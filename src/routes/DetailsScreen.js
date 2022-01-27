@@ -13,7 +13,7 @@ export default DetailsScreen = ({navigation}) => {
 
         <Button
           title="Go to Home"
-          onPress={() => navigation.navigate('HomeScreen')}
+          onPress={() => navigation.navigate('WelcomeScreen')}
         />
         <Button title="Go back" onPress={() => navigation.goBack()} />
         <Button
