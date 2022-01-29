@@ -40,7 +40,7 @@ export default NewPasswordScreen = ({navigation}) => {
             <TextInput
               returnKeyType={'done'}
               placeholder="Придумайте новий пароль"
-              placeholderTextColor={'#fff'}
+              placeholderTextColor={'#27272f'}
               style={styles.input}
               value={password}
               onChangeText={e => setPassword(e)}
@@ -53,7 +53,7 @@ export default NewPasswordScreen = ({navigation}) => {
             <TextInput
               returnKeyType={'done'}
               placeholder="Введіть його знову"
-              placeholderTextColor={'#fff'}
+              placeholderTextColor={'#27272f'}
               style={styles.input}
               value={confirmPassword}
               onChangeText={e => setConfirmPassword(e)}
@@ -71,7 +71,8 @@ export default NewPasswordScreen = ({navigation}) => {
 
             <TouchableOpacity style={styles.createProfile}>
               <Text style={styles.createProfileText}>
-                Не маєте профілю? Створіть його!
+                Маєте запитання?{' '}
+                <Text style={styles.textBlack}>Напишіть нам!</Text>
               </Text>
             </TouchableOpacity>
           </View>
@@ -114,13 +115,13 @@ const styles = StyleSheet.create({
     width: w * 0.8,
     fontSize: w * 0.045,
     padding: 5,
-    color: '#fff',
+    color: '#27272f',
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    backgroundColor: '#27272f',
+    borderWidth: 1,
   },
   someSpace: {
     marginBottom: w * 0.07,
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.2,
   },
   createProfileText: {
-    color: '#609ed1',
+    color: '#a3a3ab',
     fontSize: w * 0.037,
     fontStyle: 'italic',
   },
@@ -153,21 +154,25 @@ const styles = StyleSheet.create({
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    borderWidth: 1,
     borderColor: '#27272f',
     justifyContent: 'center',
+    backgroundColor: '#fae1dd',
     alignItems: 'center',
     alignSelf: 'flex-end',
     marginTop: w * 0.1,
   },
   sendCodeText: {
     color: '#27272f',
-    fontWeight: '400',
+    fontWeight: '500',
     fontSize: w * 0.05,
     marginRight: w * 0.01,
   },
   toRightIcon: {
     width: w * 0.05,
     height: w * 0.05,
+  },
+  textBlack: {
+    color: '#1A374D',
+    textDecorationLine: 'underline',
   },
 });

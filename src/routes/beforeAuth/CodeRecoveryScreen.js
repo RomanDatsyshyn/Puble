@@ -136,7 +136,8 @@ export default CodeRecoveryScreen = ({navigation}) => {
           <View>
             <TouchableOpacity style={styles.haveAnyQuestion}>
               <Text style={styles.haveAnyQuestionText}>
-                Маєте запитання? Напишіть нам!
+                Маєте запитання?{' '}
+                <Text style={styles.textBlack}>Напишіть нам!</Text>
               </Text>
             </TouchableOpacity>
           </View>
@@ -177,7 +178,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.2,
   },
   haveAnyQuestionText: {
-    color: '#609ed1',
+    color: '#a3a3ab',
     fontSize: w * 0.037,
     fontStyle: 'italic',
   },
@@ -189,6 +190,10 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
+  },
+  textBlack: {
+    color: '#1A374D',
+    textDecorationLine: 'underline',
   },
 });
 
@@ -232,9 +237,10 @@ const stylesForCodeInput = StyleSheet.create({
   },
   nextButton: {
     marginTop: w * 0.25,
-    borderRadius: 60,
+    borderRadius: w * 0.02,
     height: 60,
-    backgroundColor: '#27272f',
+    borderWidth: 1,
+    borderColor: '#27272f',
     justifyContent: 'center',
     width: w * 0.85,
     alignSelf: 'center',
@@ -242,8 +248,9 @@ const stylesForCodeInput = StyleSheet.create({
   },
   nextButtonText: {
     textAlign: 'center',
-    fontSize: 20,
-    color: '#fff',
-    fontWeight: '700',
+    color: '#27272f',
+    fontWeight: '500',
+    color: '#27272f',
+    fontSize: w * 0.05,
   },
 });

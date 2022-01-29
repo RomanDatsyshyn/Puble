@@ -39,7 +39,7 @@ export default ForgetPasswordScreen = ({navigation}) => {
             <TextInput
               returnKeyType={'done'}
               placeholder="Example@example.com"
-              placeholderTextColor={'#fff'}
+              placeholderTextColor={'#a3a3ab'}
               style={styles.input}
               value={email}
               onChangeText={e => setEmail(e)}
@@ -57,7 +57,8 @@ export default ForgetPasswordScreen = ({navigation}) => {
 
             <TouchableOpacity style={styles.haveAnyQuestion}>
               <Text style={styles.haveAnyQuestionText}>
-                Маєте запитання? Напишіть нам!
+                Маєте запитання?{' '}
+                <Text style={styles.textBlack}>Напишіть нам!</Text>
               </Text>
             </TouchableOpacity>
           </View>
@@ -100,13 +101,13 @@ const styles = StyleSheet.create({
     width: w * 0.8,
     fontSize: w * 0.045,
     padding: 5,
-    color: '#fff',
+    color: '#27272f',
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    backgroundColor: '#27272f',
+    borderWidth: 1,
   },
   someSpace: {
     marginBottom: w * 0.07,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.2,
   },
   haveAnyQuestionText: {
-    color: '#609ed1',
+    color: '#a3a3ab',
     fontSize: w * 0.037,
     fontStyle: 'italic',
   },
@@ -148,11 +149,15 @@ const styles = StyleSheet.create({
   },
   sendCodeText: {
     color: '#27272f',
-    fontWeight: '400',
     fontSize: w * 0.05,
+    fontWeight: '500',
   },
   toRightIcon: {
     width: w * 0.05,
     height: w * 0.05,
+  },
+  textBlack: {
+    color: '#1A374D',
+    textDecorationLine: 'underline',
   },
 });

@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     height: w * 0.16,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: w * 0.035,
+    borderRadius: w * 0.03,
     marginBottom: w * 0.08,
   },
   signUpButton: {
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fae1dd',
-    borderRadius: w * 0.035,
+    borderRadius: w * 0.03,
   },
   signInText: {
     fontSize: w * 0.045,
@@ -154,8 +154,8 @@ const styles = StyleSheet.create({
   },
   contactUs: {
     marginTop: w * 0.02,
-    color: '#000',
-    opacity: 0.9,
+    color: '#27272f',
     fontStyle: 'italic',
+    textDecorationLine: 'underline',
   },
 });

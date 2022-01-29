@@ -36,7 +36,7 @@ export default RegistrationScreen = ({navigation}) => {
               <TextInput
                 returnKeyType={'done'}
                 placeholder="Введіть своє ім'я"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#a3a3ab'}
                 style={styles.input}
                 value={login}
                 onChangeText={e => setLogin(e)}
@@ -49,7 +49,7 @@ export default RegistrationScreen = ({navigation}) => {
               <TextInput
                 returnKeyType={'done'}
                 placeholder="067 777 77 77"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#a3a3ab'}
                 style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
@@ -62,7 +62,7 @@ export default RegistrationScreen = ({navigation}) => {
               <TextInput
                 returnKeyType={'done'}
                 placeholder="Example@example.com"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#a3a3ab'}
                 style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
@@ -75,7 +75,7 @@ export default RegistrationScreen = ({navigation}) => {
               <TextInput
                 returnKeyType={'done'}
                 placeholder="Введіть ваш пароль"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#a3a3ab'}
                 style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
@@ -88,7 +88,7 @@ export default RegistrationScreen = ({navigation}) => {
               <TextInput
                 returnKeyType={'done'}
                 placeholder="Введіть його знову"
-                placeholderTextColor={'#fff'}
+                placeholderTextColor={'#a3a3ab'}
                 style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
@@ -103,7 +103,8 @@ export default RegistrationScreen = ({navigation}) => {
 
               <TouchableOpacity style={styles.createProfile}>
                 <Text style={styles.createProfileText}>
-                  Маєте запитання? Напишіть нам!
+                  Маєте запитання?{' '}
+                  <Text style={styles.textBlack}>Напишіть нам!</Text>
                 </Text>
               </TouchableOpacity>
             </View>
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
   labels: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: w * 0.1,
+    marginTop: w * 0.13,
   },
   title: {
     fontSize: w * 0.09,
@@ -156,13 +157,13 @@ const styles = StyleSheet.create({
     width: w * 0.8,
     fontSize: w * 0.045,
     padding: 5,
-    color: '#fff',
+    color: '#27272f',
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    backgroundColor: '#27272f',
+    borderWidth: 1,
   },
   someSpace: {
     marginBottom: w * 0.07,
@@ -181,7 +182,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.1,
   },
   createProfileText: {
-    color: '#609ed1',
+    color: '#a3a3ab',
     fontSize: w * 0.037,
     fontStyle: 'italic',
   },
@@ -204,15 +205,14 @@ const styles = StyleSheet.create({
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
+    backgroundColor: '#fae1dd',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'flex-end',
     marginTop: w * 0.1,
   },
   sendCodeText: {
-    color: '#27272f',
+    color: '#1A374D',
     fontWeight: '400',
     fontSize: w * 0.05,
     marginRight: w * 0.01,
@@ -220,5 +220,8 @@ const styles = StyleSheet.create({
   toRightIcon: {
     width: w * 0.05,
     height: w * 0.05,
+  },
+  textBlack: {
+    color: '#1A374D',
   },
 });
