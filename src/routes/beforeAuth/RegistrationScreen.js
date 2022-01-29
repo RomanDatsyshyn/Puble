@@ -223,5 +223,6 @@ const styles = StyleSheet.create({
   },
   textBlack: {
     color: '#1A374D',
+    textDecorationLine: 'underline',
   },
 });
