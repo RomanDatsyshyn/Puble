@@ -125,15 +125,6 @@ const styles = StyleSheet.create({
   someSpace: {
     marginBottom: w * 0.07,
   },
-  forgetPassword: {
-    alignItems: 'flex-end',
-    marginTop: w * 0.03,
-    marginRight: w * 0.02,
-  },
-  forgetPasswordText: {
-    color: '#609ed1',
-    fontSize: w * 0.037,
-  },
   createProfile: {
     alignSelf: 'center',
     marginTop: w * 0.2,
@@ -141,6 +132,7 @@ const styles = StyleSheet.create({
   createProfileText: {
     color: '#609ed1',
     fontSize: w * 0.037,
+    fontStyle: 'italic',
   },
   backButton: {
     position: 'absolute',

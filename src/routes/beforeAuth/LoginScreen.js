@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
   createProfileText: {
     color: '#609ed1',
     fontSize: w * 0.037,
+    fontStyle: 'italic',
   },
   backButton: {
     position: 'absolute',

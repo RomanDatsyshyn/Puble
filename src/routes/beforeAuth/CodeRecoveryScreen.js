@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
   haveAnyQuestionText: {
     color: '#609ed1',
     fontSize: w * 0.037,
+    fontStyle: 'italic',
   },
   backButton: {
     position: 'absolute',
