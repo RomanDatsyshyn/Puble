@@ -5,6 +5,7 @@ import WelcomeScreen from '../routes/WelcomeScreen';
 import DetailsScreen from '../routes/DetailsScreen';
 import LoginScreen from '../routes/beforeAuth/LoginScreen';
 import ForgetPasswordScreen from '../routes/beforeAuth/ForgetPasswordScreen';
+import CodeRecoveryScreen from '../routes/beforeAuth/CodeRecoveryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,11 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="ForgetPasswordScreen"
         component={ForgetPasswordScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="CodeRecoveryScreen"
+        component={CodeRecoveryScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

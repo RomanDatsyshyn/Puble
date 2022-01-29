@@ -65,6 +65,13 @@ export default LoginScreen = ({navigation}) => {
               <Text style={styles.forgetPasswordText}>Забули свій пароль?</Text>
             </TouchableOpacity>
 
+            <TouchableOpacity
+              // onPress={() => navigation.navigate('CodeRecoveryScreen')}
+              activeOpacity={0.7}
+              style={styles.sendCode}>
+              <Text style={styles.sendCodeText}>Увійти</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.createProfile}>
               <Text style={styles.createProfileText}>
                 Не маєте профілю? Створіть його!
@@ -91,6 +98,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: w * 0.09,
     fontWeight: '700',
+    color: '#1A374D',
   },
   subTitle: {
     color: '#a3a3ab',
@@ -145,5 +153,32 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
+  },
+  sendCode: {
+    width: w * 0.8,
+    flexDirection: 'row',
+    fontSize: w * 0.045,
+    padding: 5,
+    paddingLeft: w * 0.05,
+    paddingRight: w * 0.05,
+    paddingTop: w * 0.04,
+    paddingBottom: w * 0.04,
+    borderRadius: w * 0.02,
+    borderWidth: 1,
+    borderColor: '#27272f',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    marginTop: w * 0.1,
+  },
+  sendCodeText: {
+    color: '#27272f',
+    fontWeight: '400',
+    fontSize: w * 0.05,
+    marginRight: w * 0.01,
+  },
+  toRightIcon: {
+    width: w * 0.05,
+    height: w * 0.05,
   },
 });

@@ -47,7 +47,10 @@ export default ForgetPasswoerdScreen = ({navigation}) => {
 
             <View style={styles.someSpace}></View>
 
-            <TouchableOpacity activeOpacity={0.7} style={styles.sendCode}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('CodeRecoveryScreen')}
+              activeOpacity={0.7}
+              style={styles.sendCode}>
               <Text style={styles.sendCodeText}>Далі</Text>
               <Image source={icons.toRight} style={styles.toRightIcon} />
             </TouchableOpacity>
@@ -78,6 +81,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: w * 0.09,
     fontWeight: '700',
+    color: '#1A374D',
   },
   subTitle: {
     color: '#a3a3ab',
@@ -134,13 +138,15 @@ const styles = StyleSheet.create({
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
-    backgroundColor: '#27272f',
+    borderWidth: 1,
+    borderColor: '#27272f',
     justifyContent: 'space-around',
     alignItems: 'center',
     alignSelf: 'flex-end',
+    marginTop: w * 0.05,
   },
   sendCodeText: {
-    color: '#fff',
+    color: '#27272f',
     fontWeight: '400',
     fontSize: w * 0.05,
   },
