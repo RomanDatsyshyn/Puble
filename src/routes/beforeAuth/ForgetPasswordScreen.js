@@ -14,7 +14,7 @@ import {icons} from '../../assets/icons';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default ForgetPasswoerdScreen = ({navigation}) => {
+export default ForgetPasswordScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
 
   return (

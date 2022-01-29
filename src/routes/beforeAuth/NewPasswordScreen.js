@@ -22,7 +22,7 @@ export default NewPasswordScreen = ({navigation}) => {
     <>
       <View style={styles.background}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('ForgetPasswoerdScreen')}
+          onPress={() => navigation.navigate('ForgetPasswordScreen')}
           style={styles.backButton}>
           <Image source={icons.leftArrow} style={styles.backIcon} />
         </TouchableOpacity>
