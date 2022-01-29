@@ -39,7 +39,7 @@ export default WelcomeScreen = ({navigation}) => {
           <TouchableOpacity
             activeOpacity={0.7}
             style={styles.signUpButton}
-            onPress={() => navigation.navigate('DetailsScreen')}>
+            onPress={() => navigation.navigate('RegistrationScreen')}>
             <Text style={styles.signUpText}>Хутчіш приєднуйся!</Text>
           </TouchableOpacity>
 

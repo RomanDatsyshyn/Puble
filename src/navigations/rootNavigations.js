@@ -2,11 +2,11 @@ import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import WelcomeScreen from '../routes/WelcomeScreen';
-import DetailsScreen from '../routes/DetailsScreen';
 import LoginScreen from '../routes/beforeAuth/LoginScreen';
 import ForgetPasswordScreen from '../routes/beforeAuth/ForgetPasswordScreen';
 import CodeRecoveryScreen from '../routes/beforeAuth/CodeRecoveryScreen';
 import NewPasswordScreen from '../routes/beforeAuth/NewPasswordScreen';
+import RegistrationScreen from '../routes/beforeAuth/RegistrationScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,11 +16,6 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="DetailsScreen"
-        component={DetailsScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -41,6 +36,11 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="NewPasswordScreen"
         component={NewPasswordScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="RegistrationScreen"
+        component={RegistrationScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

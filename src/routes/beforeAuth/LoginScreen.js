@@ -72,7 +72,9 @@ export default LoginScreen = ({navigation}) => {
               <Text style={styles.sendCodeText}>Увійти</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.createProfile}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('RegistrationScreen')}
+              style={styles.createProfile}>
               <Text style={styles.createProfileText}>
                 Не маєте профілю? Створіть його!
               </Text>
