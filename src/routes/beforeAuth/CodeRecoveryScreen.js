@@ -127,6 +127,7 @@ export default CodeRecoveryScreen = ({navigation}) => {
             renderCell={renderCell}
           />
           <TouchableOpacity
+            onPress={() => navigation.navigate('NewPasswordScreen')}
             activeOpacity={0.7}
             style={stylesForCodeInput.nextButton}>
             <Text style={stylesForCodeInput.nextButtonText}>Підтвердити</Text>
