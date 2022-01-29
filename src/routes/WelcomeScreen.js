@@ -31,7 +31,7 @@ export default WelcomeScreen = ({navigation}) => {
           <TouchableOpacity
             activeOpacity={0.7}
             style={styles.signInButton}
-            onPress={() => navigation.navigate('DetailsScreen')}>
+            onPress={() => navigation.navigate('LoginScreen')}>
             <Text style={styles.signInText}>Заходь, друже :)</Text>
           </TouchableOpacity>
 

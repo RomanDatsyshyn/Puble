@@ -1,3 +1,4 @@
 export const icons = {
-  //   timer: require('./timer.png'),
+  leftArrow: require('./leftArrow.png'),
+  toRight: require('./toRight.png'),
 };
