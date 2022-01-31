@@ -40,6 +40,19 @@ function ProfileTAB() {
 
 const Tab = createBottomTabNavigator();
 
+const feedTabOptions = {
+  tabBarIcon: () => (
+    <Image source={icons.home} style={{width: 30, height: 30}} />
+  ),
+  headerTitle: 'Пропозиції',
+  tabBarShowLabel: false,
+  tabBarIconStyle: {
+    marginTop: w * 0.05,
+  },
+  tabBarBadge: '1',
+  tabBarBadgeStyle: {backgroundColor: '#fae1dd'},
+};
+
 const categoriesTabOptions = {
   tabBarIcon: () => (
     <Image source={icons.categories} style={{width: 26, height: 26}} />
@@ -60,6 +73,8 @@ const directTabOptions = {
   tabBarIconStyle: {
     marginTop: w * 0.05,
   },
+  tabBarBadge: '22',
+  tabBarBadgeStyle: {backgroundColor: '#fae1dd'},
 };
 const profileTabOptions = {
   tabBarIcon: () => (
@@ -73,16 +88,6 @@ const profileTabOptions = {
 };
 
 export default function TabNavigation({navigation}) {
-  const feedTabOptions = {
-    tabBarIcon: () => (
-      <Image source={icons.home} style={{width: 30, height: 30}} />
-    ),
-    headerTitle: 'Пропозиції',
-    tabBarShowLabel: false,
-    tabBarIconStyle: {
-      marginTop: w * 0.05,
-    },
-  };
   return (
     <Tab.Navigator>
       <Tab.Screen name="Feed" component={FeedTab} options={feedTabOptions} />
