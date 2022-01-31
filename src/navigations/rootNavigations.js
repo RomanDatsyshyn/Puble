@@ -16,6 +16,11 @@ export const RootNavigation = () => {
   return (
     <Stack.Navigator initialRouteName="WelcomeScreen">
       <Stack.Screen
+        name="TabNavigation"
+        component={TabNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
         options={{headerShown: false}}
@@ -43,11 +48,6 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="RegistrationScreen"
         component={RegistrationScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="TabNavigation"
-        component={TabNavigation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

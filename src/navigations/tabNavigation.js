@@ -1,6 +1,10 @@
 import * as React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Image, Dimensions} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+import {icons} from '../assets/icons';
+
+const w = Dimensions.get('window').width;
 
 function FeedTab() {
   return (
@@ -36,13 +40,67 @@ function ProfileTAB() {
 
 const Tab = createBottomTabNavigator();
 
-export default function TabNavigation() {
+const categoriesTabOptions = {
+  tabBarIcon: () => (
+    <Image source={icons.categories} style={{width: 26, height: 26}} />
+  ),
+  headerTitle: 'Категорії',
+  tabBarShowLabel: false,
+  tabBarIconStyle: {
+    marginTop: w * 0.05,
+  },
+};
+
+const directTabOptions = {
+  tabBarIcon: () => (
+    <Image source={icons.direct} style={{width: 30, height: 30}} />
+  ),
+  headerTitle: 'Особисті повідомлення',
+  tabBarShowLabel: false,
+  tabBarIconStyle: {
+    marginTop: w * 0.05,
+  },
+};
+const profileTabOptions = {
+  tabBarIcon: () => (
+    <Image source={icons.profile} style={{width: 30, height: 30}} />
+  ),
+  headerTitle: 'Профіль',
+  tabBarShowLabel: false,
+  tabBarIconStyle: {
+    marginTop: w * 0.05,
+  },
+};
+
+export default function TabNavigation({navigation}) {
+  const feedTabOptions = {
+    tabBarIcon: () => (
+      <Image source={icons.home} style={{width: 30, height: 30}} />
+    ),
+    headerTitle: 'Пропозиції',
+    tabBarShowLabel: false,
+    tabBarIconStyle: {
+      marginTop: w * 0.05,
+    },
+  };
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Feed" component={FeedTab} />
-      <Tab.Screen name="Categories" component={CategoriesTAB} />
-      <Tab.Screen name="Direct" component={DirectTAB} />
-      <Tab.Screen name="Profile" component={ProfileTAB} />
+      <Tab.Screen name="Feed" component={FeedTab} options={feedTabOptions} />
+      <Tab.Screen
+        name="Categories"
+        component={CategoriesTAB}
+        options={categoriesTabOptions}
+      />
+      <Tab.Screen
+        name="Direct"
+        component={DirectTAB}
+        options={directTabOptions}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileTAB}
+        options={profileTabOptions}
+      />
     </Tab.Navigator>
   );
 }
