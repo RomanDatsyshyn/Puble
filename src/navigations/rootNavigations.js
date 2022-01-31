@@ -8,6 +8,8 @@ import CodeRecoveryScreen from '../routes/beforeAuth/CodeRecoveryScreen';
 import NewPasswordScreen from '../routes/beforeAuth/NewPasswordScreen';
 import RegistrationScreen from '../routes/beforeAuth/RegistrationScreen';
 
+import TabNavigation from './tabNavigation';
+
 const Stack = createNativeStackNavigator();
 
 export const RootNavigation = () => {
@@ -41,6 +43,11 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="RegistrationScreen"
         component={RegistrationScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TabNavigation"
+        component={TabNavigation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

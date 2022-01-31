@@ -66,7 +66,7 @@ export default LoginScreen = ({navigation}) => {
             </TouchableOpacity>
 
             <TouchableOpacity
-              // onPress={() => navigation.navigate('CodeRecoveryScreen')}
+              onPress={() => navigation.navigate('TabNavigation')}
               activeOpacity={0.7}
               style={styles.sendCode}>
               <Text style={styles.sendCodeText}>Увійти</Text>
