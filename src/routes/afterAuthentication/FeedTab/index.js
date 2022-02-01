@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import {images} from '../../../assets/images';
+import {icons} from '../../../assets/icons';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -27,8 +28,20 @@ export default FeedTab = () => {
                 <Text style={styles.itemTypeOfService}>Перукар</Text>
               </View>
               <View>
-                <Text style={styles.itemDistance}>270 м. від вас</Text>
-                <Text style={styles.itemRating}>Рейтинг - 4.2 із 10</Text>
+                <View style={styles.row}>
+                  <Image
+                    source={icons.location}
+                    style={styles.itemLocationIcon}
+                  />
+                  <Text style={styles.itemDistance}>270 м. від вас</Text>
+                </View>
+                <View style={styles.row}>
+                  <Image
+                    source={icons.rating}
+                    style={styles.itemLocationIcon}
+                  />
+                  <Text style={styles.itemRating}>Рейтинг - 4.2 із 10</Text>
+                </View>
               </View>
             </View>
           </View>
@@ -78,13 +91,19 @@ const styles = StyleSheet.create({
     color: '#a3a3ab',
     fontSize: w * 0.035,
   },
+  itemDistance: {
+    color: '#27272f',
+    fontSize: w * 0.04,
+    marginBottom: w * 0.01,
+  },
   itemRating: {
     color: '#27272f',
     fontSize: w * 0.04,
   },
-  itemDistance: {
-    color: '#27272f',
-    fontSize: w * 0.04,
+  itemLocationIcon: {
+    width: w * 0.05,
+    height: w * 0.05,
+    marginRight: w * 0.02,
   },
   button: {
     width: '100%',

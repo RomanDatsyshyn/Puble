@@ -9,4 +9,6 @@ export const icons = {
   directActive: require('./directActive.png'),
   profile: require('./profile.png'),
   profileActive: require('./profileActive.png'),
+  location: require('./location.png'),
+  rating: require('./rating.png'),
 };
