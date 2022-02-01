@@ -6,57 +6,65 @@ import {icons} from '../assets/icons';
 
 const w = Dimensions.get('window').width;
 
-function FeedTab() {
+const FeedTab = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>FeedTab!</Text>
     </View>
   );
-}
+};
 
-function CategoriesTAB() {
+const CategoriesTAB = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>CategoriesTAB!</Text>
     </View>
   );
-}
+};
 
-function DirectTAB() {
+const DirectTAB = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>DirectTAB!</Text>
     </View>
   );
-}
+};
 
-function ProfileTAB() {
+const ProfileTAB = () => {
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>ProfileTAB!</Text>
     </View>
   );
-}
+};
 
 const Tab = createBottomTabNavigator();
 
 const feedTabOptions = {
-  tabBarIcon: () => (
-    <Image source={icons.home} style={{width: 30, height: 30}} />
-  ),
+  tabBarIcon: ({focused}) =>
+    focused ? (
+      <Image source={icons.homeActive} style={{width: 30, height: 30}} />
+    ) : (
+      <Image source={icons.home} style={{width: 30, height: 30}} />
+    ),
   headerTitle: 'Пропозиції',
   tabBarShowLabel: false,
   tabBarIconStyle: {
     marginTop: w * 0.05,
   },
-  tabBarBadge: '1',
-  tabBarBadgeStyle: {backgroundColor: '#fae1dd'},
+  tabBarBadge: '25',
+  tabBarBadgeStyle: {
+    backgroundColor: '#fae1dd',
+  },
 };
 
 const categoriesTabOptions = {
-  tabBarIcon: () => (
-    <Image source={icons.categories} style={{width: 26, height: 26}} />
-  ),
+  tabBarIcon: ({focused}) =>
+    focused ? (
+      <Image source={icons.categoriesActive} style={{width: 30, height: 30}} />
+    ) : (
+      <Image source={icons.categories} style={{width: 30, height: 30}} />
+    ),
   headerTitle: 'Категорії',
   tabBarShowLabel: false,
   tabBarIconStyle: {
@@ -65,21 +73,30 @@ const categoriesTabOptions = {
 };
 
 const directTabOptions = {
-  tabBarIcon: () => (
-    <Image source={icons.direct} style={{width: 30, height: 30}} />
-  ),
+  tabBarIcon: ({focused}) =>
+    focused ? (
+      <Image source={icons.directActive} style={{width: 30, height: 30}} />
+    ) : (
+      <Image source={icons.direct} style={{width: 30, height: 30}} />
+    ),
   headerTitle: 'Особисті повідомлення',
   tabBarShowLabel: false,
   tabBarIconStyle: {
     marginTop: w * 0.05,
   },
-  tabBarBadge: '22',
-  tabBarBadgeStyle: {backgroundColor: '#fae1dd'},
+  tabBarBadge: '3',
+  tabBarBadgeStyle: {
+    backgroundColor: '#fae1dd',
+  },
 };
+
 const profileTabOptions = {
-  tabBarIcon: () => (
-    <Image source={icons.profile} style={{width: 30, height: 30}} />
-  ),
+  tabBarIcon: ({focused}) =>
+    focused ? (
+      <Image source={icons.profileActive} style={{width: 30, height: 30}} />
+    ) : (
+      <Image source={icons.profile} style={{width: 30, height: 30}} />
+    ),
   headerTitle: 'Профіль',
   tabBarShowLabel: false,
   tabBarIconStyle: {
@@ -87,9 +104,9 @@ const profileTabOptions = {
   },
 };
 
-export default function TabNavigation({navigation}) {
+export default function TabNavigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Feed">
       <Tab.Screen name="Feed" component={FeedTab} options={feedTabOptions} />
       <Tab.Screen
         name="Categories"
