@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.1,
   },
   sendCodeText: {
-    color: '#1A374D',
+    color: '#27272f',
     fontWeight: '400',
     fontSize: w * 0.05,
     marginRight: w * 0.01,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     height: w * 0.05,
   },
   textBlack: {
-    color: '#1A374D',
+    color: '#27272f',
     textDecorationLine: 'underline',
   },
 });

@@ -22,12 +22,14 @@ export default FeedTab = () => {
           <View style={styles.row}>
             <Image source={images.avatar} style={styles.itemImage} />
             <View style={styles.itemInfo}>
-              <Text>
-                Світлана
-                <Text>(4.3)</Text>
-              </Text>
-              <Text>Перукар</Text>
-              <Text>270 м.</Text>
+              <View>
+                <Text style={styles.itemName}>Світлана</Text>
+                <Text style={styles.itemTypeOfService}>Перукар</Text>
+              </View>
+              <View>
+                <Text style={styles.itemDistance}>270 м. від вас</Text>
+                <Text style={styles.itemRating}>Рейтинг - 4.2 із 10</Text>
+              </View>
             </View>
           </View>
 
@@ -35,12 +37,6 @@ export default FeedTab = () => {
             <Text style={styles.buttonText}>Звязатися</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.item}></View>
-        <View style={styles.item}></View>
-        <View style={styles.item}></View>
-        <View style={styles.item}></View>
-        <View style={styles.item}></View>
-        <View style={styles.item}></View>
       </ScrollView>
     </View>
   );
@@ -52,7 +48,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: w * 0.03,
+    paddingTop: w * 0.05,
   },
   container: {
     width: w * 0.95,
@@ -60,8 +56,6 @@ const styles = StyleSheet.create({
   },
   item: {
     width: '100%',
-    height: w * 0.5,
-    backgroundColor: 'red',
     marginBottom: w * 0.03,
   },
   row: {
@@ -70,9 +64,27 @@ const styles = StyleSheet.create({
   itemImage: {
     width: w * 0.25,
     height: w * 0.25,
+    borderRadius: w * 0.02,
   },
   itemInfo: {
     marginLeft: w * 0.05,
+    justifyContent: 'space-between',
+  },
+  itemName: {
+    color: '#27272f',
+    fontSize: w * 0.05,
+  },
+  itemTypeOfService: {
+    color: '#a3a3ab',
+    fontSize: w * 0.035,
+  },
+  itemRating: {
+    color: '#27272f',
+    fontSize: w * 0.04,
+  },
+  itemDistance: {
+    color: '#27272f',
+    fontSize: w * 0.04,
   },
   button: {
     width: '100%',
@@ -88,7 +100,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.03,
   },
   buttonText: {
-    color: '#1A374D',
+    color: '#27272f',
     fontWeight: '400',
     fontSize: w * 0.05,
     marginRight: w * 0.01,

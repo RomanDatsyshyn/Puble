@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     height: w * 0.05,
   },
   textBlack: {
-    color: '#1A374D',
+    color: '#27272f',
     textDecorationLine: 'underline',
   },
 });
