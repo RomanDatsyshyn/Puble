@@ -241,8 +241,6 @@ const stylesForCodeInput = StyleSheet.create({
     marginBottom: 100,
     width: w * 0.8,
     flexDirection: 'row',
-    fontSize: w * 0.045,
-    padding: 5,
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
