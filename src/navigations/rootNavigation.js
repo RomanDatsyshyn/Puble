@@ -2,13 +2,13 @@ import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import WelcomeScreen from '../routes/WelcomeScreen';
-import LoginScreen from '../routes/beforeAuth/LoginScreen';
-import ForgetPasswordScreen from '../routes/beforeAuth/ForgetPasswordScreen';
-import CodeRecoveryScreen from '../routes/beforeAuth/CodeRecoveryScreen';
-import NewPasswordScreen from '../routes/beforeAuth/NewPasswordScreen';
-import RegistrationScreen from '../routes/beforeAuth/RegistrationScreen';
+import LoginScreen from '../routes/beforeAuthentication/LoginScreen';
+import ForgetPasswordScreen from '../routes/beforeAuthentication/ForgetPasswordScreen';
+import CodeRecoveryScreen from '../routes/beforeAuthentication/CodeRecoveryScreen';
+import NewPasswordScreen from '../routes/beforeAuthentication/NewPasswordScreen';
+import RegistrationScreen from '../routes/beforeAuthentication/RegistrationScreen';
 
-import TabNavigation from './tabNavigation';
+import TabNavigation from './bottomTabsNavigation';
 
 const Stack = createNativeStackNavigator();
 

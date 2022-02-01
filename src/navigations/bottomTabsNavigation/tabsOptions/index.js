@@ -1,46 +1,11 @@
 import * as React from 'react';
-import {Text, View, Image, Dimensions} from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Image, Dimensions} from 'react-native';
 
-import {icons} from '../assets/icons';
+import {icons} from '../../../assets/icons';
 
 const w = Dimensions.get('window').width;
 
-const FeedTab = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>FeedTab!</Text>
-    </View>
-  );
-};
-
-const CategoriesTAB = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>CategoriesTAB!</Text>
-    </View>
-  );
-};
-
-const DirectTAB = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>DirectTAB!</Text>
-    </View>
-  );
-};
-
-const ProfileTAB = () => {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>ProfileTAB!</Text>
-    </View>
-  );
-};
-
-const Tab = createBottomTabNavigator();
-
-const feedTabOptions = {
+export const feedTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (
       <Image source={icons.homeActive} style={{width: 30, height: 30}} />
@@ -58,7 +23,7 @@ const feedTabOptions = {
   },
 };
 
-const categoriesTabOptions = {
+export const categoriesTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (
       <Image source={icons.categoriesActive} style={{width: 30, height: 30}} />
@@ -72,7 +37,7 @@ const categoriesTabOptions = {
   },
 };
 
-const directTabOptions = {
+export const directTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (
       <Image source={icons.directActive} style={{width: 30, height: 30}} />
@@ -90,7 +55,7 @@ const directTabOptions = {
   },
 };
 
-const profileTabOptions = {
+export const profileTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (
       <Image source={icons.profileActive} style={{width: 30, height: 30}} />
@@ -103,26 +68,3 @@ const profileTabOptions = {
     marginTop: w * 0.05,
   },
 };
-
-export default function TabNavigation() {
-  return (
-    <Tab.Navigator initialRouteName="Feed">
-      <Tab.Screen name="Feed" component={FeedTab} options={feedTabOptions} />
-      <Tab.Screen
-        name="Categories"
-        component={CategoriesTAB}
-        options={categoriesTabOptions}
-      />
-      <Tab.Screen
-        name="Direct"
-        component={DirectTAB}
-        options={directTabOptions}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileTAB}
-        options={profileTabOptions}
-      />
-    </Tab.Navigator>
-  );
-}
