@@ -9,19 +9,20 @@ import {
   TextInput,
 } from 'react-native';
 
-import {icons} from '../../assets/icons';
+import {icons} from '../../../assets/icons';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default ForgetPasswordScreen = ({navigation}) => {
-  const [email, setEmail] = useState('');
+export default NewPasswordScreen = ({navigation}) => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     <>
       <View style={styles.background}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('LoginScreen')}
+          onPress={() => navigation.navigate('ForgetPasswordScreen')}
           style={styles.backButton}>
           <Image source={icons.leftArrow} style={styles.backIcon} />
         </TouchableOpacity>
@@ -29,34 +30,47 @@ export default ForgetPasswordScreen = ({navigation}) => {
         <View>
           <View style={styles.labels}>
             <Text style={styles.title}>Введіть ваш</Text>
-            <Text style={styles.title}>Email</Text>
-            <Text style={styles.subTitle}>Заповніть полe нижче</Text>
+            <Text style={styles.title}>Новий пароль</Text>
+            <Text style={styles.subTitle}>Заповніть поля нижче</Text>
           </View>
 
           <View>
-            <Text style={styles.inputLabel}>Email:</Text>
+            <Text style={styles.inputLabel}>Пароль:</Text>
 
             <TextInput
               returnKeyType={'done'}
-              placeholder="Example@example.com"
-              placeholderTextColor={'#a3a3ab'}
+              placeholder="Придумайте новий пароль"
+              placeholderTextColor={'#27272f'}
               style={styles.input}
-              value={email}
-              onChangeText={e => setEmail(e)}
+              value={password}
+              onChangeText={e => setPassword(e)}
             />
 
             <View style={styles.someSpace}></View>
 
+            <Text style={styles.inputLabel}>Повторіть пароль:</Text>
+
+            <TextInput
+              returnKeyType={'done'}
+              placeholder="Введіть його знову"
+              placeholderTextColor={'#27272f'}
+              style={styles.input}
+              value={confirmPassword}
+              onChangeText={e => setConfirmPassword(e)}
+            />
+
             <TouchableOpacity
-              onPress={() => navigation.navigate('CodeRecoveryScreen')}
+              onPress={() => {
+                alert(' Ваш пароль успішно змінено!');
+                navigation.navigate('LoginScreen');
+              }}
               activeOpacity={0.7}
               style={styles.sendCode}>
-              <Text style={styles.sendCodeText}>Далі</Text>
-              <Image source={icons.toRight} style={styles.toRightIcon} />
+              <Text style={styles.sendCodeText}>Змінити пароль</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.haveAnyQuestion}>
-              <Text style={styles.haveAnyQuestionText}>
+            <TouchableOpacity style={styles.createProfile}>
+              <Text style={styles.createProfileText}>
                 Маєте запитання?{' '}
                 <Text style={styles.textBlack}>Напишіть нам!</Text>
               </Text>
@@ -112,11 +126,11 @@ const styles = StyleSheet.create({
   someSpace: {
     marginBottom: w * 0.07,
   },
-  haveAnyQuestion: {
+  createProfile: {
     alignSelf: 'center',
     marginTop: w * 0.2,
   },
-  haveAnyQuestionText: {
+  createProfileText: {
     color: '#a3a3ab',
     fontSize: w * 0.037,
     fontStyle: 'italic',
@@ -140,16 +154,18 @@ const styles = StyleSheet.create({
     paddingTop: w * 0.04,
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
+    borderColor: '#27272f',
     justifyContent: 'center',
     backgroundColor: '#fae1dd',
     alignItems: 'center',
     alignSelf: 'flex-end',
-    marginTop: w * 0.05,
+    marginTop: w * 0.1,
   },
   sendCodeText: {
     color: '#27272f',
-    fontSize: w * 0.05,
     fontWeight: '500',
+    fontSize: w * 0.05,
+    marginRight: w * 0.01,
   },
   toRightIcon: {
     width: w * 0.05,

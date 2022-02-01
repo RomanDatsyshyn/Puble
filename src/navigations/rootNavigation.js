@@ -3,9 +3,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import WelcomeScreen from '../routes/WelcomeScreen';
 import LoginScreen from '../routes/beforeAuthentication/LoginScreen';
-import ForgetPasswordScreen from '../routes/beforeAuthentication/ForgetPasswordScreen';
-import CodeRecoveryScreen from '../routes/beforeAuthentication/CodeRecoveryScreen';
-import NewPasswordScreen from '../routes/beforeAuthentication/NewPasswordScreen';
+import ForgetPasswordScreen from '../routes/beforeAuthentication/PasswordRecovery/ForgetPasswordScreen';
+import CodeRecoveryScreen from '../routes/beforeAuthentication/PasswordRecovery/CodeRecoveryScreen';
+import NewPasswordScreen from '../routes/beforeAuthentication/PasswordRecovery/NewPasswordScreen';
 import RegistrationScreen from '../routes/beforeAuthentication/RegistrationScreen';
 
 import TabNavigation from './bottomTabsNavigation';
