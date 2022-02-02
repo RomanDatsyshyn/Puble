@@ -26,6 +26,10 @@ export default FeedItem = () => {
 
           <View>
             <View style={styles.row}>
+              <Image source={icons.uah} style={styles.itemUahIcon} />
+              <Text style={styles.itemRating}>150 - 200 грн</Text>
+            </View>
+            <View style={styles.row}>
               <Image source={icons.location} style={styles.itemLocationIcon} />
               <Text style={styles.itemDistance}>270 м. -</Text>
               <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
@@ -60,8 +64,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   itemImage: {
-    width: w * 0.25,
-    height: w * 0.25,
+    width: w * 0.32,
+    height: w * 0.32,
     borderRadius: w * 0.02,
   },
   itemInfo: {
@@ -92,6 +96,11 @@ const styles = StyleSheet.create({
   itemLocationIcon: {
     width: w * 0.05,
     height: w * 0.05,
+    marginRight: w * 0.02,
+  },
+  itemUahIcon: {
+    width: w * 0.045,
+    height: w * 0.045,
     marginRight: w * 0.02,
   },
   itemMap: {
