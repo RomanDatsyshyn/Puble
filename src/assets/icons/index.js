@@ -11,4 +11,5 @@ export const icons = {
   profileActive: require('./profileActive.png'),
   location: require('./location.png'),
   rating: require('./rating.png'),
+  close: require('./close.png'),
 };
