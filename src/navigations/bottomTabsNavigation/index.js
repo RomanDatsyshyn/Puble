@@ -2,9 +2,10 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import FeedTabScreen from '../../routes/afterAuthentication/FeedTab';
-import CategoriesTabScreen from '../../routes/afterAuthentication/CategoriesTab';
 import DirectTabScreen from '../../routes/afterAuthentication/DirectTab';
 import ProfileTabScreen from '../../routes/afterAuthentication/ProfileTab';
+
+import CategoriesTabNavigation from '../categoriesTabNavigation';
 
 import {
   feedTabOptions,
@@ -25,7 +26,7 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Categories"
-        component={CategoriesTabScreen}
+        component={CategoriesTabNavigation}
         options={categoriesTabOptions}
       />
       <Tab.Screen
