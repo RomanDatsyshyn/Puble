@@ -197,7 +197,6 @@ const styles = StyleSheet.create({
   },
   sendCode: {
     width: w * 0.8,
-    flexDirection: 'row',
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
@@ -206,14 +205,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fae1dd',
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'flex-end',
     marginTop: w * 0.1,
   },
   sendCodeText: {
     color: '#27272f',
     fontWeight: '400',
     fontSize: w * 0.05,
-    marginRight: w * 0.01,
   },
   toRightIcon: {
     width: w * 0.05,

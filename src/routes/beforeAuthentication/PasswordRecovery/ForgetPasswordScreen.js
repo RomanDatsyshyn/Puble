@@ -141,7 +141,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fae1dd',
     alignItems: 'center',
-    alignSelf: 'flex-end',
     marginTop: w * 0.05,
   },
   sendCodeText: {

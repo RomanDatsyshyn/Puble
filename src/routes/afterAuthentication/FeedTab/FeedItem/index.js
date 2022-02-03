@@ -120,14 +120,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fae1dd',
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'flex-end',
     marginTop: w * 0.03,
   },
   buttonText: {
     color: '#27272f',
     fontWeight: '400',
     fontSize: w * 0.05,
-    marginRight: w * 0.01,
   },
   close: {
     position: 'absolute',
