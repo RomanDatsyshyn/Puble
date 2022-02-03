@@ -1,6 +1,7 @@
 export const icons = {
   leftArrow: require('./leftArrow.png'),
   toRight: require('./toRight.png'),
+  toLeft: require('./toLeft.png'),
   home: require('./home.png'),
   homeActive: require('./homeActive.png'),
   categories: require('./categories.png'),

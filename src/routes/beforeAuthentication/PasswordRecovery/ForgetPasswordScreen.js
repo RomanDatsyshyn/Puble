@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
     color: '#27272f',
     fontSize: w * 0.05,
     fontWeight: '500',
+    marginRight: w * 0.01,
   },
   toRightIcon: {
     width: w * 0.05,
