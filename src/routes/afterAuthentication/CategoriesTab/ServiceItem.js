@@ -4,22 +4,18 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  Image,
   TouchableOpacity,
 } from 'react-native';
 
-import {icons} from '../../../assets/icons';
-
 const w = Dimensions.get('window').width;
 
-export default CategoryItem = ({icon, name, navigation}) => {
+export default ServiceItem = ({name, navigation}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      onPress={() => navigation.navigate('ListOfServicesScreen')}
+      onPress={() => navigation.navigate('IWantToScreen')}
       style={styles.item}>
       <View style={styles.itemConteiner}>
-        <Image source={icon} style={styles.itemIcon} />
         <Text style={styles.itemTitle}>{name}</Text>
       </View>
     </TouchableOpacity>
@@ -28,13 +24,17 @@ export default CategoryItem = ({icon, name, navigation}) => {
 
 const styles = StyleSheet.create({
   item: {
-    width: w * 0.37,
-    height: w * 0.37,
-    borderRadius: w * 0.02,
-    backgroundColor: '#fae1dd',
-    marginBottom: w * 0.06,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    width: w * 0.8,
+    paddingLeft: w * 0.05,
+    paddingRight: w * 0.05,
+    paddingTop: w * 0.04,
+    paddingBottom: w * 0.04,
     alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: w * 0.03,
+    marginBottom: w * 0.03,
+    backgroundColor: '#fae1dd',
   },
   itemConteiner: {
     justifyContent: 'center',

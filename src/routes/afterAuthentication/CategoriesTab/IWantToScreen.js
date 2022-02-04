@@ -24,7 +24,7 @@ export default IWantToScreen = ({navigation}) => {
       <TouchableOpacity
         activeOpacity={0.7}
         style={styles.signInButton}
-        onPress={() => navigation.navigate('CategoriesTabScreen')}>
+        onPress={() => navigation.navigate('ListOfServicesScreen')}>
         <Image source={icons.toLeft} style={styles.toRightIcon} />
         <Text style={styles.signInText}>Повернутися назад</Text>
       </TouchableOpacity>

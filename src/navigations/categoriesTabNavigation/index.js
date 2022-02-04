@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import CategoriesTabScreen from '../../routes/afterAuthentication/CategoriesTab';
 import IWantToScreen from '../../routes/afterAuthentication/CategoriesTab/IWantToScreen';
+import ListOfServicesScreen from '../../routes/afterAuthentication/CategoriesTab/ListOfServicesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +13,11 @@ export default function CategoriesTabNavigation() {
       <Stack.Screen
         name="CategoriesTabScreen"
         component={CategoriesTabScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ListOfServicesScreen"
+        component={ListOfServicesScreen}
         options={{headerShown: false}}
       />
       <Stack.Screen
