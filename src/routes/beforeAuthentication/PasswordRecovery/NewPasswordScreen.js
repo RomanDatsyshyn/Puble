@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
     paddingBottom: w * 0.04,
     borderRadius: w * 0.02,
     borderWidth: 1,
+    borderColor: '#27272f',
   },
   someSpace: {
     marginBottom: w * 0.07,

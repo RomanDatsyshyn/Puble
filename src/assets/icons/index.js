@@ -14,4 +14,6 @@ export const icons = {
   rating: require('./rating.png'),
   close: require('./close.png'),
   uah: require('./uah.png'),
+  search: require('./search.png'),
+  beauty: require('./beauty.png'),
 };
