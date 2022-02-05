@@ -16,14 +16,15 @@ const h = Dimensions.get('window').height;
 export default ProfileTab = ({navigation}) => {
   return (
     <View style={styles.background}>
-      <Image source={images.avatar} style={styles.userPhoto} />
       <View style={styles.container}>
+        <Image source={images.avatar} style={styles.userPhoto} />
+
         <Text style={styles.userName}>Орися</Text>
 
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.signUpButton}
-          onPress={() => navigation.navigate('RegistrationScreen')}>
+          onPress={() => navigation.navigate('ForgetPasswordScreen')}>
           <Text style={styles.signUpText}>Змінити пароль</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -55,23 +56,16 @@ const styles = StyleSheet.create({
     width: w * 0.35,
     height: w * 0.35,
     borderRadius: w * 0.5,
-    position: 'absolute',
-    top: h * 0.02,
-    zIndex: 9,
+    marginBottom: w * 0.02,
   },
   userName: {
     fontSize: w * 0.09,
     fontWeight: '700',
     color: '#1A374D',
-    marginBottom: w * 0.09,
+    marginBottom: w * 0.12,
   },
   container: {
     width: w * 0.8,
-    height: h * 0.6,
-    borderWidth: 1,
-    borderColor: '#27272f',
-    borderRadius: w * 0.02,
-    paddingTop: w * 0.2,
     alignItems: 'center',
   },
   signUpButton: {
@@ -95,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: w * 0.03,
-    marginTop: w * 0.245,
+    marginTop: w * 0.13,
   },
   signInText: {
     fontSize: w * 0.045,

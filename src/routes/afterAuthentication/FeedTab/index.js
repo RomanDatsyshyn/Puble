@@ -10,6 +10,7 @@ export default FeedTab = () => {
   return (
     <View style={styles.background}>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.spacing}></View>
         <FeedItem />
         <FeedItem />
         <FeedItem />
@@ -27,10 +28,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: w * 0.05,
   },
   container: {
     width: w * 0.95,
     height: h,
+  },
+  spacing: {
+    height: w * 0.05,
   },
 });
