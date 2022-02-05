@@ -39,38 +39,47 @@ export default DirectTabScreen = ({navigation}) => {
           <DialogItem
             name={'Орися'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Тетяна'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Оля'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Орися'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Тетяна'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Оля'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Орися'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Тетяна'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
           <DialogItem
             name={'Оля'}
             message={'Доброго дня! Скидаю вам ціну...'}
+            navigation={navigation}
           />
         </View>
       </ScrollView>

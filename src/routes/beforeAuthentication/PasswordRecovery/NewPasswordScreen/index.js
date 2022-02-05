@@ -9,7 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 
-import {icons} from '../../../assets/icons';
+import {icons} from '../../../../assets/icons';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;

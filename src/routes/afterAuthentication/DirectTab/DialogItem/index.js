@@ -16,7 +16,7 @@ export default DialogItem = ({name, message, navigation}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      onPress={() => navigation.navigate('')}
+      onPress={() => navigation.navigate('DialogScreen')}
       style={styles.item}>
       <View style={styles.badge}>
         <Text style={styles.badgeAmount}>2</Text>

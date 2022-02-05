@@ -10,7 +10,7 @@ import {
 
 const w = Dimensions.get('window').width;
 
-import {icons} from '../../../assets/icons';
+import {icons} from '../../../../assets/icons';
 
 export default IWantToScreen = ({navigation}) => {
   return (

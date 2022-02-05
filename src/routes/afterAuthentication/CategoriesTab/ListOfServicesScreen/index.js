@@ -10,9 +10,9 @@ import {
   ScrollView,
 } from 'react-native';
 
-import {icons} from '../../../assets/icons';
+import {icons} from '../../../../assets/icons';
 
-import ServiceItem from './ServiceItem';
+import ServiceItem from '../ServiceItem';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
