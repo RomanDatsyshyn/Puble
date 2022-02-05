@@ -114,7 +114,6 @@ const styles = StyleSheet.create({
   backButton: {
     position: 'absolute',
     top: h * 0.03,
-    // left: w * 0.0,
   },
   backIcon: {
     width: w * 0.09,
