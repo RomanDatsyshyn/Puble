@@ -2,10 +2,10 @@ import * as React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import FeedTabScreen from '../../routes/afterAuthentication/FeedTab';
-import DirectTabScreen from '../../routes/afterAuthentication/DirectTab';
 import ProfileTabScreen from '../../routes/afterAuthentication/ProfileTab';
 
 import CategoriesTabNavigation from '../categoriesTabNavigation';
+import DirectTabNavigation from '../directTabNavigation';
 
 import {
   feedTabOptions,
@@ -31,7 +31,7 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Direct"
-        component={DirectTabScreen}
+        component={DirectTabNavigation}
         options={directTabOptions}
       />
       <Tab.Screen

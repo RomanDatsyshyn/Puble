@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {icons} from '../../../assets/icons';
+import {icons} from '../../../../assets/icons';
 
 const w = Dimensions.get('window').width;
 
