@@ -28,26 +28,24 @@ export default Button = ({
   };
 
   return (
-    <>
-      <TouchableOpacity
-        activeOpacity={0.7}
-        style={[styles.button, getIdditionalStyles()]}
-        onPress={() => navigation.navigate(route)}>
-        {leftArrow && (
-          <Image
-            source={icons.toLeft}
-            style={[styles.icon, styles.iconMarginRight]}
-          />
-        )}
-        <Text style={[styles.text, bold && styles.boldText]}>{label}</Text>
-        {rightArrow && (
-          <Image
-            source={icons.toRight}
-            style={[styles.icon, styles.iconMarginLeft]}
-          />
-        )}
-      </TouchableOpacity>
-    </>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={[styles.button, getIdditionalStyles()]}
+      onPress={() => navigation.navigate(route)}>
+      {leftArrow && (
+        <Image
+          source={icons.toLeft}
+          style={[styles.icon, styles.iconMarginRight]}
+        />
+      )}
+      <Text style={[styles.text, bold && styles.boldText]}>{label}</Text>
+      {rightArrow && (
+        <Image
+          source={icons.toRight}
+          style={[styles.icon, styles.iconMarginLeft]}
+        />
+      )}
+    </TouchableOpacity>
   );
 };
 

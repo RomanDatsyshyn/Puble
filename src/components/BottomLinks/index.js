@@ -7,14 +7,12 @@ import {colors} from '../../assets/colors';
 
 export default BottomLinks = ({route, firstText, secondText, navigation}) => {
   return (
-    <>
-      <TouchableOpacity
-        onPress={() => navigation.navigate(route)}
-        style={styles.links}>
-        <Text style={styles.firstText}>{firstText}</Text>
-        <Text style={styles.secondText}>{secondText}</Text>
-      </TouchableOpacity>
-    </>
+    <TouchableOpacity
+      onPress={() => navigation.navigate(route)}
+      style={styles.links}>
+      <Text style={styles.firstText}>{firstText}</Text>
+      <Text style={styles.secondText}>{secondText}</Text>
+    </TouchableOpacity>
   );
 };
 

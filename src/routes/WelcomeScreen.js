@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-  Image,
-} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
 
 import {images} from '../assets/images';
+
+import TextBlock from '../components/TextBlock';
 import Button from '../components/Button';
+import BottomLinks from '../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -21,8 +17,8 @@ export default WelcomeScreen = ({navigation}) => {
         <Image source={images.welcomeBoy} style={styles.image} />
 
         <View style={styles.labels}>
-          <Text style={styles.title}>Забудь про пошук!</Text>
-          <Text style={styles.subTitle}>Тепер є Ми.</Text>
+          <TextBlock text={'Забудь про пошук!'} size={2} bolder />
+          <TextBlock text={'Тепер є Ми.'} size={2} bolder />
         </View>
 
         <Image source={images.logo} style={styles.logo} />
@@ -45,12 +41,12 @@ export default WelcomeScreen = ({navigation}) => {
             pink
           />
 
-          <View style={styles.contactUsContainer}>
-            <Text style={styles.contactUsQuestion}>Виникли запитання?</Text>
-            <TouchableOpacity activeOpacity={0.7}>
-              <Text style={styles.contactUs}>Напишіть нам</Text>
-            </TouchableOpacity>
-          </View>
+          <BottomLinks
+            firstText={'Не маєте профілю?'}
+            secondText={'Створіть його!'}
+            route={'RegistrationScreen'}
+            navigation={navigation}
+          />
         </View>
       </View>
     </>
@@ -118,21 +114,5 @@ const styles = StyleSheet.create({
     marginBottom: w * 0.025,
     fontWeight: '300',
     opacity: 0.9,
-  },
-  contactUsContainer: {
-    position: 'absolute',
-    alignSelf: 'center',
-    alignItems: 'center',
-    bottom: h * 0.045,
-  },
-  contactUsQuestion: {
-    color: '#b2b2ba',
-    fontStyle: 'italic',
-  },
-  contactUs: {
-    marginTop: w * 0.02,
-    color: '#27272f',
-    fontStyle: 'italic',
-    textDecorationLine: 'underline',
   },
 });
