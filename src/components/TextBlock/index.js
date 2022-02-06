@@ -14,6 +14,13 @@ export default TextBlock = ({
   boldest,
   italic,
   underline,
+  pink,
+  opange,
+  deepBlue,
+  lightBlue,
+  white,
+  grey,
+  lightGrey,
 }) => {
   const getTextSize = () => {
     if (size === 1) return 0.09;
@@ -46,12 +53,33 @@ export default TextBlock = ({
     return underline ? 'underline' : 'none';
   };
 
+  const getTextColor = () => {
+    if (pink) {
+      return colors.pink;
+    } else if (opange) {
+      return colors.opange;
+    } else if (deepBlue) {
+      return colors.deepBlue;
+    } else if (lightBlue) {
+      return colors.lightBlue;
+    } else if (white) {
+      return colors.white;
+    } else if (grey) {
+      return colors.grey;
+    } else if (lightGrey) {
+      return colors.lightGrey;
+    } else {
+      return colors.black;
+    }
+  };
+
   const getTextStyle = () => {
     return {
       fontSize: w * getTextSize(),
       fontWeight: getFontWeightStyle(),
       fontStyle: getFontStyle(),
       textDecorationLine: getTextDecorationLineStyle(),
+      color: getTextColor(),
     };
   };
 

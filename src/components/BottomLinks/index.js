@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     marginBottom: w * 0.05,
   },
   firstText: {
-    color: '#a3a3ab',
+    color: colors.grey,
     fontSize: w * 0.037,
     fontStyle: 'italic',
   },
   secondText: {
-    color: '#27272f',
+    color: colors.deepBlue,
     textDecorationLine: 'underline',
     marginLeft: w * 0.01,
   },

@@ -23,7 +23,7 @@ export default Button = ({
 }) => {
   const getIdditionalStyles = () => {
     return pink
-      ? {backgroundColor: '#fae1dd'}
+      ? {backgroundColor: colors.pink}
       : {borderWidth: 1, borderColor: colors.deepBlue};
   };
 
