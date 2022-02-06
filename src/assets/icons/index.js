@@ -16,4 +16,6 @@ export const icons = {
   uah: require('./uah.png'),
   search: require('./search.png'),
   beauty: require('./beauty.png'),
+  humans: require('./humans.png'),
+  humansActive: require('./humansActive.png'),
 };

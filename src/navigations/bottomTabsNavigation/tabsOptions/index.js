@@ -37,6 +37,20 @@ export const categoriesTabOptions = {
   },
 };
 
+export const specialistsTabOptions = {
+  tabBarIcon: ({focused}) =>
+    focused ? (
+      <Image source={icons.humansActive} style={{width: 80, height: 30}} />
+    ) : (
+      <Image source={icons.humans} style={{width: 80, height: 30}} />
+    ),
+  headerTitle: 'Спеціалісти',
+  tabBarShowLabel: false,
+  tabBarIconStyle: {
+    marginTop: w * 0.05,
+  },
+};
+
 export const directTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (

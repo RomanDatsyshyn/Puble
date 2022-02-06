@@ -12,22 +12,28 @@ import {
   categoriesTabOptions,
   directTabOptions,
   profileTabOptions,
+  specialistsTabOptions,
 } from './tabsOptions';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-    <Tab.Navigator initialRouteName="Feed">
+    <Tab.Navigator initialRouteName="Categories">
       <Tab.Screen
-        name="Feed"
-        component={FeedTabScreen}
-        options={feedTabOptions}
+        name="Specialists"
+        component={CategoriesTabNavigation}
+        options={specialistsTabOptions}
       />
       <Tab.Screen
         name="Categories"
         component={CategoriesTabNavigation}
         options={categoriesTabOptions}
+      />
+      <Tab.Screen
+        name="Feed"
+        component={FeedTabScreen}
+        options={feedTabOptions}
       />
       <Tab.Screen
         name="Direct"
