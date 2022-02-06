@@ -14,6 +14,7 @@ const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 import Input from '../../../../components/Input';
+import Button from '../../../../components/Button';
 
 export default NewPasswordScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
@@ -54,15 +55,15 @@ export default NewPasswordScreen = ({navigation}) => {
               onChangeText={e => setConfirmPassword(e)}
             />
 
-            <TouchableOpacity
-              onPress={() => {
-                alert(' Ваш пароль успішно змінено!');
-                navigation.navigate('LoginScreen');
-              }}
-              activeOpacity={0.7}
-              style={styles.sendCode}>
-              <Text style={styles.sendCodeText}>Змінити пароль</Text>
-            </TouchableOpacity>
+            <View style={styles.spacing}></View>
+
+            <Button
+              label={'Змінити пароль'}
+              route={'LoginScreen'}
+              navigation={navigation}
+              pink
+              bold
+            />
 
             <TouchableOpacity style={styles.createProfile}>
               <Text style={styles.createProfileText}>
@@ -121,30 +122,11 @@ const styles = StyleSheet.create({
     width: w * 0.09,
     height: w * 0.09,
   },
-  sendCode: {
-    width: w * 0.8,
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderColor: '#27272f',
-    justifyContent: 'center',
-    backgroundColor: '#fae1dd',
-    alignItems: 'center',
-    marginTop: w * 0.1,
-  },
-  sendCodeText: {
-    color: '#27272f',
-    fontWeight: '500',
-    fontSize: w * 0.05,
-  },
-  toRightIcon: {
-    width: w * 0.05,
-    height: w * 0.05,
-  },
   textBlack: {
     color: '#27272f',
     textDecorationLine: 'underline',
+  },
+  spacing: {
+    marginTop: w * 0.1,
   },
 });

@@ -16,6 +16,12 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 
+import {icons} from '../../../../assets/icons';
+import Button from '../../../../components/Button';
+
+const w = Dimensions.get('window').width;
+const h = Dimensions.get('window').height;
+
 const CELL_COUNT = 4;
 const CELL_SIZE = 70;
 const CELL_BORDER_RADIUS = 8;
@@ -27,6 +33,7 @@ const {Value, Text: AnimatedText} = Animated;
 
 const animationsColor = [...new Array(CELL_COUNT)].map(() => new Value(0));
 const animationsScale = [...new Array(CELL_COUNT)].map(() => new Value(1));
+
 const animateCell = ({hasValue, index, isFocused}) => {
   Animated.parallel([
     Animated.timing(animationsColor[index], {
@@ -41,11 +48,6 @@ const animateCell = ({hasValue, index, isFocused}) => {
     }),
   ]).start();
 };
-
-import {icons} from '../../../../assets/icons';
-
-const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
 
 export default CodeRecoveryScreen = ({navigation}) => {
   const [value, setValue] = useState('');
@@ -81,8 +83,6 @@ export default CodeRecoveryScreen = ({navigation}) => {
       ],
     };
 
-    // Run animation on next event loop tik
-    // Because we need first return new style prop and then animate this value
     setTimeout(() => {
       animateCell({hasValue, index, isFocused});
     }, 0);
@@ -126,12 +126,16 @@ export default CodeRecoveryScreen = ({navigation}) => {
             textContentType="oneTimeCode"
             renderCell={renderCell}
           />
-          <TouchableOpacity
-            onPress={() => navigation.navigate('NewPasswordScreen')}
-            activeOpacity={0.7}
-            style={stylesForCodeInput.nextButton}>
-            <Text style={stylesForCodeInput.nextButtonText}>Підтвердити</Text>
-          </TouchableOpacity>
+
+          <View style={stylesForCodeInput.nextButton}>
+            <Button
+              label={'Підтвердити'}
+              route={'NewPasswordScreen'}
+              navigation={navigation}
+              pink
+              bold
+            />
+          </View>
 
           <View>
             <TouchableOpacity style={styles.haveAnyQuestion}>
@@ -215,7 +219,6 @@ const stylesForCodeInput = StyleSheet.create({
     borderRadius: CELL_BORDER_RADIUS,
     color: '#27272f',
     backgroundColor: '#fff',
-
     // IOS
     shadowColor: '#000',
     shadowOffset: {
@@ -224,13 +227,9 @@ const stylesForCodeInput = StyleSheet.create({
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-
     // Android
     elevation: 3,
   },
-
-  // =======================
-
   root: {
     minHeight: 800,
     padding: 20,
@@ -239,22 +238,5 @@ const stylesForCodeInput = StyleSheet.create({
     marginTop: w * 0.25,
     alignSelf: 'center',
     marginBottom: 100,
-    width: w * 0.8,
-    flexDirection: 'row',
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    justifyContent: 'center',
-    backgroundColor: '#fae1dd',
-    alignItems: 'center',
-  },
-  nextButtonText: {
-    textAlign: 'center',
-    color: '#27272f',
-    fontWeight: '500',
-    color: '#27272f',
-    fontSize: w * 0.05,
   },
 });

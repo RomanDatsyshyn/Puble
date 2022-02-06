@@ -12,6 +12,7 @@ import {
 import {icons} from '../../assets/icons';
 
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -80,12 +81,15 @@ export default RegistrationScreen = ({navigation}) => {
                 onChange={e => setPassword(e)}
               />
 
-              <TouchableOpacity
-                // onPress={() => navigation.navigate('CodeRecoveryScreen')}
-                activeOpacity={0.7}
-                style={styles.sendCode}>
-                <Text style={styles.sendCodeText}>Зареєструватися</Text>
-              </TouchableOpacity>
+              <View style={styles.spacing}></View>
+
+              <Button
+                label={'Зареєструватися'}
+                route={'TabNavigation'}
+                navigation={navigation}
+                pink
+                bold
+              />
 
               <TouchableOpacity style={styles.createProfile}>
                 <Text style={styles.createProfileText}>
@@ -163,22 +167,8 @@ const styles = StyleSheet.create({
     width: w * 0.09,
     height: w * 0.09,
   },
-  sendCode: {
-    width: w * 0.8,
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    backgroundColor: '#fae1dd',
-    justifyContent: 'center',
-    alignItems: 'center',
+  spacing: {
     marginTop: w * 0.1,
-  },
-  sendCodeText: {
-    color: '#27272f',
-    fontWeight: '400',
-    fontSize: w * 0.05,
   },
   toRightIcon: {
     width: w * 0.05,

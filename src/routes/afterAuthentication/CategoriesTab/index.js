@@ -1,12 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, ScrollView} from 'react-native';
 
 import {icons} from '../../../assets/icons';
 
@@ -14,7 +7,6 @@ import Input from '../../../components/Input';
 import CategoryItem from './CategoryItem';
 
 const w = Dimensions.get('window').width;
-const h = Dimensions.get('window').height;
 
 export default CategoriesTab = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -97,16 +89,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.041,
     marginTop: w * 0.01,
     marginBottom: w * 0.05,
-  },
-  positionRelative: {
-    position: 'relative',
-    justifyContent: 'center',
-  },
-  toRightIcon: {
-    position: 'absolute',
-    width: w * 0.06,
-    height: w * 0.06,
-    marginLeft: w * 0.03,
   },
   categoriesContainer: {
     width: w * 0.8,

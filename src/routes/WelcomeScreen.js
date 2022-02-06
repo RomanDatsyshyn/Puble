@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import {images} from '../assets/images';
+import Button from '../components/Button';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -28,20 +29,21 @@ export default WelcomeScreen = ({navigation}) => {
 
         <View style={styles.container}>
           <Text style={styles.labelForSignIn}>Я вже є в Puble</Text>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            style={styles.signInButton}
-            onPress={() => navigation.navigate('LoginScreen')}>
-            <Text style={styles.signInText}>Заходь, друже :)</Text>
-          </TouchableOpacity>
+
+          <Button
+            label={'Заходь, друже :)'}
+            route={'LoginScreen'}
+            navigation={navigation}
+          />
 
           <Text style={styles.labelForSignUp}>Мене ще немає...</Text>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            style={styles.signUpButton}
-            onPress={() => navigation.navigate('RegistrationScreen')}>
-            <Text style={styles.signUpText}>Хутчіш приєднуйся!</Text>
-          </TouchableOpacity>
+
+          <Button
+            label={'Хутчіш приєднуйся!'}
+            route={'RegistrationScreen'}
+            navigation={navigation}
+            pink
+          />
 
           <View style={styles.contactUsContainer}>
             <Text style={styles.contactUsQuestion}>Виникли запитання?</Text>
@@ -99,32 +101,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: w * 0.08,
     alignItems: 'center',
   },
-  signInButton: {
-    borderColor: '#27272f',
-    borderWidth: 1,
-    width: w * 0.8,
-    height: w * 0.16,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: w * 0.03,
-    marginBottom: w * 0.08,
-  },
-  signUpButton: {
-    width: w * 0.8,
-    height: w * 0.16,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fae1dd',
-    borderRadius: w * 0.03,
-  },
-  signInText: {
-    fontSize: w * 0.045,
-    color: '#27272f',
-  },
-  signUpText: {
-    fontSize: w * 0.045,
-    color: '#27272f',
-  },
   labelForSignIn: {
     fontSize: w * 0.039,
     alignSelf: 'flex-end',
@@ -135,6 +111,7 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
   labelForSignUp: {
+    marginTop: w * 0.08,
     fontSize: w * 0.039,
     alignSelf: 'flex-start',
     marginLeft: w * 0.13,

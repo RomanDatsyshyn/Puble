@@ -11,6 +11,7 @@ import {
 import {icons} from '../../assets/icons';
 
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -60,12 +61,13 @@ export default LoginScreen = ({navigation}) => {
               <Text style={styles.forgetPasswordText}>Забули пароль?</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate('TabNavigation')}
-              activeOpacity={0.7}
-              style={styles.sendCode}>
-              <Text style={styles.sendCodeText}>Увійти</Text>
-            </TouchableOpacity>
+            <Button
+              label={'Увійти'}
+              route={'TabNavigation'}
+              navigation={navigation}
+              pink
+              bold
+            />
 
             <TouchableOpacity
               onPress={() => navigation.navigate('RegistrationScreen')}
@@ -117,6 +119,7 @@ const styles = StyleSheet.create({
     color: '#27272f',
     fontSize: w * 0.037,
     textDecorationLine: 'underline',
+    marginBottom: w * 0.1,
   },
   createProfile: {
     alignSelf: 'center',
@@ -135,27 +138,6 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
-  },
-  sendCode: {
-    width: w * 0.8,
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fae1dd',
-    marginTop: w * 0.1,
-  },
-  sendCodeText: {
-    color: '#27272f',
-    fontWeight: '500',
-    fontSize: w * 0.05,
-  },
-  toRightIcon: {
-    width: w * 0.05,
-    height: w * 0.05,
   },
   textBlack: {
     color: '#27272f',

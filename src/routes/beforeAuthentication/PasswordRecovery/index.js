@@ -11,6 +11,7 @@ import {
 import {icons} from '../../../assets/icons';
 
 import Input from '../../../components/Input';
+import Button from '../../../components/Button';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -45,13 +46,14 @@ export default ForgetPasswordScreen = ({navigation}) => {
 
             <View style={styles.someSpace}></View>
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate('CodeRecoveryScreen')}
-              activeOpacity={0.7}
-              style={styles.sendCode}>
-              <Text style={styles.sendCodeText}>Далі</Text>
-              <Image source={icons.toRight} style={styles.toRightIcon} />
-            </TouchableOpacity>
+            <Button
+              label={'Далі'}
+              route={'CodeRecoveryScreen'}
+              navigation={navigation}
+              pink
+              bold
+              rightArrow
+            />
 
             <TouchableOpacity style={styles.haveAnyQuestion}>
               <Text style={styles.haveAnyQuestionText}>
@@ -109,29 +111,6 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
-  },
-  sendCode: {
-    width: w * 0.8,
-    flexDirection: 'row',
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    justifyContent: 'center',
-    backgroundColor: '#fae1dd',
-    alignItems: 'center',
-    marginTop: w * 0.05,
-  },
-  sendCodeText: {
-    color: '#27272f',
-    fontSize: w * 0.05,
-    fontWeight: '500',
-    marginRight: w * 0.01,
-  },
-  toRightIcon: {
-    width: w * 0.05,
-    height: w * 0.05,
   },
   textBlack: {
     color: '#27272f',
