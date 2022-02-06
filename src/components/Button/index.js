@@ -2,8 +2,6 @@ import React from 'react';
 import {
   StyleSheet,
   Dimensions,
-  TextInput,
-  View,
   Image,
   TouchableOpacity,
   Text,

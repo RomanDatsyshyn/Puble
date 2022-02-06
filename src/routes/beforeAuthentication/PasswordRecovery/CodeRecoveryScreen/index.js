@@ -18,6 +18,7 @@ import {
 
 import {icons} from '../../../../assets/icons';
 import Button from '../../../../components/Button';
+import BottomLinks from '../../../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -137,14 +138,12 @@ export default CodeRecoveryScreen = ({navigation}) => {
             />
           </View>
 
-          <View>
-            <TouchableOpacity style={styles.haveAnyQuestion}>
-              <Text style={styles.haveAnyQuestionText}>
-                Маєте запитання?{' '}
-                <Text style={styles.textBlack}>Напишіть нам!</Text>
-              </Text>
-            </TouchableOpacity>
-          </View>
+          <BottomLinks
+            firstText={'Маєте запитання?'}
+            secondText={'Напишіть нам!'}
+            route={'RegistrationScreen'}
+            navigation={navigation}
+          />
         </View>
       </View>
     </>
@@ -177,15 +176,6 @@ const styles = StyleSheet.create({
   mb15: {
     marginBottom: w * 0.15,
   },
-  haveAnyQuestion: {
-    alignSelf: 'center',
-    marginTop: w * 0.2,
-  },
-  haveAnyQuestionText: {
-    color: '#a3a3ab',
-    fontSize: w * 0.037,
-    fontStyle: 'italic',
-  },
   backButton: {
     position: 'absolute',
     top: h * 0.07,
@@ -194,10 +184,6 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
-  },
-  textBlack: {
-    color: '#27272f',
-    textDecorationLine: 'underline',
   },
 });
 

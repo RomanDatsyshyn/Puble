@@ -12,6 +12,7 @@ import {icons} from '../../assets/icons';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -69,14 +70,14 @@ export default LoginScreen = ({navigation}) => {
               bold
             />
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate('RegistrationScreen')}
-              style={styles.createProfile}>
-              <Text style={styles.createProfileText}>
-                Не маєте профілю?{' '}
-                <Text style={styles.textBlack}>Створіть його!</Text>
-              </Text>
-            </TouchableOpacity>
+            <View style={styles.someSpace}></View>
+
+            <BottomLinks
+              firstText={'Не маєте профілю?'}
+              secondText={'Створіть його!'}
+              route={'RegistrationScreen'}
+              navigation={navigation}
+            />
           </View>
         </View>
       </View>
@@ -121,15 +122,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     marginBottom: w * 0.1,
   },
-  createProfile: {
-    alignSelf: 'center',
-    marginTop: w * 0.2,
-  },
-  createProfileText: {
-    color: '#a3a3ab',
-    fontSize: w * 0.037,
-    fontStyle: 'italic',
-  },
   backButton: {
     position: 'absolute',
     top: h * 0.07,
@@ -138,9 +130,5 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
-  },
-  textBlack: {
-    color: '#27272f',
-    textDecorationLine: 'underline',
   },
 });

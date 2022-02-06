@@ -85,10 +85,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.04,
     marginBottom: w * 0.01,
   },
-  itemStreet: {
-    color: '#a3a3ab',
-    fontSize: w * 0.035,
-  },
   itemRating: {
     color: '#27272f',
     fontSize: w * 0.04,

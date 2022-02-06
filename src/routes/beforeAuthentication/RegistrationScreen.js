@@ -13,6 +13,7 @@ import {icons} from '../../assets/icons';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -91,12 +92,12 @@ export default RegistrationScreen = ({navigation}) => {
                 bold
               />
 
-              <TouchableOpacity style={styles.createProfile}>
-                <Text style={styles.createProfileText}>
-                  Маєте запитання?{' '}
-                  <Text style={styles.textBlack}>Напишіть нам!</Text>
-                </Text>
-              </TouchableOpacity>
+              <BottomLinks
+                firstText={'Маєте запитання?'}
+                secondText={'Напишіть нам!'}
+                route={'RegistrationScreen'}
+                navigation={navigation}
+              />
             </View>
           </View>
         </View>
@@ -140,24 +141,6 @@ const styles = StyleSheet.create({
   someSpace: {
     marginBottom: w * 0.07,
   },
-  forgetPassword: {
-    alignItems: 'flex-end',
-    marginTop: w * 0.03,
-    marginRight: w * 0.02,
-  },
-  forgetPasswordText: {
-    color: '#609ed1',
-    fontSize: w * 0.037,
-  },
-  createProfile: {
-    alignSelf: 'center',
-    marginTop: w * 0.1,
-  },
-  createProfileText: {
-    color: '#a3a3ab',
-    fontSize: w * 0.037,
-    fontStyle: 'italic',
-  },
   backButton: {
     position: 'absolute',
     top: h * 0.01,
@@ -169,13 +152,5 @@ const styles = StyleSheet.create({
   },
   spacing: {
     marginTop: w * 0.1,
-  },
-  toRightIcon: {
-    width: w * 0.05,
-    height: w * 0.05,
-  },
-  textBlack: {
-    color: '#27272f',
-    textDecorationLine: 'underline',
   },
 });
