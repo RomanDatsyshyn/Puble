@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import {
   View,
-  TextInput,
   Text,
-  TouchableOpacity,
   StyleSheet,
   Dimensions,
   Image,
@@ -12,6 +10,7 @@ import {
 
 import {icons} from '../../../assets/icons';
 
+import Input from '../../../components/Input';
 import CategoryItem from './CategoryItem';
 
 const w = Dimensions.get('window').width;
@@ -25,17 +24,13 @@ export default CategoriesTab = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>Оберіть категорію</Text>
         <Text style={styles.subTitle}>або скористайтеся пошуком</Text>
-        <View style={styles.positionRelative}>
-          <TextInput
-            returnKeyType={'done'}
-            placeholder="Введіть назву категорії"
-            placeholderTextColor={'#a3a3ab'}
-            style={styles.input}
-            value={searchQuery}
-            onChangeText={e => setSearchQuery(e)}
-          />
-          <Image source={icons.search} style={styles.toRightIcon} />
-        </View>
+
+        <Input
+          placeholder="Введіть назву категорії"
+          isShowIcon={true}
+          value={searchQuery}
+          onChange={e => setSearchQuery(e)}
+        />
 
         <View style={styles.categoriesContainer}>
           <CategoryItem
@@ -102,19 +97,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.041,
     marginTop: w * 0.01,
     marginBottom: w * 0.05,
-  },
-  input: {
-    width: w * 0.8,
-    fontSize: w * 0.045,
-    padding: 5,
-    color: '#27272f',
-    paddingLeft: w * 0.1,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
   },
   positionRelative: {
     position: 'relative',

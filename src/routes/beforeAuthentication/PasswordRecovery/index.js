@@ -6,10 +6,11 @@ import {
   StyleSheet,
   Dimensions,
   Image,
-  TextInput,
 } from 'react-native';
 
 import {icons} from '../../../assets/icons';
+
+import Input from '../../../components/Input';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -34,13 +35,10 @@ export default ForgetPasswordScreen = ({navigation}) => {
           </View>
 
           <View>
-            <Text style={styles.inputLabel}>Email:</Text>
-
-            <TextInput
-              returnKeyType={'done'}
+            <Input
+              label={'Email:'}
+              isShowLabel={true}
               placeholder="Example@example.com"
-              placeholderTextColor={'#a3a3ab'}
-              style={styles.input}
               value={email}
               onChangeText={e => setEmail(e)}
             />
@@ -90,25 +88,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.041,
     marginTop: w * 0.02,
     marginBottom: w * 0.15,
-  },
-  inputLabel: {
-    fontSize: w * 0.041,
-    fontWeight: '500',
-    marginBottom: w * 0.03,
-    marginLeft: w * 0.01,
-  },
-  input: {
-    width: w * 0.8,
-    fontSize: w * 0.045,
-    padding: 5,
-    color: '#27272f',
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
   },
   someSpace: {
     marginBottom: w * 0.07,

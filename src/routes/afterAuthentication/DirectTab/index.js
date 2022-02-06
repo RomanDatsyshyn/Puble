@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  TextInput,
   Text,
   StyleSheet,
   Dimensions,
@@ -12,6 +11,7 @@ import {
 import {icons} from '../../../assets/icons';
 
 import DialogItem from './DialogItem';
+import Input from '../../../components/Input';
 
 const w = Dimensions.get('window').width;
 
@@ -22,12 +22,10 @@ export default DirectTabScreen = ({navigation}) => {
     <View style={styles.background}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.positionRelative}>
-          <TextInput
-            returnKeyType={'done'}
+          <Input
             placeholder="Введіть назву категорії"
-            placeholderTextColor={'#a3a3ab'}
-            style={styles.input}
             value={searchQuery}
+            isShowIcon={true}
             onChangeText={e => setSearchQuery(e)}
           />
           <Image source={icons.search} style={styles.toRightIcon} />
@@ -98,19 +96,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#1A374D',
     marginTop: w * 0.07,
-  },
-  input: {
-    width: w * 0.8,
-    fontSize: w * 0.045,
-    padding: 5,
-    color: '#27272f',
-    paddingLeft: w * 0.1,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
   },
   positionRelative: {
     position: 'relative',

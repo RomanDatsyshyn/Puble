@@ -8,9 +8,10 @@ import {
   Image,
   ScrollView,
   SafeAreaView,
-  TextInput,
 } from 'react-native';
 import {icons} from '../../assets/icons';
+
+import Input from '../../components/Input';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -31,67 +32,52 @@ export default RegistrationScreen = ({navigation}) => {
             </View>
 
             <View>
-              <Text style={styles.inputLabel}>Як вас звати?</Text>
-
-              <TextInput
-                returnKeyType={'done'}
+              <Input
+                label={'Як вас звати?'}
+                isShowLabel={true}
                 placeholder="Введіть своє ім'я"
-                placeholderTextColor={'#a3a3ab'}
-                style={styles.input}
                 value={login}
                 onChangeText={e => setLogin(e)}
               />
 
               <View style={styles.someSpace}></View>
 
-              <Text style={styles.inputLabel}>Ваш номер телефону:</Text>
-
-              <TextInput
-                returnKeyType={'done'}
+              <Input
+                label={'Ваш номер телефону:'}
+                isShowLabel={true}
                 placeholder="067 777 77 77"
-                placeholderTextColor={'#a3a3ab'}
-                style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
               />
 
               <View style={styles.someSpace}></View>
 
-              <Text style={styles.inputLabel}>Ваш Email:</Text>
-
-              <TextInput
-                returnKeyType={'done'}
+              <Input
+                label={'Ваш Email:'}
+                isShowLabel={true}
                 placeholder="Example@example.com"
-                placeholderTextColor={'#a3a3ab'}
-                style={styles.input}
                 value={password}
                 onChangeText={e => setPassword(e)}
               />
 
               <View style={styles.someSpace}></View>
 
-              <Text style={styles.inputLabel}>Пароль:</Text>
-
-              <TextInput
-                returnKeyType={'done'}
+              <Input
+                label={'Пароль:'}
+                isShowLabel={true}
                 placeholder="Введіть ваш пароль"
-                placeholderTextColor={'#a3a3ab'}
-                style={styles.input}
                 value={password}
-                onChangeText={e => setPassword(e)}
+                onChange={e => setPassword(e)}
               />
 
               <View style={styles.someSpace}></View>
 
-              <Text style={styles.inputLabel}>Повторіть пароль:</Text>
-
-              <TextInput
-                returnKeyType={'done'}
+              <Input
+                label={'Повторіть пароль:'}
+                isShowLabel={true}
                 placeholder="Введіть його знову"
-                placeholderTextColor={'#a3a3ab'}
-                style={styles.input}
                 value={password}
-                onChangeText={e => setPassword(e)}
+                onChange={e => setPassword(e)}
               />
 
               <TouchableOpacity
@@ -146,25 +132,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.041,
     marginTop: w * 0.02,
     marginBottom: w * 0.15,
-  },
-  inputLabel: {
-    fontSize: w * 0.041,
-    fontWeight: '500',
-    marginBottom: w * 0.03,
-    marginLeft: w * 0.01,
-  },
-  input: {
-    width: w * 0.8,
-    fontSize: w * 0.045,
-    padding: 5,
-    color: '#27272f',
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
   },
   someSpace: {
     marginBottom: w * 0.07,

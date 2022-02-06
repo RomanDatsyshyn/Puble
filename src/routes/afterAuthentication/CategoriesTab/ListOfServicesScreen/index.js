@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  TextInput,
   Text,
   TouchableOpacity,
   StyleSheet,
@@ -13,6 +12,7 @@ import {
 import {icons} from '../../../../assets/icons';
 
 import ServiceItem from '../ServiceItem';
+import Input from '../../../../components/Input';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -31,11 +31,9 @@ export default ListOfServicesScreen = ({navigation}) => {
         <Text style={styles.title}>Оберіть послугу</Text>
         <Text style={styles.subTitle}>або скористайтеся пошуком</Text>
         <View style={styles.positionRelative}>
-          <TextInput
-            returnKeyType={'done'}
+          <Input
             placeholder="Введіть назву послуги"
-            placeholderTextColor={'#a3a3ab'}
-            style={styles.input}
+            isShowIcon={true}
             value={searchQuery}
             onChangeText={e => setSearchQuery(e)}
           />
@@ -80,19 +78,6 @@ const styles = StyleSheet.create({
     fontSize: w * 0.041,
     marginTop: w * 0.01,
     marginBottom: w * 0.05,
-  },
-  input: {
-    width: w * 0.8,
-    fontSize: w * 0.045,
-    padding: 5,
-    color: '#27272f',
-    paddingLeft: w * 0.1,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.04,
-    paddingBottom: w * 0.04,
-    borderRadius: w * 0.02,
-    borderWidth: 1,
-    borderColor: '#27272f',
   },
   positionRelative: {
     position: 'relative',
