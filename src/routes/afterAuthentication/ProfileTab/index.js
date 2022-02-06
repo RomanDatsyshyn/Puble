@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   signUpButton: {
-    width: w * 0.7,
+    width: w * 0.8,
     height: w * 0.16,
     alignItems: 'center',
     justifyContent: 'center',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   signInButton: {
     borderColor: '#27272f',
     borderWidth: 1,
-    width: w * 0.7,
+    width: w * 0.8,
     height: w * 0.16,
     alignItems: 'center',
     justifyContent: 'center',
