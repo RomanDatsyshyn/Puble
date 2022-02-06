@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   itemTitle: {
     fontSize: w * 0.05,
-    fontWeight: '700',
+    fontWeight: '500',
     color: '#1A374D',
   },
   itemIcon: {
