@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   itemTypeOfService: {
     color: '#a3a3ab',
-    fontSize: w * 0.035,
+    fontSize: w * 0.037,
   },
   itemDistance: {
     color: '#27272f',

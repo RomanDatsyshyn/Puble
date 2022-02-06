@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.03,
   },
   label: {
-    fontSize: w * 0.041,
+    fontSize: w * 0.04,
     fontWeight: '500',
     marginBottom: w * 0.03,
     marginLeft: w * 0.01,

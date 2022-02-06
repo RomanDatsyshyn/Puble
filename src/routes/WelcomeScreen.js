@@ -69,12 +69,12 @@ const styles = StyleSheet.create({
     left: w * 0.075,
   },
   title: {
-    fontSize: w * 0.075,
+    fontSize: w * 0.07,
     color: '#27272f',
     fontWeight: '600',
   },
   subTitle: {
-    fontSize: w * 0.075,
+    fontSize: w * 0.07,
     marginLeft: w * 0.015,
     color: '#27272f',
     fontWeight: '600',
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   labelForSignIn: {
-    fontSize: w * 0.039,
+    fontSize: w * 0.04,
     alignSelf: 'flex-end',
     marginRight: w * 0.13,
     marginTop: w * 0.12,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   labelForSignUp: {
     marginTop: w * 0.08,
-    fontSize: w * 0.039,
+    fontSize: w * 0.04,
     alignSelf: 'flex-start',
     marginLeft: w * 0.13,
     marginBottom: w * 0.025,

@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   subTitle: {
     color: '#a3a3ab',
     fontWeight: '500',
-    fontSize: w * 0.041,
+    fontSize: w * 0.04,
     marginTop: w * 0.02,
   },
   mb15: {

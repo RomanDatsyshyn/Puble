@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginBottom: w * 0.01,
   },
   itemMessage: {
-    fontSize: w * 0.035,
+    fontSize: w * 0.037,
     fontWeight: '700',
     color: '#a3a3ab',
   },
