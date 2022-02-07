@@ -108,10 +108,14 @@ export default CodeRecoveryScreen = ({navigation}) => {
 
         <View>
           <View style={styles.labels}>
-            <Text style={styles.title}>Введіть код</Text>
-            <Text style={styles.title}>Віддновлення</Text>
-            <Text style={styles.subTitle}>На ваш Email було</Text>
-            <Text style={styles.subTitle}>надіслано код</Text>
+            <TextBlock text={'Введіть код'} size={1} lightBlue boldest />
+            <TextBlock text={'Віддновлення'} size={1} lightBlue boldest />
+
+            <View style={styles.subTitle}>
+              <TextBlock text={'На ваш Email було'} size={5} grey bold />
+              <View style={styles.someSpacing}></View>
+              <TextBlock text={'надіслано код'} size={5} grey bold />
+            </View>
           </View>
 
           <View style={styles.mb15}></View>
@@ -162,16 +166,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
-  },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.02,
+    alignItems: 'center',
   },
   mb15: {
     marginBottom: w * 0.15,
@@ -184,6 +181,9 @@ const styles = StyleSheet.create({
   backIcon: {
     width: w * 0.09,
     height: w * 0.09,
+  },
+  someSpacing: {
+    height: w * 0.01,
   },
 });
 
@@ -205,7 +205,6 @@ const stylesForCodeInput = StyleSheet.create({
     borderRadius: CELL_BORDER_RADIUS,
     color: '#27272f',
     backgroundColor: '#fff',
-    // IOS
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -213,7 +212,6 @@ const stylesForCodeInput = StyleSheet.create({
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-    // Android
     elevation: 3,
   },
   root: {

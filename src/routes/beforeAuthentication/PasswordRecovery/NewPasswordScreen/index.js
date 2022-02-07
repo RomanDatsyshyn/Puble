@@ -31,9 +31,12 @@ export default NewPasswordScreen = ({navigation}) => {
 
         <View>
           <View style={styles.labels}>
-            <Text style={styles.title}>Введіть ваш</Text>
-            <Text style={styles.title}>Новий пароль</Text>
-            <Text style={styles.subTitle}>Заповніть поля нижче</Text>
+            <TextBlock text={'Введіть ваш'} size={1} lightBlue boldest />
+            <TextBlock text={'Новий пароль'} size={1} lightBlue boldest />
+
+            <View style={styles.subTitle}>
+              <TextBlock text={'Заповніть поля нижче'} size={5} grey bold />
+            </View>
           </View>
 
           <View>
@@ -91,15 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
-  },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.02,
     marginBottom: w * 0.15,
   },

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -9,6 +8,7 @@ import {
 } from 'react-native';
 
 import {icons} from '../../assets/icons';
+import {colors} from '../../assets/colors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -32,9 +32,12 @@ export default LoginScreen = ({navigation}) => {
 
         <View>
           <View style={styles.labels}>
-            <Text style={styles.title}>Увійдіть до</Text>
-            <Text style={styles.title}>Puble</Text>
-            <Text style={styles.subTitle}>Заповніть поля нижче</Text>
+            <TextBlock text={'Увійдіть до'} size={1} lightBlue boldest />
+            <TextBlock text={'Puble'} size={1} lightBlue boldest />
+
+            <View style={styles.subTitle}>
+              <TextBlock text={'Заповни всі поля нижче'} size={5} grey bold />
+            </View>
           </View>
 
           <View>
@@ -59,7 +62,14 @@ export default LoginScreen = ({navigation}) => {
             <TouchableOpacity
               onPress={() => navigation.navigate('ForgetPasswordScreen')}
               style={styles.forgetPassword}>
-              <Text style={styles.forgetPasswordText}>Забули пароль?</Text>
+              <View style={styles.forgetPasswordText}>
+                <TextBlock
+                  text={'Забули пароль?'}
+                  size={6}
+                  deepBlue
+                  underline
+                />
+              </View>
             </TouchableOpacity>
 
             <Button
@@ -88,7 +98,7 @@ export default LoginScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -96,13 +106,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
-  },
   subTitle: {
-    color: '#a3a3ab',
+    color: colors.grey,
     fontWeight: '500',
     fontSize: w * 0.04,
     marginTop: w * 0.02,
@@ -117,9 +122,6 @@ const styles = StyleSheet.create({
     marginRight: w * 0.02,
   },
   forgetPasswordText: {
-    color: '#27272f',
-    fontSize: w * 0.037,
-    textDecorationLine: 'underline',
     marginBottom: w * 0.1,
   },
   backButton: {

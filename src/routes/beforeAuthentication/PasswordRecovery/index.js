@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -9,9 +8,11 @@ import {
 } from 'react-native';
 
 import {icons} from '../../../assets/icons';
+import {colors} from '../../../assets/colors';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import TextBlock from '../../../components/TextBlock';
 import BottomLinks from '../../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
@@ -31,9 +32,12 @@ export default ForgetPasswordScreen = ({navigation}) => {
 
         <View>
           <View style={styles.labels}>
-            <Text style={styles.title}>Введіть ваш</Text>
-            <Text style={styles.title}>Email</Text>
-            <Text style={styles.subTitle}>Заповніть полe нижче</Text>
+            <TextBlock text={'Введіть ваш'} size={1} lightBlue boldest />
+            <TextBlock text={'Email'} size={1} lightBlue boldest />
+
+            <View style={styles.subTitle}>
+              <TextBlock text={'Заповніть полe нижче'} size={5} grey bold />
+            </View>
           </View>
 
           <View>
@@ -74,7 +78,7 @@ export default ForgetPasswordScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -82,15 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
-  },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.02,
     marginBottom: w * 0.15,
   },

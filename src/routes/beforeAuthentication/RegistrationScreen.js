@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -9,10 +8,13 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
+
 import {icons} from '../../assets/icons';
+import {colors} from '../../assets/colors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
@@ -28,9 +30,12 @@ export default RegistrationScreen = ({navigation}) => {
         <View style={styles.background}>
           <View>
             <View style={styles.labels}>
-              <Text style={styles.title}>Стань частиною</Text>
-              <Text style={styles.title}>Puble</Text>
-              <Text style={styles.subTitle}>Заповни всі поля нижче</Text>
+              <TextBlock text={'Стань частиною'} size={1} lightBlue boldest />
+              <TextBlock text={'Puble'} size={1} lightBlue boldest />
+
+              <View style={styles.subTitle}>
+                <TextBlock text={'Заповни всі поля нижче'} size={5} grey bold />
+              </View>
             </View>
 
             <View>
@@ -113,11 +118,11 @@ export default RegistrationScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   backgroundSafeArea: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -126,15 +131,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: w * 0.13,
   },
-  title: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
-  },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.02,
     marginBottom: w * 0.15,
   },
