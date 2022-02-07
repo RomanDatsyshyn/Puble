@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Dimensions,
-  TextInput,
-  View,
-  Image,
-  Text,
-} from 'react-native';
+import {StyleSheet, Dimensions, TextInput, View, Image} from 'react-native';
 
 const w = Dimensions.get('window').width;
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+
+import TextBlock from '../../components/TextBlock';
 
 export default Input = ({
   placeholder,
@@ -31,7 +26,11 @@ export default Input = ({
 
   return (
     <>
-      {isShowLabel && <Text style={styles.label}>{label}</Text>}
+      {isShowLabel && (
+        <View style={styles.label}>
+          <TextBlock text={label} size={5} bold />
+        </View>
+      )}
       <View style={getStylesOfPosition()}>
         <TextInput
           style={[styles.input, getStylesOfPaddingLeft()]}
@@ -72,8 +71,6 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.03,
   },
   label: {
-    fontSize: w * 0.04,
-    fontWeight: '500',
     marginBottom: w * 0.03,
     marginLeft: w * 0.01,
   },

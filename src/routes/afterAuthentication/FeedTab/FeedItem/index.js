@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -41,7 +40,7 @@ export default FeedItem = () => {
               </View>
 
               <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
-                <Text style={styles.itemMapLink}>див. на карті </Text>
+                <TextBlock text={'див. на карті'} size={5} orange />
               </TouchableOpacity>
             </View>
 
@@ -96,10 +95,6 @@ const styles = StyleSheet.create({
   },
   itemMap: {
     marginLeft: w * 0.01,
-  },
-  itemMapLink: {
-    color: colors.orange,
-    fontSize: w * 0.04,
   },
   button: {
     width: '100%',

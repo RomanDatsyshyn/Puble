@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   Dimensions,
   Image,
@@ -9,6 +8,8 @@ import {
 } from 'react-native';
 
 const w = Dimensions.get('window').width;
+
+import TextBlock from '../../../../components/TextBlock';
 
 export default CategoryItem = ({icon, name, navigation}) => {
   return (
@@ -18,7 +19,7 @@ export default CategoryItem = ({icon, name, navigation}) => {
       style={styles.item}>
       <View style={styles.itemConteiner}>
         <Image source={icon} style={styles.itemIcon} />
-        <Text style={styles.itemTitle}>{name}</Text>
+        <TextBlock text={name} size={4} lightBlue boldest />
       </View>
     </TouchableOpacity>
   );
@@ -37,11 +38,6 @@ const styles = StyleSheet.create({
   itemConteiner: {
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  itemTitle: {
-    fontSize: w * 0.05,
-    fontWeight: '700',
-    color: '#1A374D',
   },
   itemIcon: {
     width: w * 0.2,

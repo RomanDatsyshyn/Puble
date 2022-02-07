@@ -1,17 +1,17 @@
 import React from 'react';
-import {StyleSheet, Dimensions, TouchableOpacity, Text} from 'react-native';
+import {StyleSheet, Dimensions, TouchableOpacity, View} from 'react-native';
 
 const w = Dimensions.get('window').width;
-
-import {colors} from '../../assets/colors';
 
 export default BottomLinks = ({route, firstText, secondText, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate(route)}
       style={styles.links}>
-      <Text style={styles.firstText}>{firstText}</Text>
-      <Text style={styles.secondText}>{secondText}</Text>
+      <TextBlock text={firstText} size={6} grey italic />
+      <View style={styles.marginLeft}>
+        <TextBlock text={secondText} size={6} deepBlue underline />
+      </View>
     </TouchableOpacity>
   );
 };
@@ -23,14 +23,7 @@ const styles = StyleSheet.create({
     marginTop: w * 0.1,
     marginBottom: w * 0.05,
   },
-  firstText: {
-    color: colors.grey,
-    fontSize: w * 0.037,
-    fontStyle: 'italic',
-  },
-  secondText: {
-    color: colors.deepBlue,
-    textDecorationLine: 'underline',
+  marginLeft: {
     marginLeft: w * 0.01,
   },
 });

@@ -1,17 +1,12 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  Image,
-  ScrollView,
-} from 'react-native';
+import {View, StyleSheet, Dimensions, Image, ScrollView} from 'react-native';
 
 import {icons} from '../../../assets/icons';
+import {colors} from '../../../assets/colors';
 
 import DialogItem from './DialogItem';
 import Input from '../../../components/Input';
+import TextBlock from '../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
 
@@ -31,7 +26,9 @@ export default DirectTabScreen = ({navigation}) => {
           <Image source={icons.search} style={styles.toRightIcon} />
         </View>
 
-        <Text style={styles.title}>Ваші чати</Text>
+        <View style={styles.title}>
+          <TextBlock text={'Чати'} size={2} lightBlue boldest />
+        </View>
 
         <View style={styles.categoriesContainer}>
           <DialogItem
@@ -88,13 +85,10 @@ export default DirectTabScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     alignItems: 'center',
   },
   title: {
-    fontSize: w * 0.07,
-    fontWeight: '700',
-    color: '#1A374D',
     marginTop: w * 0.07,
   },
   positionRelative: {

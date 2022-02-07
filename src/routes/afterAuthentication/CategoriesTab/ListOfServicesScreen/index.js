@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -10,9 +9,11 @@ import {
 } from 'react-native';
 
 import {icons} from '../../../../assets/icons';
+import {colors} from '../../../../assets/colors';
 
 import ServiceItem from '../ServiceItem';
 import Input from '../../../../components/Input';
+import TextBlock from '../../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -28,8 +29,12 @@ export default ListOfServicesScreen = ({navigation}) => {
           style={styles.backButton}>
           <Image source={icons.leftArrow} style={styles.backIcon} />
         </TouchableOpacity>
-        <Text style={styles.title}>Оберіть послугу</Text>
-        <Text style={styles.subTitle}>або скористайтеся пошуком</Text>
+        <View style={styles.title}>
+          <TextBlock text={'Оберіть категорію'} size={2} lightBlue boldest />
+        </View>
+        <View style={styles.subTitle}>
+          <TextBlock text={'або скористайтеся пошуком'} size={5} grey bolde />
+        </View>
         <View style={styles.positionRelative}>
           <Input
             placeholder="Введіть назву послуги"
@@ -62,20 +67,14 @@ export default ListOfServicesScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     alignItems: 'center',
   },
   title: {
-    fontSize: w * 0.07,
-    fontWeight: '700',
-    color: '#1A374D',
     marginTop: w * 0.07,
     marginLeft: w * 0.1,
   },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.01,
     marginBottom: w * 0.05,
   },

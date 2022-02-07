@@ -1,16 +1,18 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   Dimensions,
   Image,
   TouchableOpacity,
 } from 'react-native';
 
-import {images} from '../../../../assets/images';
-
 const w = Dimensions.get('window').width;
+
+import {images} from '../../../../assets/images';
+import {colors} from '../../../../assets/colors';
+
+import TextBlock from '../../../../components/TextBlock';
 
 export default DialogItem = ({name, message, navigation}) => {
   return (
@@ -19,12 +21,14 @@ export default DialogItem = ({name, message, navigation}) => {
       onPress={() => navigation.navigate('DialogScreen')}
       style={styles.item}>
       <View style={styles.badge}>
-        <Text style={styles.badgeAmount}>2</Text>
+        <TextBlock text={'2'} size={4} lightBlue />
       </View>
       <Image source={images.avatar} style={styles.itemPhoto} />
       <View style={styles.itemText}>
-        <Text style={styles.itemName}>{name}</Text>
-        <Text style={styles.itemMessage}>{message}</Text>
+        <View style={styles.itemName}>
+          <TextBlock text={name} size={3} lightBlue boldest />
+        </View>
+        <TextBlock text={message} size={6} grey boldest />
       </View>
     </TouchableOpacity>
   );
@@ -37,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: w * 0.05,
     borderWidth: 1,
-    borderColor: '#fae1dd',
+    borderColor: colors.pink,
     paddingLeft: w * 0.05,
     paddingRight: w * 0.05,
     paddingTop: w * 0.04,
@@ -53,15 +57,7 @@ const styles = StyleSheet.create({
     borderRadius: w * 0.04,
   },
   itemName: {
-    fontSize: w * 0.05,
-    fontWeight: '700',
-    color: '#1A374D',
     marginBottom: w * 0.01,
-  },
-  itemMessage: {
-    fontSize: w * 0.037,
-    fontWeight: '700',
-    color: '#a3a3ab',
   },
   badge: {
     width: w * 0.07,
@@ -69,13 +65,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: w * 0.03,
     top: w * 0.02,
-    backgroundColor: '#fae1dd',
+    backgroundColor: colors.pink,
     borderRadius: w * 0.1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  badgeAmount: {
-    fontSize: w * 0.045,
-    color: '#1A374D',
   },
 });

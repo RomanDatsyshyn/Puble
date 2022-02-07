@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Dimensions, ScrollView} from 'react-native';
+import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 
 import {icons} from '../../../assets/icons';
-
-import Input from '../../../components/Input';
-import CategoryItem from './CategoryItem';
+import {colors} from '../../../assets/colors';
 
 const w = Dimensions.get('window').width;
+
+import Input from '../../../components/Input';
+import TextBlock from '../../../components/TextBlock';
+
+import CategoryItem from './CategoryItem';
 
 export default CategoriesTab = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -14,8 +17,12 @@ export default CategoriesTab = ({navigation}) => {
   return (
     <View style={styles.background}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>Оберіть категорію</Text>
-        <Text style={styles.subTitle}>або скористайтеся пошуком</Text>
+        <View style={styles.title}>
+          <TextBlock text={'Оберіть категорію'} size={2} lightBlue boldest />
+        </View>
+        <View style={styles.subTitle}>
+          <TextBlock text={'або скористайтеся пошуком'} size={5} grey bolde />
+        </View>
 
         <Input
           placeholder="Введіть назву категорії"
@@ -74,19 +81,13 @@ export default CategoriesTab = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     alignItems: 'center',
   },
   title: {
-    fontSize: w * 0.07,
-    fontWeight: '700',
-    color: '#1A374D',
     marginTop: w * 0.07,
   },
   subTitle: {
-    color: '#a3a3ab',
-    fontWeight: '500',
-    fontSize: w * 0.04,
     marginTop: w * 0.01,
     marginBottom: w * 0.05,
   },

@@ -3,6 +3,8 @@ import {View, StyleSheet, Dimensions} from 'react-native';
 
 const w = Dimensions.get('window').width;
 
+import {colors} from '../../../../assets/colors';
+
 export default IWantToScreen = ({navigation}) => {
   return (
     <View style={styles.background}>
@@ -30,7 +32,7 @@ export default IWantToScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
