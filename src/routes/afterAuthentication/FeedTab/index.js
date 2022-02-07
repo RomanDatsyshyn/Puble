@@ -3,6 +3,8 @@ import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 
 import FeedItem from './FeedItem';
 
+import {colors} from '../../../assets/colors';
+
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
@@ -25,7 +27,7 @@ export default FeedTab = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },

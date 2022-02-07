@@ -4,8 +4,8 @@ import {View, StyleSheet, Dimensions, Image} from 'react-native';
 import {images} from '../assets/images';
 import {colors} from '../assets/colors';
 
-import TextBlock from '../components/TextBlock';
 import Button from '../components/Button';
+import TextBlock from '../components/TextBlock';
 import BottomLinks from '../components/BottomLinks';
 
 const w = Dimensions.get('window').width;

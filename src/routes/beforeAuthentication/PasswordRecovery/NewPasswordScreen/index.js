@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -9,6 +8,7 @@ import {
 } from 'react-native';
 
 import {icons} from '../../../../assets/icons';
+import {colors} from '../../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -86,7 +86,7 @@ export default NewPasswordScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },

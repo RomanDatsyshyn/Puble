@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
+import {colors} from '../../../../assets/colors';
+
 export default EmptyFeedScreen = () => {
   return (
     <View style={styles.background}>
@@ -12,7 +14,7 @@ export default EmptyFeedScreen = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },

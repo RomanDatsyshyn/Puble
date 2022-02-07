@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions, Image} from 'react-native';
+import {View, StyleSheet, Dimensions, Image} from 'react-native';
 
 import {images} from '../../../assets/images';
+import {colors} from '../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
@@ -11,7 +12,9 @@ export default ProfileTab = ({navigation}) => {
       <View style={styles.container}>
         <Image source={images.avatar} style={styles.userPhoto} />
 
-        <Text style={styles.userName}>Орися</Text>
+        <View style={styles.userName}>
+          <TextBlock text={'Орися'} size={1} lightBlue boldest />
+        </View>
 
         <Button
           label={'Змінити пароль'}
@@ -19,9 +22,7 @@ export default ProfileTab = ({navigation}) => {
           navigation={navigation}
           pink
         />
-
         <View style={styles.spacing}></View>
-
         <Button
           label={'Історія запитів'}
           route={'RegistrationScreen'}
@@ -40,7 +41,7 @@ export default ProfileTab = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -51,9 +52,6 @@ const styles = StyleSheet.create({
     marginBottom: w * 0.02,
   },
   userName: {
-    fontSize: w * 0.09,
-    fontWeight: '700',
-    color: '#1A374D',
     marginBottom: w * 0.12,
   },
   container: {

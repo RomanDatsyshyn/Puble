@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Dimensions,
@@ -17,6 +16,8 @@ import {
 } from 'react-native-confirmation-code-field';
 
 import {icons} from '../../../../assets/icons';
+import {colors} from '../../../../assets/colors';
+
 import Button from '../../../../components/Button';
 import BottomLinks from '../../../../components/BottomLinks';
 
@@ -157,7 +158,7 @@ export default CodeRecoveryScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: w * 0.15,
@@ -203,9 +204,9 @@ const stylesForCodeInput = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     borderRadius: CELL_BORDER_RADIUS,
-    color: '#27272f',
-    backgroundColor: '#fff',
-    shadowColor: '#000',
+    color: colors.deepBlue,
+    backgroundColor: colors.white,
+    shadowColor: colors.black,
     shadowOffset: {
       width: 0,
       height: 1,

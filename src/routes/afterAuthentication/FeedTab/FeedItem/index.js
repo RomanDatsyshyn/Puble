@@ -8,8 +8,11 @@ import {
   Image,
 } from 'react-native';
 
-import {images} from '../../../../assets/images';
+import TextBlock from '../../../../components/TextBlock';
+
 import {icons} from '../../../../assets/icons';
+import {images} from '../../../../assets/images';
+import {colors} from '../../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
@@ -20,32 +23,38 @@ export default FeedItem = () => {
         <Image source={images.avatar} style={styles.itemImage} />
         <View style={styles.itemInfo}>
           <View>
-            <Text style={styles.itemName}>Світлана</Text>
-            <Text style={styles.itemTypeOfService}>Перукар</Text>
+            <TextBlock text={'Світлана'} size={3} deepBlue />
+            <TextBlock text={'Перукар'} size={6} grey />
           </View>
 
           <View>
             <View style={styles.row}>
               <Image source={icons.uah} style={styles.itemUahIcon} />
-              <Text style={styles.itemRating}>150 - 200 грн</Text>
+              <TextBlock text={'150 - 200 грн'} size={5} deepBlue />
             </View>
+
             <View style={styles.row}>
               <Image source={icons.location} style={styles.itemLocationIcon} />
-              <Text style={styles.itemDistance}>270 м. -</Text>
+
+              <View style={styles.itemDistance}>
+                <TextBlock text={'270 м. -'} size={5} deepBlue />
+              </View>
+
               <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
                 <Text style={styles.itemMapLink}>див. на карті </Text>
               </TouchableOpacity>
             </View>
+
             <View style={styles.row}>
               <Image source={icons.rating} style={styles.itemLocationIcon} />
-              <Text style={styles.itemRating}>Рейтинг - 6.2 із 10</Text>
+              <TextBlock text={'Рейтинг - 6.2 із 10'} size={5} deepBlue />
             </View>
           </View>
         </View>
       </View>
 
       <TouchableOpacity style={styles.button} activeOpacity={0.7}>
-        <Text style={styles.buttonText}>Надіслати повідомлення</Text>
+        <TextBlock text={'Надіслати повідомлення'} size={3} deepBlue />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.close} activeOpacity={0.7}>
@@ -72,22 +81,8 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.05,
     justifyContent: 'space-between',
   },
-  itemName: {
-    color: '#27272f',
-    fontSize: w * 0.05,
-  },
-  itemTypeOfService: {
-    color: '#a3a3ab',
-    fontSize: w * 0.037,
-  },
   itemDistance: {
-    color: '#27272f',
-    fontSize: w * 0.04,
     marginBottom: w * 0.01,
-  },
-  itemRating: {
-    color: '#27272f',
-    fontSize: w * 0.04,
   },
   itemLocationIcon: {
     width: w * 0.05,
@@ -103,7 +98,7 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.01,
   },
   itemMapLink: {
-    color: '#f69b76',
+    color: colors.orange,
     fontSize: w * 0.04,
   },
   button: {
@@ -113,14 +108,10 @@ const styles = StyleSheet.create({
     paddingTop: w * 0.035,
     paddingBottom: w * 0.035,
     borderRadius: w * 0.02,
-    backgroundColor: '#fae1dd',
+    backgroundColor: colors.pink,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: w * 0.03,
-  },
-  buttonText: {
-    color: '#27272f',
-    fontSize: w * 0.05,
   },
   close: {
     position: 'absolute',
