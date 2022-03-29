@@ -10,7 +10,7 @@ import TextBlock from '../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
 
-export default DirectTabScreen = ({navigation}) => {
+export const DirectTabScreen = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -81,6 +81,8 @@ export default DirectTabScreen = ({navigation}) => {
     </View>
   );
 };
+
+export default DirectTabScreen;
 
 const styles = StyleSheet.create({
   background: {

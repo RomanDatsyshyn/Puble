@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
+import Button from '../../../../components/Button';
 
 const w = Dimensions.get('window').width;
 
-export default ServiceItem = ({name, navigation}) => {
+export const ServiceItem = ({name, navigation}) => {
   return (
     <View style={styles.item}>
       <Button
@@ -16,6 +17,8 @@ export default ServiceItem = ({name, navigation}) => {
     </View>
   );
 };
+
+export default ServiceItem;
 
 const styles = StyleSheet.create({
   item: {

@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet, Dimensions, TouchableOpacity, View} from 'react-native';
+import TextBlock from '../TextBlock';
 
 const w = Dimensions.get('window').width;
 
-export default BottomLinks = ({route, firstText, secondText, navigation}) => {
+export const BottomLinks = ({route, firstText, secondText, navigation}) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate(route)}
@@ -15,6 +16,8 @@ export default BottomLinks = ({route, firstText, secondText, navigation}) => {
     </TouchableOpacity>
   );
 };
+
+export default BottomLinks;
 
 const styles = StyleSheet.create({
   links: {

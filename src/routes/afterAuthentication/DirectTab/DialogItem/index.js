@@ -14,7 +14,7 @@ import {colors} from '../../../../assets/colors';
 
 import TextBlock from '../../../../components/TextBlock';
 
-export default DialogItem = ({name, message, navigation}) => {
+export const DialogItem = ({name, message, navigation}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -33,6 +33,8 @@ export default DialogItem = ({name, message, navigation}) => {
     </TouchableOpacity>
   );
 };
+
+export default DialogItem;
 
 const styles = StyleSheet.create({
   item: {

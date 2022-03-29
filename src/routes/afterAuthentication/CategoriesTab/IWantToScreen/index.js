@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
+import Button from '../../../../components/Button';
 
 const w = Dimensions.get('window').width;
 
 import {colors} from '../../../../assets/colors';
 
-export default IWantToScreen = ({navigation}) => {
+export const IWantToScreen = ({navigation}) => {
   return (
     <View style={styles.background}>
       <Button
@@ -16,7 +17,7 @@ export default IWantToScreen = ({navigation}) => {
         bold
       />
 
-      <View style={styles.spacing}></View>
+      <View style={styles.spacing} />
 
       <Button
         label={'Повернутися назад'}
@@ -28,6 +29,8 @@ export default IWantToScreen = ({navigation}) => {
     </View>
   );
 };
+
+export default IWantToScreen;
 
 const styles = StyleSheet.create({
   background: {

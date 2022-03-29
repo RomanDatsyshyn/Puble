@@ -1,12 +1,15 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions, Image} from 'react-native';
 
+import Button from '../../../components/Button';
+import TextBlock from '../../../components/TextBlock';
+
 import {images} from '../../../assets/images';
 import {colors} from '../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
-export default ProfileTab = ({navigation}) => {
+export const ProfileTab = ({navigation}) => {
   return (
     <View style={styles.background}>
       <View style={styles.container}>
@@ -22,7 +25,7 @@ export default ProfileTab = ({navigation}) => {
           navigation={navigation}
           pink
         />
-        <View style={styles.spacing}></View>
+        <View style={styles.spacing} />
         <Button
           label={'Історія запитів'}
           route={'RegistrationScreen'}
@@ -30,13 +33,15 @@ export default ProfileTab = ({navigation}) => {
           pink
         />
 
-        <View style={styles.moreSpacing}></View>
+        <View style={styles.moreSpacing} />
 
         <Button label={'Вийти'} route={'LoginScreen'} navigation={navigation} />
       </View>
     </View>
   );
 };
+
+export default ProfileTab;
 
 const styles = StyleSheet.create({
   background: {

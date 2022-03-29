@@ -15,7 +15,7 @@ import {colors} from '../../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
-export default FeedItem = () => {
+export const FeedItem = () => {
   return (
     <View style={styles.item}>
       <View style={styles.row}>
@@ -62,6 +62,8 @@ export default FeedItem = () => {
     </View>
   );
 };
+
+export default FeedItem;
 
 const styles = StyleSheet.create({
   item: {

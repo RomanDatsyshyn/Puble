@@ -18,7 +18,7 @@ import BottomLinks from '../../../components/BottomLinks';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default ForgetPasswordScreen = ({navigation}) => {
+export const ForgetPasswordScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
 
   return (
@@ -49,7 +49,7 @@ export default ForgetPasswordScreen = ({navigation}) => {
               onChangeText={e => setEmail(e)}
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <Button
               label={'Далі'}
@@ -60,7 +60,7 @@ export default ForgetPasswordScreen = ({navigation}) => {
               rightArrow
             />
 
-            <View style={styles.moreSpace}></View>
+            <View style={styles.moreSpace} />
 
             <BottomLinks
               firstText={'Маєте запитання?'}
@@ -74,6 +74,8 @@ export default ForgetPasswordScreen = ({navigation}) => {
     </>
   );
 };
+
+export default ForgetPasswordScreen;
 
 const styles = StyleSheet.create({
   background: {

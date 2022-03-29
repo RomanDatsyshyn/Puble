@@ -5,7 +5,7 @@ const w = Dimensions.get('window').width;
 
 import {colors} from '../../assets/colors';
 
-export default TextBlock = ({
+export const TextBlock = ({
   text = '',
   size = 3,
   lighter,
@@ -23,12 +23,24 @@ export default TextBlock = ({
   lightGrey,
 }) => {
   const getTextSize = () => {
-    if (size === 1) return 0.09;
-    if (size === 2) return 0.07;
-    if (size === 3) return 0.05;
-    if (size === 4) return 0.045;
-    if (size === 5) return 0.04;
-    if (size === 6) return 0.037;
+    if (size === 1) {
+      return 0.09;
+    }
+    if (size === 2) {
+      return 0.07;
+    }
+    if (size === 3) {
+      return 0.05;
+    }
+    if (size === 4) {
+      return 0.045;
+    }
+    if (size === 5) {
+      return 0.04;
+    }
+    if (size === 6) {
+      return 0.037;
+    }
   };
 
   const getFontWeightStyle = () => {
@@ -85,3 +97,5 @@ export default TextBlock = ({
 
   return <Text style={getTextStyle()}>{text}</Text>;
 };
+
+export default TextBlock;

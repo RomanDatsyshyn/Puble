@@ -8,7 +8,7 @@ import {colors} from '../../assets/colors';
 
 import TextBlock from '../../components/TextBlock';
 
-export default Input = ({
+export const Input = ({
   placeholder,
   value,
   onChange,
@@ -47,6 +47,8 @@ export default Input = ({
     </>
   );
 };
+
+export default Input;
 
 const styles = StyleSheet.create({
   input: {

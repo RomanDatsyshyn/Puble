@@ -12,12 +12,13 @@ import {colors} from '../../assets/colors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default LoginScreen = ({navigation}) => {
+export const LoginScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
@@ -49,7 +50,7 @@ export default LoginScreen = ({navigation}) => {
               onChange={e => setLogin(e)}
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <Input
               label="Пароль:"
@@ -80,7 +81,7 @@ export default LoginScreen = ({navigation}) => {
               bold
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <BottomLinks
               firstText={'Не маєте профілю?'}
@@ -94,6 +95,8 @@ export default LoginScreen = ({navigation}) => {
     </>
   );
 };
+
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   background: {

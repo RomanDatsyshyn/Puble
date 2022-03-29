@@ -11,7 +11,7 @@ import TextBlock from '../../../components/TextBlock';
 
 import CategoryItem from './CategoryItem';
 
-export default CategoriesTab = ({navigation}) => {
+export const CategoriesTab = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -77,6 +77,8 @@ export default CategoriesTab = ({navigation}) => {
     </View>
   );
 };
+
+export default CategoriesTab;
 
 const styles = StyleSheet.create({
   background: {

@@ -3,13 +3,15 @@ import {View, Text, StyleSheet} from 'react-native';
 
 import {colors} from '../../../../assets/colors';
 
-export default EmptyFeedScreen = () => {
+export const EmptyFeedScreen = () => {
   return (
     <View style={styles.background}>
       <Text>No one propositions</Text>
     </View>
   );
 };
+
+export default EmptyFeedScreen;
 
 const styles = StyleSheet.create({
   background: {

@@ -18,7 +18,7 @@ import TextBlock from '../../../../components/TextBlock';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default ListOfServicesScreen = ({navigation}) => {
+export const ListOfServicesScreen = ({navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -63,6 +63,8 @@ export default ListOfServicesScreen = ({navigation}) => {
     </View>
   );
 };
+
+export default ListOfServicesScreen;
 
 const styles = StyleSheet.create({
   background: {

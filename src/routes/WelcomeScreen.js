@@ -11,7 +11,7 @@ import BottomLinks from '../components/BottomLinks';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default WelcomeScreen = ({navigation}) => {
+export const WelcomeScreen = ({navigation}) => {
   return (
     <>
       <View style={styles.background}>
@@ -57,6 +57,8 @@ export default WelcomeScreen = ({navigation}) => {
     </>
   );
 };
+
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   background: {

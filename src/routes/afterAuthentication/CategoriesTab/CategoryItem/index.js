@@ -11,7 +11,7 @@ const w = Dimensions.get('window').width;
 
 import TextBlock from '../../../../components/TextBlock';
 
-export default CategoryItem = ({icon, name, navigation}) => {
+export const CategoryItem = ({icon, name, navigation}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -24,6 +24,8 @@ export default CategoryItem = ({icon, name, navigation}) => {
     </TouchableOpacity>
   );
 };
+
+export default CategoryItem;
 
 const styles = StyleSheet.create({
   item: {

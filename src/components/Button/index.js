@@ -12,7 +12,7 @@ const w = Dimensions.get('window').width;
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 
-export default Button = ({
+export const Button = ({
   label = '',
   route = '',
   pink,
@@ -48,6 +48,8 @@ export default Button = ({
     </TouchableOpacity>
   );
 };
+
+export default Button;
 
 const styles = StyleSheet.create({
   button: {

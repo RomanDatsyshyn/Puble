@@ -8,11 +8,11 @@ import {colors} from '../../../assets/colors';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default FeedTab = () => {
+export const FeedTab = () => {
   return (
     <View style={styles.background}>
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-        <View style={styles.spacing}></View>
+        <View style={styles.spacing} />
         <FeedItem />
         <FeedItem />
         <FeedItem />
@@ -23,6 +23,8 @@ export default FeedTab = () => {
     </View>
   );
 };
+
+export default FeedTab;
 
 const styles = StyleSheet.create({
   background: {

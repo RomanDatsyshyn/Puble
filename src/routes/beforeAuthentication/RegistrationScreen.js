@@ -20,7 +20,7 @@ import BottomLinks from '../../components/BottomLinks';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default RegistrationScreen = ({navigation}) => {
+export const RegistrationScreen = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
@@ -47,7 +47,7 @@ export default RegistrationScreen = ({navigation}) => {
                 onChangeText={e => setLogin(e)}
               />
 
-              <View style={styles.someSpace}></View>
+              <View style={styles.someSpace} />
 
               <Input
                 label={'Ваш номер телефону:'}
@@ -57,7 +57,7 @@ export default RegistrationScreen = ({navigation}) => {
                 onChangeText={e => setPassword(e)}
               />
 
-              <View style={styles.someSpace}></View>
+              <View style={styles.someSpace} />
 
               <Input
                 label={'Ваш Email:'}
@@ -67,7 +67,7 @@ export default RegistrationScreen = ({navigation}) => {
                 onChangeText={e => setPassword(e)}
               />
 
-              <View style={styles.someSpace}></View>
+              <View style={styles.someSpace} />
 
               <Input
                 label={'Пароль:'}
@@ -77,7 +77,7 @@ export default RegistrationScreen = ({navigation}) => {
                 onChange={e => setPassword(e)}
               />
 
-              <View style={styles.someSpace}></View>
+              <View style={styles.someSpace} />
 
               <Input
                 label={'Повторіть пароль:'}
@@ -87,7 +87,7 @@ export default RegistrationScreen = ({navigation}) => {
                 onChange={e => setPassword(e)}
               />
 
-              <View style={styles.spacing}></View>
+              <View style={styles.spacing} />
 
               <Button
                 label={'Зареєструватися'}
@@ -115,6 +115,8 @@ export default RegistrationScreen = ({navigation}) => {
     </SafeAreaView>
   );
 };
+
+export default RegistrationScreen;
 
 const styles = StyleSheet.create({
   backgroundSafeArea: {
