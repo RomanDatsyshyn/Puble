@@ -126,8 +126,6 @@ export const LoginScreen = ({navigation}) => {
 
             <Button
               label={'Увійти'}
-              route={'TabNavigation'}
-              navigation={navigation}
               onPress={() => basicValidation()}
               pink
               bold

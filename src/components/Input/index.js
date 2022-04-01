@@ -17,6 +17,8 @@ export const Input = ({
   isShowIcon = false,
   isShowLabel = false,
   label = '',
+  onFocus,
+  onBlur,
 }) => {
   const getStylesOfPosition = () => {
     return isShowIcon ? styles.positionRelative : {};
@@ -33,6 +35,12 @@ export const Input = ({
           <TextBlock text={label} size={5} bold />
         </View>
       )}
+      {error !== '' && (
+        <View style={styles.errorMessage}>
+          <TextBlock text={error} size={6} red italic />
+        </View>
+      )}
+
       <View style={getStylesOfPosition()}>
         <TextInput
           style={[styles.input, getStylesOfPaddingLeft()]}
@@ -42,13 +50,13 @@ export const Input = ({
           placeholderTextColor={colors.grey}
           value={value}
           onChangeText={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          blurOnSubmit
         />
         {isShowIcon && (
           <Image source={icons.search} style={styles.toRightIcon} />
         )}
-      </View>
-      <View style={styles.errorMessage}>
-        <TextBlock text={error} size={6} red italic />
       </View>
     </>
   );
@@ -83,7 +91,7 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.01,
   },
   errorMessage: {
-    marginTop: w * 0.01,
-    marginLeft: w * 0.02,
+    marginBottom: w * 0.03,
+    marginLeft: w * 0.01,
   },
 });

@@ -9,6 +9,14 @@ class DataService {
     }
   };
 
+  register = async data => {
+    try {
+      return http.post('/user', data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   //   getMarks = async () => {
   //     try {
   //       return http.get('/driver/get_makes/', await this.returnUdidHeader());
