@@ -31,8 +31,7 @@ export const WelcomeScreen = ({navigation}) => {
 
           <Button
             label={'Заходь, друже :)'}
-            route={'LoginScreen'}
-            navigation={navigation}
+            onPress={() => navigation.navigate('LoginScreen')}
           />
 
           <View style={styles.labelForSignUp}>

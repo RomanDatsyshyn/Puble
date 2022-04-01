@@ -15,6 +15,7 @@ export const TextBlock = ({
   italic,
   underline,
   pink,
+  red,
   opange,
   deepBlue,
   lightBlue,
@@ -80,6 +81,8 @@ export const TextBlock = ({
       return colors.grey;
     } else if (lightGrey) {
       return colors.lightGrey;
+    } else if (red) {
+      return colors.red;
     } else {
       return colors.black;
     }

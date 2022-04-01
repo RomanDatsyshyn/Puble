@@ -14,12 +14,11 @@ import {colors} from '../../assets/colors';
 
 export const Button = ({
   label = '',
-  route = '',
   pink,
   bold,
   leftArrow,
   rightArrow,
-  navigation,
+  onPress,
 }) => {
   const getIdditionalStyles = () => {
     return pink
@@ -31,7 +30,7 @@ export const Button = ({
     <TouchableOpacity
       activeOpacity={0.7}
       style={[styles.button, getIdditionalStyles()]}
-      onPress={() => navigation.navigate(route)}>
+      onPress={onPress}>
       {leftArrow && (
         <Image
           source={icons.toLeft}

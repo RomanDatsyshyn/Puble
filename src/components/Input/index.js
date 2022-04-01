@@ -1,17 +1,19 @@
 import React from 'react';
 import {StyleSheet, Dimensions, TextInput, View, Image} from 'react-native';
 
+import TextBlock from '../TextBlock';
+
 const w = Dimensions.get('window').width;
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 
-import TextBlock from '../../components/TextBlock';
-
 export const Input = ({
   placeholder,
   value,
   onChange,
+  keyboardType = 'default',
+  error = '',
   isShowIcon = false,
   isShowLabel = false,
   label = '',
@@ -35,6 +37,7 @@ export const Input = ({
         <TextInput
           style={[styles.input, getStylesOfPaddingLeft()]}
           returnKeyType={'done'}
+          keyboardType={keyboardType}
           placeholder={placeholder}
           placeholderTextColor={colors.grey}
           value={value}
@@ -43,6 +46,9 @@ export const Input = ({
         {isShowIcon && (
           <Image source={icons.search} style={styles.toRightIcon} />
         )}
+      </View>
+      <View style={styles.errorMessage}>
+        <TextBlock text={error} size={6} red italic />
       </View>
     </>
   );
@@ -75,5 +81,9 @@ const styles = StyleSheet.create({
   label: {
     marginBottom: w * 0.03,
     marginLeft: w * 0.01,
+  },
+  errorMessage: {
+    marginTop: w * 0.01,
+    marginLeft: w * 0.02,
   },
 });

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -12,15 +12,63 @@ import {colors} from '../../assets/colors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import AlertBox from '../../components/Alert';
 import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
+
+import DataService from '../../API/HTTP/services/data.service';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 export const LoginScreen = ({navigation}) => {
-  const [login, setLogin] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+
+  const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
+
+  const isPhoneCorrect = phone.length < 10;
+  const isPasswordCorrect = password.length < 5;
+
+  const loginRequest = async data => {
+    await DataService.login(data)
+      .then(res => {
+        res.data.success
+          ? navigation.navigate('TabNavigation')
+          : AlertBox('Failed login', res.data.errors);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const signIn = () => {
+    loginRequest({
+      phone,
+      password,
+    });
+  };
+
+  const basicValidation = () => {
+    setPhoneErrorMessage('');
+    setPasswordErrorMessage('');
+
+    isPhoneCorrect && setPhoneErrorMessage('Введіть мінімум 10 цифр');
+    isPasswordCorrect && setPasswordErrorMessage('Введіть мінімум 5 символів');
+
+    !isPhoneCorrect && !isPasswordCorrect && signIn();
+  };
+
+  useEffect(() => {
+    phoneErrorMessage !== '' && !isPhoneCorrect && setPhoneErrorMessage('');
+  }, [phoneErrorMessage, setPhoneErrorMessage, isPhoneCorrect]);
+
+  useEffect(() => {
+    passwordErrorMessage !== '' &&
+      !isPasswordCorrect &&
+      setPasswordErrorMessage('');
+  }, [passwordErrorMessage, setPasswordErrorMessage, isPasswordCorrect]);
 
   return (
     <>
@@ -46,8 +94,10 @@ export const LoginScreen = ({navigation}) => {
               label="Логін:"
               isShowLabel={true}
               placeholder="Введіть номер телефону"
-              value={login}
-              onChange={e => setLogin(e)}
+              error={phoneErrorMessage}
+              value={phone}
+              keyboardType={'number-pad'}
+              onChange={e => setPhone(e)}
             />
 
             <View style={styles.someSpace} />
@@ -56,6 +106,7 @@ export const LoginScreen = ({navigation}) => {
               label="Пароль:"
               isShowLabel={true}
               placeholder="Введіть ваш пароль"
+              error={passwordErrorMessage}
               value={password}
               onChange={e => setPassword(e)}
             />
@@ -77,6 +128,7 @@ export const LoginScreen = ({navigation}) => {
               label={'Увійти'}
               route={'TabNavigation'}
               navigation={navigation}
+              onPress={() => basicValidation()}
               pink
               bold
             />
