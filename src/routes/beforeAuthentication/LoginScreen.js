@@ -9,6 +9,7 @@ import {
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+import {getPhoneMask} from '../../components/common';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -95,7 +96,7 @@ export const LoginScreen = ({navigation}) => {
               isShowLabel={true}
               placeholder="Введіть номер телефону"
               error={phoneErrorMessage}
-              value={phone}
+              value={getPhoneMask(phone)}
               keyboardType={'number-pad'}
               onChange={e => setPhone(e)}
             />

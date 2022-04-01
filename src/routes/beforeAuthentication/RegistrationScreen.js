@@ -12,6 +12,7 @@ import InputScrollView from 'react-native-input-scroll-view';
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+import {getPhoneMask} from '../../components/common';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -140,7 +141,7 @@ export const RegistrationScreen = ({navigation}) => {
                   placeholder="067 777 77 77"
                   error={phoneErrorMessage}
                   keyboardType={'number-pad'}
-                  value={phone}
+                  value={getPhoneMask(phone)}
                   onChange={e => setPhone(e)}
                 />
 
