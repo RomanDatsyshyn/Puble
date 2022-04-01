@@ -18,7 +18,7 @@ export const WelcomeScreen = ({navigation}) => {
         <Image source={images.welcomeBoy} style={styles.image} />
 
         <View style={styles.labels}>
-          <TextBlock text={'Забудь про пошук!'} size={2} deepBlue bolder />
+          <TextBlock text={'Забудьте про пошук!'} size={2} deepBlue bolder />
           <TextBlock text={'Тепер є Ми.'} size={2} deepBlue bolder />
         </View>
 
@@ -30,7 +30,7 @@ export const WelcomeScreen = ({navigation}) => {
           </View>
 
           <Button
-            label={'Заходь, друже :)'}
+            label={'Увійти'}
             onPress={() => navigation.navigate('LoginScreen')}
           />
 
@@ -39,15 +39,14 @@ export const WelcomeScreen = ({navigation}) => {
           </View>
 
           <Button
-            label={'Хутчіш приєднуйся!'}
-            route={'RegistrationScreen'}
-            navigation={navigation}
+            label={'Зареєструватися'}
+            onPress={() => navigation.navigate('RegistrationScreen')}
             pink
           />
 
           <BottomLinks
-            firstText={'Не маєте профілю?'}
-            secondText={'Створіть його!'}
+            firstText={'Маєте запитання?'}
+            secondText={'Напишіть нам!'}
             route={'RegistrationScreen'}
             navigation={navigation}
           />

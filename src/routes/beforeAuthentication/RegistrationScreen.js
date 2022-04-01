@@ -30,11 +30,16 @@ export const RegistrationScreen = ({navigation}) => {
         <View style={styles.background}>
           <View>
             <View style={styles.labels}>
-              <TextBlock text={'Стань частиною'} size={1} lightBlue boldest />
+              <TextBlock text={'Станьте частиною'} size={1} lightBlue boldest />
               <TextBlock text={'Puble'} size={1} lightBlue boldest />
 
               <View style={styles.subTitle}>
-                <TextBlock text={'Заповни всі поля нижче'} size={5} grey bold />
+                <TextBlock
+                  text={'Заповніть всі поля нижче'}
+                  size={5}
+                  grey
+                  bold
+                />
               </View>
             </View>
 
