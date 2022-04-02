@@ -36,13 +36,19 @@ class DataService {
     }
   };
 
-  //   getMarks = async () => {
-  //     try {
-  //       return http.get('/driver/get_makes/', await this.returnUdidHeader());
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   };
+  getUserData = async () => {
+    try {
+      let token = await getToken();
+
+      return http.get('/user', {
+        headers: {
+          Authorization: token,
+        },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
 }
 
 export default new DataService();
