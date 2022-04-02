@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions, Image} from 'react-native';
 
-import {images} from '../assets/images';
-import {colors} from '../assets/colors';
+import {images} from '../../assets/images';
+import {colors} from '../../assets/colors';
 
-import Button from '../components/Button';
-import TextBlock from '../components/TextBlock';
-import BottomLinks from '../components/BottomLinks';
+import Button from '../../components/Button';
+import TextBlock from '../../components/TextBlock';
+import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;

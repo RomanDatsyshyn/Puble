@@ -17,6 +17,7 @@ import AlertBox from '../../components/Alert';
 import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
 
+import {setToken} from '../../asyncStorage/token';
 import DataService from '../../API/HTTP/services/data.service';
 
 const w = Dimensions.get('window').width;
@@ -32,12 +33,21 @@ export const LoginScreen = ({navigation}) => {
   const isPhoneCorrect = phone.length < 10;
   const isPasswordCorrect = password.length < 5;
 
+  const setTokenToStorage = async token => {
+    await setToken(token);
+  };
+
   const loginRequest = async data => {
     await DataService.login(data)
       .then(res => {
-        res.data.success
-          ? navigation.navigate('TabNavigation')
-          : AlertBox('Failed login', res.data.errors);
+        if (res.data.success) {
+          const {access_token} = res.data.data;
+          setTokenToStorage(access_token);
+
+          navigation.navigate('TabNavigation');
+        } else {
+          AlertBox('Failed login', res.data.errors);
+        }
       })
       .catch(e => {
         console.log(e);
