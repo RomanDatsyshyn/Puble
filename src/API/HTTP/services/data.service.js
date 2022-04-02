@@ -1,9 +1,28 @@
 import http from '../http-common';
+import {getToken} from '../../../asyncStorage/token';
 
 class DataService {
   login = async data => {
     try {
       return http.post('/auth', data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  logout = async () => {
+    try {
+      let token = await getToken();
+
+      return http.post(
+        '/auth/logout',
+        {},
+        {
+          headers: {
+            Authorization: token,
+          },
+        },
+      );
     } catch (e) {
       console.log(e);
     }

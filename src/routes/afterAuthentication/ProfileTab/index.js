@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions, Image} from 'react-native';
 
+import {clearToken} from '../../../asyncStorage/token';
+import DataService from '../../../API/HTTP/services/data.service';
+
 import Button from '../../../components/Button';
 import TextBlock from '../../../components/TextBlock';
 
@@ -10,6 +13,12 @@ import {colors} from '../../../assets/colors';
 const w = Dimensions.get('window').width;
 
 export const ProfileTab = ({navigation}) => {
+  const logout = async () => {
+    await DataService.logout();
+    await clearToken();
+    navigation.navigate('WelcomeScreen');
+  };
+
   return (
     <View style={styles.background}>
       <View style={styles.container}>
@@ -35,7 +44,7 @@ export const ProfileTab = ({navigation}) => {
 
         <View style={styles.moreSpacing} />
 
-        <Button label={'Вийти'} route={'LoginScreen'} navigation={navigation} />
+        <Button label={'Вийти'} onPress={() => logout()} />
       </View>
     </View>
   );
