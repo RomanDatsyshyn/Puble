@@ -25,7 +25,9 @@ export const IWantToScreen = ({route, navigation}) => {
         label={name}
         onPress={() => {
           getOrders();
-          navigation.navigate('Feed');
+          navigation.navigate('Feed', {
+            isStart: true,
+          });
         }}
         pink
         bold
