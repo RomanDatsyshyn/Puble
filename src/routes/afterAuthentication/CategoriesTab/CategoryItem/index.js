@@ -8,11 +8,20 @@ import TextBlock from '../../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
 
-export const CategoryItem = ({icon, name, navigation}) => {
+export const CategoryItem = ({
+  icon = 'faAdd',
+  name = '',
+  services = [],
+  navigation,
+}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      onPress={() => navigation.navigate('ListOfServicesScreen')}
+      onPress={() =>
+        navigation.navigate('ListOfServicesScreen', {
+          services,
+        })
+      }
       style={styles.item}>
       <View style={styles.itemConteiner}>
         <FontAwesomeIcon

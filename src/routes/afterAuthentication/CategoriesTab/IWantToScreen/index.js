@@ -6,13 +6,14 @@ const w = Dimensions.get('window').width;
 
 import {colors} from '../../../../assets/colors';
 
-export const IWantToScreen = ({navigation}) => {
+export const IWantToScreen = ({route, navigation}) => {
+  const {name, services} = route.params;
+
   return (
     <View style={styles.background}>
       <Button
-        label={'Я хочу манік'}
-        route={'Feed'}
-        navigation={navigation}
+        label={name}
+        onPress={() => navigation.navigate('Feed')}
         pink
         bold
       />
@@ -21,8 +22,11 @@ export const IWantToScreen = ({navigation}) => {
 
       <Button
         label={'Повернутися назад'}
-        route={'ListOfServicesScreen'}
-        navigation={navigation}
+        onPress={() =>
+          navigation.navigate('ListOfServicesScreen', {
+            services,
+          })
+        }
         bold
         leftArrow
       />
