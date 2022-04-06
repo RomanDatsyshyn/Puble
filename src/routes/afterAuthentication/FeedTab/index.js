@@ -33,12 +33,12 @@ export const FeedTab = () => {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {offers && offers.map((mess, index) => <Text key={index}>{mess}</Text>)}
         <View style={styles.spacing} />
+        {/* <FeedItem />
         <FeedItem />
         <FeedItem />
         <FeedItem />
         <FeedItem />
-        <FeedItem />
-        <FeedItem />
+        <FeedItem /> */}
       </ScrollView>
     </View>
   );

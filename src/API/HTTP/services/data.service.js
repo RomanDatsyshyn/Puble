@@ -71,6 +71,27 @@ class DataService {
       console.log(e);
     }
   };
+
+  getOrders = async category_id => {
+    try {
+      let token = await getToken();
+
+      return http.post(
+        `http://localhost:3001/feed/user/sendOrder/${category_id}`,
+        {
+          message: 'test',
+          id: Date.now(),
+        },
+        {
+          headers: {
+            Authorization: token,
+          },
+        },
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
 }
 
 export default new DataService();
