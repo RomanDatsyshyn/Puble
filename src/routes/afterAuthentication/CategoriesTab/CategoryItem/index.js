@@ -15,7 +15,11 @@ export const CategoryItem = ({icon, name, navigation}) => {
       onPress={() => navigation.navigate('ListOfServicesScreen')}
       style={styles.item}>
       <View style={styles.itemConteiner}>
-        <FontAwesomeIcon icon={Icons[icon]} size={50} style={styles.icon} />
+        <FontAwesomeIcon
+          icon={Icons[icon]}
+          size={w * 0.16}
+          style={styles.icon}
+        />
         <TextBlock text={name} size={4} lightBlue boldest />
       </View>
     </TouchableOpacity>
@@ -38,11 +42,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  itemIcon: {
-    width: w * 0.2,
-    height: w * 0.2,
-  },
   icon: {
     color: colors.lightBlue,
+    marginBottom: w * 0.02,
   },
 });
