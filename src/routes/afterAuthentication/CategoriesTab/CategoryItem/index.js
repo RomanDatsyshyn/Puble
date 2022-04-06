@@ -1,15 +1,12 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+
+import {colors} from '../../../../assets/colors';
+import TextBlock from '../../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
-
-import TextBlock from '../../../../components/TextBlock';
 
 export const CategoryItem = ({icon, name, navigation}) => {
   return (
@@ -18,7 +15,7 @@ export const CategoryItem = ({icon, name, navigation}) => {
       onPress={() => navigation.navigate('ListOfServicesScreen')}
       style={styles.item}>
       <View style={styles.itemConteiner}>
-        <Image source={icon} style={styles.itemIcon} />
+        <FontAwesomeIcon icon={Icons[icon]} size={50} style={styles.icon} />
         <TextBlock text={name} size={4} lightBlue boldest />
       </View>
     </TouchableOpacity>
@@ -44,5 +41,8 @@ const styles = StyleSheet.create({
   itemIcon: {
     width: w * 0.2,
     height: w * 0.2,
+  },
+  icon: {
+    color: colors.lightBlue,
   },
 });

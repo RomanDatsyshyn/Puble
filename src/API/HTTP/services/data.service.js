@@ -49,6 +49,14 @@ class DataService {
       console.log(e);
     }
   };
+
+  getCategories = async () => {
+    try {
+      return http.get('/categories');
+    } catch (e) {
+      console.log(e);
+    }
+  };
 }
 
 export default new DataService();
