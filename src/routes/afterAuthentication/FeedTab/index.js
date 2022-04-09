@@ -1,12 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useEffect, useState, useCallback} from 'react';
+import {View, StyleSheet, Dimensions, ScrollView, Text} from 'react-native';
 const {io} = require('socket.io-client');
 
 // import FeedItem from './FeedItem';
@@ -19,13 +12,17 @@ const h = Dimensions.get('window').height;
 
 export const FeedTab = ({route}) => {
   const [feed, setFeed] = useState([]);
+  const [connected, setConnected] = useState(false);
 
   const socket = io('ws://localhost:3001');
 
-  const connect = id => {
-    socket.emit('join', {room: `userFeed-${id}`});
-    socket.on('message', messages => setFeed(messages));
-  };
+  const connect = useCallback(
+    id => {
+      socket.emit('join', {room: `userFeed-${id}`});
+      socket.on('message', data => setFeed(data));
+    },
+    [socket],
+  );
 
   const getUserFeed = async () => {
     await DataService.getUserData()
@@ -44,6 +41,13 @@ export const FeedTab = ({route}) => {
     getUserFeed();
   }, []);
 
+  useEffect(() => {
+    if (!connected) {
+      connect('62486b2ccc97633ca1a504c4');
+      setConnected(true);
+    }
+  }, [connected, connect]);
+
   return (
     <View style={styles.background}>
       {feed?.length > 0 && (
@@ -55,12 +59,6 @@ export const FeedTab = ({route}) => {
               {index} - {id}
             </Text>
           ))}
-          {
-            <TouchableOpacity
-              onPress={() => connect('62486b2ccc97633ca1a504c4')}>
-              <Text>Sign In</Text>
-            </TouchableOpacity>
-          }
           <View style={styles.spacing} />
         </ScrollView>
       )}
