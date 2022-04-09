@@ -1,6 +1,13 @@
-import React, {useEffect, useState, useCallback} from 'react';
-import {View, StyleSheet, Dimensions, ScrollView, Text} from 'react-native';
-import {useIsFocused} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+const {io} = require('socket.io-client');
 
 // import FeedItem from './FeedItem';
 
@@ -11,32 +18,21 @@ const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 export const FeedTab = ({route}) => {
-  const [offers, setOffers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [feed, setFeed] = useState([]);
 
-  const isFocused = useIsFocused();
+  const socket = io('ws://localhost:3001');
 
-  const getOffers = useCallback(async () => {
-    try {
-      offers.length === 0 ? setIsLoading(true) : setIsLoading(false);
-
-      const {data} = await DataService.subscribe();
-      setOffers(data);
-
-      await getOffers();
-    } catch (e) {
-      setTimeout(() => {
-        getOffers();
-      }, 500);
-    }
-  }, [offers.length]);
+  const connect = id => {
+    socket.emit('join', {room: `userFeed-${id}`});
+    socket.on('message', messages => setFeed(messages));
+  };
 
   const getUserFeed = async () => {
     await DataService.getUserData()
       .then(res => {
-        if (res.data.success) {
-          const {feed} = res.data.data;
-          setOffers(feed);
+        const {success, data} = res.data;
+        if (success) {
+          setFeed(data.feed);
         }
       })
       .catch(e => {
@@ -48,36 +44,27 @@ export const FeedTab = ({route}) => {
     getUserFeed();
   }, []);
 
-  useEffect(() => {
-    if (route.params !== undefined) {
-      const {isStart} = route.params;
-
-      if (isStart) {
-        getOffers();
-      }
-    }
-    if (isFocused && route.params === undefined) {
-      if (offers.length !== 0) {
-        getOffers();
-      }
-    }
-  }, [isFocused, offers.length, route.params, getOffers]);
-
   return (
     <View style={styles.background}>
-      {offers?.length > 0 && (
+      {feed?.length > 0 && (
         <ScrollView
           style={styles.container}
           showsVerticalScrollIndicator={false}>
-          {/* {offers &&
-            offers.map((id, index) => <FeedItem id={id} key={index} />)} */}
-          {offers &&
-            offers.map((id, index) => <Text key={index}>{index}</Text>)}
+          {feed?.map((id, index) => (
+            <Text key={index}>
+              {index} - {id}
+            </Text>
+          ))}
+          {
+            <TouchableOpacity
+              onPress={() => connect('62486b2ccc97633ca1a504c4')}>
+              <Text>Sign In</Text>
+            </TouchableOpacity>
+          }
           <View style={styles.spacing} />
         </ScrollView>
       )}
-      {offers.length === 0 && !isLoading && <Text>No one propositions</Text>}
-      {isLoading && <Text>Loading</Text>}
+      {feed.length === 0 && <Text>No one propositions</Text>}
     </View>
   );
 };
