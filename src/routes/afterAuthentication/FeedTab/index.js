@@ -1,5 +1,12 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {View, StyleSheet, Dimensions, ScrollView, Text} from 'react-native';
+import {
+  AppState,
+  View,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Text,
+} from 'react-native';
 const {io} = require('socket.io-client');
 
 // import FeedItem from './FeedItem';
@@ -13,13 +20,43 @@ const h = Dimensions.get('window').height;
 export const FeedTab = ({route}) => {
   const [feed, setFeed] = useState([]);
   const [connected, setConnected] = useState(false);
+  const [appState, setAppState] = useState('');
 
   const socket = io('ws://localhost:3001');
+
+  useEffect(() => {
+    AppState.addEventListener('change', handleChange);
+  }, [handleChange]);
+
+  const handleChange = useCallback(
+    newState => {
+      if (newState === 'active') {
+        if (appState !== 'active') {
+          // console.log('Reconnect');
+          connect('62486b2ccc97633ca1a504c4');
+        }
+        setAppState(newState);
+      }
+      if (newState === 'background' || newState === 'inactive') {
+        // console.log('Unsubscribe');
+        setAppState(newState);
+        unsubscribe('62486b2ccc97633ca1a504c4');
+      }
+    },
+    [appState, connect, unsubscribe],
+  );
 
   const connect = useCallback(
     id => {
       socket.emit('join', {room: `userFeed-${id}`});
       socket.on('message', data => setFeed(data));
+    },
+    [socket],
+  );
+
+  const unsubscribe = useCallback(
+    id => {
+      socket.emit('unsubscribe', {room: `userFeed-${id}`});
     },
     [socket],
   );
