@@ -19,6 +19,7 @@ export const Input = ({
   label = '',
   onFocus,
   onBlur,
+  width = w * 0.8,
 }) => {
   const getStylesOfPosition = () => {
     return isShowIcon ? styles.positionRelative : {};
@@ -43,7 +44,7 @@ export const Input = ({
 
       <View style={getStylesOfPosition()}>
         <TextInput
-          style={[styles.input, getStylesOfPaddingLeft()]}
+          style={[styles.input, {width}, getStylesOfPaddingLeft()]}
           returnKeyType={'done'}
           keyboardType={keyboardType}
           placeholder={placeholder}
@@ -66,7 +67,6 @@ export default Input;
 
 const styles = StyleSheet.create({
   input: {
-    width: w * 0.8,
     fontSize: w * 0.045,
     color: colors.deepBlue,
     paddingRight: w * 0.05,

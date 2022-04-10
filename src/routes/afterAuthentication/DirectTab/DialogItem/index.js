@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     width: '73%',
+    marginRight: w * 0.03,
   },
   itemPhoto: {
     width: w * 0.15,

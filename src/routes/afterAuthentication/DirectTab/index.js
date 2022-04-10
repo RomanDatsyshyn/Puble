@@ -18,12 +18,12 @@ export const DirectTabScreen = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.positionRelative}>
           <Input
-            placeholder="Введіть назву категорії"
+            placeholder="Введіть ім'я для пошуку"
             value={searchQuery}
             isShowIcon={true}
+            width={w * 0.91}
             onChangeText={e => setSearchQuery(e)}
           />
-          <Image source={icons.search} style={styles.toRightIcon} />
         </View>
 
         <View style={styles.title}>
@@ -94,18 +94,11 @@ const styles = StyleSheet.create({
     marginTop: w * 0.07,
   },
   positionRelative: {
-    position: 'relative',
-    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: w * 0.05,
   },
-  toRightIcon: {
-    position: 'absolute',
-    width: w * 0.06,
-    height: w * 0.06,
-    marginLeft: w * 0.03,
-  },
   categoriesContainer: {
-    width: w * 0.8,
+    width: w * 0.92,
     marginTop: w * 0.07,
   },
 });

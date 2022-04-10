@@ -11,6 +11,13 @@ import DataService from '../../../../API/HTTP/services/data.service';
 export const IWantToScreen = ({route, navigation}) => {
   const {name, services} = route.params;
 
+  // const sendMessage = () => {
+  //   socket.emit('sendUserOrderToServiceSellers', {
+  //     userId: '62486b2ccc97633ca1a504c4',
+  //     serviceId: '623da65073deea0ebf9ba44d',
+  //   });
+  // };
+
   const getOrders = async () => {
     try {
       await DataService.getOrders('623da65073deea0ebf9ba44d');
