@@ -47,8 +47,9 @@ export const ListOfServicesScreen = ({route, navigation}) => {
         </View>
 
         <View style={styles.categoriesContainer}>
-          {services.map(({name}, index) => (
+          {services.map(({name, id}, index) => (
             <ServiceItem
+              id={id}
               name={name}
               navigation={navigation}
               services={services}

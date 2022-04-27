@@ -10,33 +10,38 @@ import {
 import TextBlock from '../../../../components/TextBlock';
 
 import {icons} from '../../../../assets/icons';
-import {images} from '../../../../assets/images';
 import {colors} from '../../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
-export const FeedItem = ({id}) => {
+export const FeedItem = ({item}) => {
+  const {id, name, photo, rating, profession, distance, price} = item;
   return (
     <View style={styles.item}>
       <View style={styles.row}>
-        <Image source={images.avatar} style={styles.itemImage} />
+        <Image
+          source={{
+            uri: `http://localhost:3001/${photo}`,
+          }}
+          style={styles.itemImage}
+        />
         <View style={styles.itemInfo}>
           <View>
-            <TextBlock text={'Світлана'} size={3} deepBlue />
-            <TextBlock text={'Перукар'} size={6} grey />
+            <TextBlock text={name} size={3} deepBlue />
+            <TextBlock text={profession} size={6} grey />
           </View>
 
           <View>
             <View style={styles.row}>
               <Image source={icons.uah} style={styles.itemUahIcon} />
-              <TextBlock text={'150 - 200 грн'} size={5} deepBlue />
+              <TextBlock text={price} size={5} deepBlue />
             </View>
 
             <View style={styles.row}>
               <Image source={icons.location} style={styles.itemLocationIcon} />
 
               <View style={styles.itemDistance}>
-                <TextBlock text={'270 м. -'} size={5} deepBlue />
+                <TextBlock text={`${distance} -`} size={5} deepBlue />
               </View>
 
               <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
@@ -46,13 +51,18 @@ export const FeedItem = ({id}) => {
 
             <View style={styles.row}>
               <Image source={icons.rating} style={styles.itemLocationIcon} />
-              <TextBlock text={'Рейтинг - 6.2 із 10'} size={5} deepBlue />
+              <TextBlock text={`Рейтинг - ${rating} із 10`} size={5} deepBlue />
             </View>
           </View>
         </View>
       </View>
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.7}
+        onPress={() => {
+          console.log(id);
+        }}>
         <TextBlock text={'Надіслати повідомлення'} size={3} deepBlue />
       </TouchableOpacity>
 

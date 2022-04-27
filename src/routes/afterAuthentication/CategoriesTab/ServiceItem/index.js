@@ -4,13 +4,14 @@ import Button from '../../../../components/Button';
 
 const w = Dimensions.get('window').width;
 
-export const ServiceItem = ({name, services, navigation}) => {
+export const ServiceItem = ({name, id, services, navigation}) => {
   return (
     <View style={styles.item}>
       <Button
         label={name}
         onPress={() =>
           navigation.navigate('IWantToScreen', {
+            id,
             name,
             services,
           })
