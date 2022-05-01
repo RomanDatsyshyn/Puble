@@ -4,9 +4,10 @@ import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import {colors} from '../../../assets/colors';
 export const DirectTabScreen = ({navigation}) => {
   useEffect(() => {
-    2 > 1
-      ? navigation.navigate('EmptyDirectScreen')
-      : navigation.navigate('DirectScreen');
+    // 2 > 1
+    //   ? navigation.navigate('EmptyDirectScreen')
+    //   : navigation.navigate('DirectScreen');
+    navigation.navigate('Dialog');
   }, [navigation]);
 
   // const getUserFeed = async () => {
