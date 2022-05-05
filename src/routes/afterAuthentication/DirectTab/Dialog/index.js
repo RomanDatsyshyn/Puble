@@ -175,9 +175,17 @@ export const Dialog = () => {
         var day2 = d2.getUTCDate();
         var year2 = d2.getUTCFullYear();
 
-        if (day1 !== day2) {
-          date = d2;
-          arr[i].currentDate = `${day2} ${getNameOfTheMonth(month2)}`;
+        if (year1 === year2) {
+          if (month1 === month2) {
+            if (day1 !== day2) {
+              date = d2;
+              arr[i].currentDate = `${day2} ${getNameOfTheMonth(month2)}`;
+            }
+          } else {
+            // Дописати логіку
+          }
+        } else {
+          // Дописати логіку
         }
       }
 
@@ -234,27 +242,36 @@ export const Dialog = () => {
           showsHorizontalScrollIndicator={false}
         />
 
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            returnKeyType={'done'}
-            keyboardType={'default'}
-            placeholder={'Send message'}
-            placeholderTextColor={colors.grey}
-            multiline={true}
-            // value={value}
-            // onChangeText={onChange}
-            // onFocus={onFocus}
-            // onBlur={onBlur}
-            // blurOnSubmit
-          />
-          <TouchableOpacity activeOpacity={0.7} style={styles.icon}>
+        <View style={styles.bottomContainer}>
+          <TouchableOpacity activeOpacity={0.7}>
             <FontAwesomeIcon
-              icon={Icons.faPaperPlane}
+              icon={Icons.faPaperclip}
               size={w * 0.08}
-              style={{color: colors.white}}
+              style={{color: colors.lightBlue, marginRight: w * 0.02}}
             />
           </TouchableOpacity>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              returnKeyType={'done'}
+              keyboardType={'default'}
+              placeholder={'Send message'}
+              placeholderTextColor={colors.grey}
+              multiline={true}
+              // value={value}
+              // onChangeText={onChange}
+              // onFocus={onFocus}
+              // onBlur={onBlur}
+              // blurOnSubmit
+            />
+            <TouchableOpacity activeOpacity={0.7} style={styles.icon}>
+              <FontAwesomeIcon
+                icon={Icons.faPaperPlane}
+                size={w * 0.08}
+                style={{color: colors.white}}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </>
@@ -300,7 +317,7 @@ const styles = StyleSheet.create({
     width: w * 0.95,
   },
   input: {
-    width: w * 0.95,
+    width: w * 0.85,
     fontSize: w * 0.045,
     color: colors.deepBlue,
     paddingRight: w * 0.14,
@@ -311,9 +328,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.deepBlue,
   },
+  bottomContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   inputContainer: {
     position: 'relative',
-    marginBottom: w * 0.02,
+
     justifyContent: 'center',
   },
   typing: {
