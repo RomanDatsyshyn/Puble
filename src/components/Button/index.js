@@ -29,7 +29,7 @@ export const Button = ({
       {leftArrow && (
         <FontAwesomeIcon
           icon={Icons.faChevronLeft}
-          size={w * 0.08}
+          size={w * 0.06}
           style={[
             styles.icon,
             styles.iconMarginRight,
@@ -41,7 +41,7 @@ export const Button = ({
       {rightArrow && (
         <FontAwesomeIcon
           icon={Icons.faChevronRight}
-          size={w * 0.08}
+          size={w * 0.06}
           style={[styles.icon, styles.iconMarginLeft, {color: colors.deepBlue}]}
         />
       )}

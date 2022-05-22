@@ -31,7 +31,7 @@ export const ListOfServicesScreen = ({route, navigation}) => {
           style={styles.backButton}>
           <FontAwesomeIcon
             icon={Icons.faChevronLeft}
-            size={w * 0.08}
+            size={w * 0.07}
             style={[{color: colors.deepBlue}, styles.backIcon]}
           />
         </TouchableOpacity>
@@ -41,19 +41,13 @@ export const ListOfServicesScreen = ({route, navigation}) => {
         <View style={styles.subTitle}>
           <TextBlock text={'або скористайтеся пошуком'} size={5} grey bolde />
         </View>
-        <View style={styles.positionRelative}>
-          <Input
-            placeholder="Введіть назву послуги"
-            isShowIcon={true}
-            value={searchQuery}
-            onChangeText={e => setSearchQuery(e)}
-          />
-          <FontAwesomeIcon
-            icon={Icons.faMagnifyingGlass}
-            size={w * 0.08}
-            style={[{color: colors.deepBlue}, styles.toRightIcon]}
-          />
-        </View>
+
+        <Input
+          placeholder="Введіть назву послуги"
+          isShowIcon={true}
+          value={searchQuery}
+          onChangeText={e => setSearchQuery(e)}
+        />
 
         <View style={styles.categoriesContainer}>
           {services.map(({name, id}, index) => (
