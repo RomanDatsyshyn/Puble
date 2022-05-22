@@ -1,20 +1,25 @@
 import React from 'react';
 import {StyleSheet, Dimensions, TextInput, View, Image} from 'react-native';
 
+import TextBlock from '../TextBlock';
+
 const w = Dimensions.get('window').width;
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 
-import TextBlock from '../../components/TextBlock';
-
-export default Input = ({
+export const Input = ({
   placeholder,
   value,
   onChange,
+  keyboardType = 'default',
+  error = '',
   isShowIcon = false,
   isShowLabel = false,
   label = '',
+  onFocus,
+  onBlur,
+  width = w * 0.8,
 }) => {
   const getStylesOfPosition = () => {
     return isShowIcon ? styles.positionRelative : {};
@@ -31,14 +36,24 @@ export default Input = ({
           <TextBlock text={label} size={5} bold />
         </View>
       )}
+      {error !== '' && (
+        <View style={styles.errorMessage}>
+          <TextBlock text={error} size={6} red italic />
+        </View>
+      )}
+
       <View style={getStylesOfPosition()}>
         <TextInput
-          style={[styles.input, getStylesOfPaddingLeft()]}
+          style={[styles.input, {width}, getStylesOfPaddingLeft()]}
           returnKeyType={'done'}
+          keyboardType={keyboardType}
           placeholder={placeholder}
           placeholderTextColor={colors.grey}
           value={value}
           onChangeText={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          blurOnSubmit
         />
         {isShowIcon && (
           <Image source={icons.search} style={styles.toRightIcon} />
@@ -48,9 +63,10 @@ export default Input = ({
   );
 };
 
+export default Input;
+
 const styles = StyleSheet.create({
   input: {
-    width: w * 0.8,
     fontSize: w * 0.045,
     color: colors.deepBlue,
     paddingRight: w * 0.05,
@@ -71,6 +87,10 @@ const styles = StyleSheet.create({
     marginLeft: w * 0.03,
   },
   label: {
+    marginBottom: w * 0.03,
+    marginLeft: w * 0.01,
+  },
+  errorMessage: {
     marginBottom: w * 0.03,
     marginLeft: w * 0.01,
   },

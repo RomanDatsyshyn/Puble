@@ -14,7 +14,7 @@ import {colors} from '../../../../assets/colors';
 
 import TextBlock from '../../../../components/TextBlock';
 
-export default DialogItem = ({name, message, navigation}) => {
+export const DialogItem = ({name, message, navigation}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
@@ -34,6 +34,8 @@ export default DialogItem = ({name, message, navigation}) => {
   );
 };
 
+export default DialogItem;
+
 const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     width: '73%',
+    marginRight: w * 0.03,
   },
   itemPhoto: {
     width: w * 0.15,

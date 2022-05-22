@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   TouchableOpacity,
@@ -9,17 +9,77 @@ import {
 
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+import {getPhoneMask} from '../../components/common';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import AlertBox from '../../components/Alert';
+import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
+
+import {setToken} from '../../asyncStorage/token';
+import DataService from '../../API/HTTP/services/data.service';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default LoginScreen = ({navigation}) => {
-  const [login, setLogin] = useState('');
+export const LoginScreen = ({navigation}) => {
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
+
+  const [phoneErrorMessage, setPhoneErrorMessage] = useState('');
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
+
+  const isPhoneCorrect = phone.length < 10;
+  const isPasswordCorrect = password.length < 5;
+
+  const setTokenToStorage = async token => {
+    await setToken(token);
+  };
+
+  const loginRequest = async data => {
+    await DataService.login(data)
+      .then(res => {
+        if (res.data.success) {
+          const {access_token} = res.data.data;
+          setTokenToStorage(access_token);
+
+          navigation.navigate('TabNavigation');
+        } else {
+          AlertBox('Failed login', res.data.errors);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  const signIn = () => {
+    loginRequest({
+      phone,
+      password,
+    });
+  };
+
+  const basicValidation = () => {
+    setPhoneErrorMessage('');
+    setPasswordErrorMessage('');
+
+    isPhoneCorrect && setPhoneErrorMessage('Введіть мінімум 10 цифр');
+    isPasswordCorrect && setPasswordErrorMessage('Введіть мінімум 5 символів');
+
+    !isPhoneCorrect && !isPasswordCorrect && signIn();
+  };
+
+  useEffect(() => {
+    phoneErrorMessage !== '' && !isPhoneCorrect && setPhoneErrorMessage('');
+  }, [phoneErrorMessage, setPhoneErrorMessage, isPhoneCorrect]);
+
+  useEffect(() => {
+    passwordErrorMessage !== '' &&
+      !isPasswordCorrect &&
+      setPasswordErrorMessage('');
+  }, [passwordErrorMessage, setPasswordErrorMessage, isPasswordCorrect]);
 
   return (
     <>
@@ -36,7 +96,7 @@ export default LoginScreen = ({navigation}) => {
             <TextBlock text={'Puble'} size={1} lightBlue boldest />
 
             <View style={styles.subTitle}>
-              <TextBlock text={'Заповни всі поля нижче'} size={5} grey bold />
+              <TextBlock text={'Заповніть всі поля нижче'} size={5} grey bold />
             </View>
           </View>
 
@@ -45,16 +105,19 @@ export default LoginScreen = ({navigation}) => {
               label="Логін:"
               isShowLabel={true}
               placeholder="Введіть номер телефону"
-              value={login}
-              onChange={e => setLogin(e)}
+              error={phoneErrorMessage}
+              value={getPhoneMask(phone)}
+              keyboardType={'number-pad'}
+              onChange={e => setPhone(e)}
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <Input
               label="Пароль:"
               isShowLabel={true}
               placeholder="Введіть ваш пароль"
+              error={passwordErrorMessage}
               value={password}
               onChange={e => setPassword(e)}
             />
@@ -74,13 +137,12 @@ export default LoginScreen = ({navigation}) => {
 
             <Button
               label={'Увійти'}
-              route={'TabNavigation'}
-              navigation={navigation}
+              onPress={() => basicValidation()}
               pink
               bold
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <BottomLinks
               firstText={'Не маєте профілю?'}
@@ -94,6 +156,8 @@ export default LoginScreen = ({navigation}) => {
     </>
   );
 };
+
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   background: {

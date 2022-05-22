@@ -15,8 +15,10 @@ const h = Dimensions.get('window').height;
 
 import Input from '../../../../components/Input';
 import Button from '../../../../components/Button';
+import TextBlock from '../../../../components/TextBlock';
+import BottomLinks from '../../../../components/BottomLinks';
 
-export default NewPasswordScreen = ({navigation}) => {
+export const NewPasswordScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -48,7 +50,7 @@ export default NewPasswordScreen = ({navigation}) => {
               onChangeText={e => setPassword(e)}
             />
 
-            <View style={styles.someSpace}></View>
+            <View style={styles.someSpace} />
 
             <Input
               label={'Повторіть пароль:'}
@@ -58,7 +60,7 @@ export default NewPasswordScreen = ({navigation}) => {
               onChangeText={e => setConfirmPassword(e)}
             />
 
-            <View style={styles.spacing}></View>
+            <View style={styles.spacing} />
 
             <Button
               label={'Змінити пароль'}
@@ -68,7 +70,7 @@ export default NewPasswordScreen = ({navigation}) => {
               bold
             />
 
-            <View style={styles.spacing}></View>
+            <View style={styles.spacing} />
 
             <BottomLinks
               firstText={'Маєте запитання?'}
@@ -82,6 +84,8 @@ export default NewPasswordScreen = ({navigation}) => {
     </>
   );
 };
+
+export default NewPasswordScreen;
 
 const styles = StyleSheet.create({
   background: {

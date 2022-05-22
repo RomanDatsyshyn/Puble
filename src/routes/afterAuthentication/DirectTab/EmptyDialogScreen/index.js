@@ -3,13 +3,15 @@ import {View, Text, StyleSheet} from 'react-native';
 
 import {colors} from '../../../../assets/colors';
 
-export default EmptyDirectScreen = () => {
+export const DialogScreen = () => {
   return (
     <View style={styles.background}>
       <Text>No one messages</Text>
     </View>
   );
 };
+
+export default DialogScreen;
 
 const styles = StyleSheet.create({
   background: {

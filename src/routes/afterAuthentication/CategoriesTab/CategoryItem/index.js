@@ -1,29 +1,41 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+
+import {colors} from '../../../../assets/colors';
+import TextBlock from '../../../../components/TextBlock';
 
 const w = Dimensions.get('window').width;
 
-import TextBlock from '../../../../components/TextBlock';
-
-export default CategoryItem = ({icon, name, navigation}) => {
+export const CategoryItem = ({
+  icon = 'faAdd',
+  name = '',
+  services = [],
+  navigation,
+}) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
-      onPress={() => navigation.navigate('ListOfServicesScreen')}
+      onPress={() =>
+        navigation.navigate('ListOfServicesScreen', {
+          services,
+        })
+      }
       style={styles.item}>
       <View style={styles.itemConteiner}>
-        <Image source={icon} style={styles.itemIcon} />
+        <FontAwesomeIcon
+          icon={Icons[icon]}
+          size={w * 0.16}
+          style={styles.icon}
+        />
         <TextBlock text={name} size={4} lightBlue boldest />
       </View>
     </TouchableOpacity>
   );
 };
+
+export default CategoryItem;
 
 const styles = StyleSheet.create({
   item: {
@@ -39,8 +51,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  itemIcon: {
-    width: w * 0.2,
-    height: w * 0.2,
+  icon: {
+    color: colors.lightBlue,
+    marginBottom: w * 0.02,
   },
 });

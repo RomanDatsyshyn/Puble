@@ -6,6 +6,7 @@ import {
   Dimensions,
   Image,
   Animated,
+  Platform,
 } from 'react-native';
 
 import {
@@ -19,6 +20,7 @@ import {icons} from '../../../../assets/icons';
 import {colors} from '../../../../assets/colors';
 
 import Button from '../../../../components/Button';
+import TextBlock from '../../../../components/TextBlock';
 import BottomLinks from '../../../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
@@ -51,7 +53,7 @@ const animateCell = ({hasValue, index, isFocused}) => {
   ]).start();
 };
 
-export default CodeRecoveryScreen = ({navigation}) => {
+export const CodeRecoveryScreen = ({navigation}) => {
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
@@ -114,12 +116,12 @@ export default CodeRecoveryScreen = ({navigation}) => {
 
             <View style={styles.subTitle}>
               <TextBlock text={'На ваш Email було'} size={5} grey bold />
-              <View style={styles.someSpacing}></View>
+              <View style={styles.someSpacing} />
               <TextBlock text={'надіслано код'} size={5} grey bold />
             </View>
           </View>
 
-          <View style={styles.mb15}></View>
+          <View style={styles.mb15} />
 
           <CodeField
             ref={ref}
@@ -154,6 +156,8 @@ export default CodeRecoveryScreen = ({navigation}) => {
     </>
   );
 };
+
+export default CodeRecoveryScreen;
 
 const styles = StyleSheet.create({
   background: {

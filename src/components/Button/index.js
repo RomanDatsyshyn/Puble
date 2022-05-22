@@ -12,14 +12,13 @@ const w = Dimensions.get('window').width;
 import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 
-export default Button = ({
+export const Button = ({
   label = '',
-  route = '',
   pink,
   bold,
   leftArrow,
   rightArrow,
-  navigation,
+  onPress,
 }) => {
   const getIdditionalStyles = () => {
     return pink
@@ -31,7 +30,7 @@ export default Button = ({
     <TouchableOpacity
       activeOpacity={0.7}
       style={[styles.button, getIdditionalStyles()]}
-      onPress={() => navigation.navigate(route)}>
+      onPress={onPress}>
       {leftArrow && (
         <Image
           source={icons.toLeft}
@@ -48,6 +47,8 @@ export default Button = ({
     </TouchableOpacity>
   );
 };
+
+export default Button;
 
 const styles = StyleSheet.create({
   button: {

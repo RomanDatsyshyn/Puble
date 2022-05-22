@@ -1,38 +1,37 @@
 import React from 'react';
 import {View, StyleSheet, Dimensions, Image} from 'react-native';
 
-import {images} from '../assets/images';
-import {colors} from '../assets/colors';
+import {images} from '../../assets/images';
+import {colors} from '../../assets/colors';
 
-import Button from '../components/Button';
-import TextBlock from '../components/TextBlock';
-import BottomLinks from '../components/BottomLinks';
+import Button from '../../components/Button';
+import TextBlock from '../../components/TextBlock';
+import BottomLinks from '../../components/BottomLinks';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default WelcomeScreen = ({navigation}) => {
+export const WelcomeScreen = ({navigation}) => {
   return (
     <>
       <View style={styles.background}>
         <Image source={images.welcomeBoy} style={styles.image} />
 
         <View style={styles.labels}>
-          <TextBlock text={'Забудь про пошук!'} size={2} deepBlue bolder />
+          <TextBlock text={'Забудьте про пошук!'} size={2} deepBlue bolder />
           <TextBlock text={'Тепер є Ми.'} size={2} deepBlue bolder />
         </View>
 
-        <Image source={images.logo} style={styles.logo} />
+        <Image source={images.newLogo} style={styles.logo} />
 
         <View style={styles.container}>
           <View style={styles.labelForSignIn}>
-            <TextBlock text={'Я вже є в Puble'} size={5} lighter />
+            <TextBlock text={'Я вже є в Radius'} size={5} lighter />
           </View>
 
           <Button
-            label={'Заходь, друже :)'}
-            route={'LoginScreen'}
-            navigation={navigation}
+            label={'Увійти'}
+            onPress={() => navigation.navigate('LoginScreen')}
           />
 
           <View style={styles.labelForSignUp}>
@@ -40,15 +39,14 @@ export default WelcomeScreen = ({navigation}) => {
           </View>
 
           <Button
-            label={'Хутчіш приєднуйся!'}
-            route={'RegistrationScreen'}
-            navigation={navigation}
+            label={'Зареєструватися'}
+            onPress={() => navigation.navigate('RegistrationScreen')}
             pink
           />
 
           <BottomLinks
-            firstText={'Не маєте профілю?'}
-            secondText={'Створіть його!'}
+            firstText={'Маєте запитання?'}
+            secondText={'Напишіть нам!'}
             route={'RegistrationScreen'}
             navigation={navigation}
           />
@@ -57,6 +55,8 @@ export default WelcomeScreen = ({navigation}) => {
     </>
   );
 };
+
+export default WelcomeScreen;
 
 const styles = StyleSheet.create({
   background: {

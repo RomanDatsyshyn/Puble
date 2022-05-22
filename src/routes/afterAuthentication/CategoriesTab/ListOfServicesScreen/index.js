@@ -18,8 +18,9 @@ import TextBlock from '../../../../components/TextBlock';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export default ListOfServicesScreen = ({navigation}) => {
+export const ListOfServicesScreen = ({route, navigation}) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const {services} = route.params;
 
   return (
     <View style={styles.background}>
@@ -30,7 +31,7 @@ export default ListOfServicesScreen = ({navigation}) => {
           <Image source={icons.leftArrow} style={styles.backIcon} />
         </TouchableOpacity>
         <View style={styles.title}>
-          <TextBlock text={'Оберіть категорію'} size={2} lightBlue boldest />
+          <TextBlock text={'Оберіть послугу'} size={2} lightBlue boldest />
         </View>
         <View style={styles.subTitle}>
           <TextBlock text={'або скористайтеся пошуком'} size={5} grey bolde />
@@ -46,23 +47,22 @@ export default ListOfServicesScreen = ({navigation}) => {
         </View>
 
         <View style={styles.categoriesContainer}>
-          <ServiceItem name="Укладка волосся" navigation={navigation} />
-          <ServiceItem name="Фарбування волосся" navigation={navigation} />
-          <ServiceItem name="Ламінування брів" navigation={navigation} />
-          <ServiceItem name="Укладка волосся" navigation={navigation} />
-          <ServiceItem name="Фарбування волосся" navigation={navigation} />
-          <ServiceItem name="Ламінування брів" navigation={navigation} />
-          <ServiceItem name="Укладка волосся" navigation={navigation} />
-          <ServiceItem name="Фарбування волосся" navigation={navigation} />
-          <ServiceItem name="Ламінування брів" navigation={navigation} />
-          <ServiceItem name="Укладка волосся" navigation={navigation} />
-          <ServiceItem name="Фарбування волосся" navigation={navigation} />
-          <ServiceItem name="Ламінування брів" navigation={navigation} />
+          {services.map(({name, id}, index) => (
+            <ServiceItem
+              id={id}
+              name={name}
+              navigation={navigation}
+              services={services}
+              key={index}
+            />
+          ))}
         </View>
       </ScrollView>
     </View>
   );
 };
+
+export default ListOfServicesScreen;
 
 const styles = StyleSheet.create({
   background: {

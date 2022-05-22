@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Dimensions, ScrollView} from 'react-native';
 
-import {icons} from '../../../assets/icons';
 import {colors} from '../../../assets/colors';
 
 const w = Dimensions.get('window').width;
@@ -11,8 +10,26 @@ import TextBlock from '../../../components/TextBlock';
 
 import CategoryItem from './CategoryItem';
 
-export default CategoriesTab = ({navigation}) => {
+import DataService from '../../../API/HTTP/services/data.service';
+
+export const CategoriesTab = ({navigation}) => {
+  const [catagoriesList, setCatagoriesList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const getCategories = async () => {
+    await DataService.getCategories()
+      .then(res => {
+        if (res.data.success) {
+          setCatagoriesList([...res.data.data]);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <View style={styles.background}>
@@ -32,51 +49,22 @@ export default CategoriesTab = ({navigation}) => {
         />
 
         <View style={styles.categoriesContainer}>
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
-          <CategoryItem
-            name="Краса та здоров'я"
-            icon={icons.beauty}
-            navigation={navigation}
-          />
+          {catagoriesList.map(({name, icon, services}, index) => (
+            <CategoryItem
+              name={name}
+              icon={icon}
+              services={services}
+              navigation={navigation}
+              key={index}
+            />
+          ))}
         </View>
       </ScrollView>
     </View>
   );
 };
+
+export default CategoriesTab;
 
 const styles = StyleSheet.create({
   background: {
