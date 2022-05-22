@@ -1,37 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 import Button from '../../../../components/Button';
+import DataService from '../../../../API/HTTP/services/data.service';
+
+const {io} = require('socket.io-client');
 
 const w = Dimensions.get('window').width;
 
 import {colors} from '../../../../assets/colors';
 
-import DataService from '../../../../API/HTTP/services/data.service';
-
 export const IWantToScreen = ({route, navigation}) => {
-  const {name, services} = route.params;
+  const [userId_, setUserId_] = useState('');
+  const {name, id, services} = route.params;
 
-  // const sendMessage = () => {
-  //   socket.emit('sendUserOrderToServiceSellers', {
-  //     userId: '62486b2ccc97633ca1a504c4',
-  //     serviceId: '623da65073deea0ebf9ba44d',
-  //   });
-  // };
+  const socket = io('ws://localhost:3001');
 
-  const getOrders = async () => {
-    try {
-      await DataService.getOrders('623da65073deea0ebf9ba44d');
-    } catch (e) {
-      console.log(e);
-    }
+  const sendMessage = () => {
+    socket.emit('sendUserOrderToServiceSellers', {
+      userId: userId_,
+      serviceId: id,
+    });
   };
+
+  const getUserRequest = async () => {
+    await DataService.getUserData()
+      .then(res => {
+        if (res.data.success) {
+          setUserId_(res.data.data.id);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    getUserRequest();
+  }, []);
 
   return (
     <View style={styles.background}>
       <Button
         label={name}
         onPress={() => {
-          getOrders();
+          sendMessage();
           navigation.navigate('Feed', {
             isStart: true,
           });

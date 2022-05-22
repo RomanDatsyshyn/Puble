@@ -10,6 +10,7 @@ import RegistrationScreen from '../routes/beforeAuthentication/RegistrationScree
 
 import IsUserLoggedScreen from '../routes/IsUserLoggedScreen';
 import TabNavigation from './bottomTabsNavigation';
+import Dialog from '../routes/afterAuthentication/DirectTab/Dialog';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,11 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="TabNavigation"
         component={TabNavigation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Dialog"
+        component={Dialog}
         options={{headerShown: false}}
       />
       <Stack.Screen

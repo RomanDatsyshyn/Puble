@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 const {io} = require('socket.io-client');
 
-// import FeedItem from './FeedItem';
+import FeedItem from './FeedItem';
 
 import {colors} from '../../../assets/colors';
 import DataService from '../../../API/HTTP/services/data.service';
@@ -18,6 +18,7 @@ const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
 export const FeedTab = ({route}) => {
+  const [userId, setUserId] = useState('');
   const [feed, setFeed] = useState([]);
   const [connected, setConnected] = useState(false);
   const [appState, setAppState] = useState('');
@@ -28,28 +29,51 @@ export const FeedTab = ({route}) => {
     AppState.addEventListener('change', handleChange);
   }, [handleChange]);
 
+  const getUserRequest = async () => {
+    await DataService.getUserData()
+      .then(res => {
+        if (res.data.success) {
+          setUserId(res.data.data.id);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  useEffect(() => {
+    getUserRequest();
+  }, []);
+
   const handleChange = useCallback(
     newState => {
       if (newState === 'active') {
-        if (appState !== 'active') {
-          // console.log('Reconnect');
-          connect('62486b2ccc97633ca1a504c4');
+        if (appState !== 'active' && userId !== '') {
+          // Reconnect
+          connect(userId);
         }
         setAppState(newState);
       }
-      if (newState === 'background' || newState === 'inactive') {
-        // console.log('Unsubscribe');
+      if (
+        newState === 'background' ||
+        (newState === 'inactive' && userId !== '')
+      ) {
+        // Unsubscribe
         setAppState(newState);
-        unsubscribe('62486b2ccc97633ca1a504c4');
+        unsubscribe(userId);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [appState, connect, unsubscribe],
   );
 
   const connect = useCallback(
     id => {
       socket.emit('join', {room: `userFeed-${id}`});
-      socket.on('message', data => setFeed(data));
+      socket.on('message', data => {
+        setFeed(data);
+        console.log(2);
+      });
     },
     [socket],
   );
@@ -79,11 +103,11 @@ export const FeedTab = ({route}) => {
   }, []);
 
   useEffect(() => {
-    if (!connected) {
-      connect('62486b2ccc97633ca1a504c4');
+    if (!connected && userId !== '') {
+      connect(userId);
       setConnected(true);
     }
-  }, [connected, connect]);
+  }, [connected, connect, userId]);
 
   return (
     <View style={styles.background}>
@@ -91,10 +115,8 @@ export const FeedTab = ({route}) => {
         <ScrollView
           style={styles.container}
           showsVerticalScrollIndicator={false}>
-          {feed?.map((id, index) => (
-            <Text key={index}>
-              {index} - {id}
-            </Text>
+          {feed?.map((item, index) => (
+            <FeedItem item={item} key={index} />
           ))}
           <View style={styles.spacing} />
         </ScrollView>

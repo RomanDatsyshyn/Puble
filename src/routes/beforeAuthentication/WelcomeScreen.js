@@ -22,11 +22,11 @@ export const WelcomeScreen = ({navigation}) => {
           <TextBlock text={'Тепер є Ми.'} size={2} deepBlue bolder />
         </View>
 
-        <Image source={images.logo} style={styles.logo} />
+        <Image source={images.newLogo} style={styles.logo} />
 
         <View style={styles.container}>
           <View style={styles.labelForSignIn}>
-            <TextBlock text={'Я вже є в Puble'} size={5} lighter />
+            <TextBlock text={'Я вже є в Radius'} size={5} lighter />
           </View>
 
           <Button

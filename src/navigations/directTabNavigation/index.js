@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import DirectTabScreen from '../../routes/afterAuthentication/DirectTab';
 import DialogScreen from '../../routes/afterAuthentication/DirectTab/DialogScreen';
+import EmptyDialogScreen from '../../routes/afterAuthentication/DirectTab/EmptyDialogScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,8 +16,13 @@ export default function DirectTabNavigation() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="DialogScreen"
+        name="DirectScreen"
         component={DialogScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EmptyDirectScreen"
+        component={EmptyDialogScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
