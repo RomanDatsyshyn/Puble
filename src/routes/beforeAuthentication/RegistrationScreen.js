@@ -4,13 +4,11 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  Image,
   ScrollView,
   SafeAreaView,
 } from 'react-native';
 import InputScrollView from 'react-native-input-scroll-view';
 
-import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 import {getPhoneMask} from '../../components/common';
 
@@ -21,6 +19,9 @@ import TextBlock from '../../components/TextBlock';
 import BottomLinks from '../../components/BottomLinks';
 
 import DataService from '../../API/HTTP/services/data.service';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -188,7 +189,11 @@ export const RegistrationScreen = ({navigation}) => {
           <TouchableOpacity
             onPress={() => navigation.navigate('WelcomeScreen')}
             style={styles.backButton}>
-            <Image source={icons.leftArrow} style={styles.backIcon} />
+            <FontAwesomeIcon
+              icon={Icons.faChevronLeft}
+              size={w * 0.08}
+              style={[{color: colors.deepBlue}, styles.backIcon]}
+            />
           </TouchableOpacity>
         </ScrollView>
       </InputScrollView>

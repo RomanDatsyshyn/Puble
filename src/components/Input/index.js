@@ -1,12 +1,13 @@
 import React from 'react';
-import {StyleSheet, Dimensions, TextInput, View, Image} from 'react-native';
+import {StyleSheet, Dimensions, TextInput, View} from 'react-native';
 
 import TextBlock from '../TextBlock';
 
 const w = Dimensions.get('window').width;
 
-import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 export const Input = ({
   placeholder,
@@ -26,7 +27,7 @@ export const Input = ({
   };
 
   const getStylesOfPaddingLeft = () => {
-    return {paddingLeft: isShowIcon ? w * 0.1 : w * 0.05};
+    return {paddingLeft: isShowIcon ? w * 0.13 : w * 0.05};
   };
 
   return (
@@ -56,7 +57,11 @@ export const Input = ({
           blurOnSubmit
         />
         {isShowIcon && (
-          <Image source={icons.search} style={styles.toRightIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faMagnifyingGlass}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.toRightIcon]}
+          />
         )}
       </View>
     </>

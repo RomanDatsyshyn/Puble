@@ -4,7 +4,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  Image,
   Animated,
   Platform,
 } from 'react-native';
@@ -16,12 +15,14 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 
-import {icons} from '../../../../assets/icons';
 import {colors} from '../../../../assets/colors';
 
 import Button from '../../../../components/Button';
 import TextBlock from '../../../../components/TextBlock';
 import BottomLinks from '../../../../components/BottomLinks';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -106,7 +107,11 @@ export const CodeRecoveryScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('ForgetPasswordScreen')}
           style={styles.backButton}>
-          <Image source={icons.leftArrow} style={styles.backIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faChevronLeft}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.backIcon]}
+          />
         </TouchableOpacity>
 
         <View>

@@ -1,13 +1,6 @@
 import React, {useState} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-  Image,
-} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 
-import {icons} from '../../../assets/icons';
 import {colors} from '../../../assets/colors';
 
 import Input from '../../../components/Input';
@@ -18,6 +11,9 @@ import BottomLinks from '../../../components/BottomLinks';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+
 export const ForgetPasswordScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
 
@@ -27,7 +23,11 @@ export const ForgetPasswordScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('LoginScreen')}
           style={styles.backButton}>
-          <Image source={icons.leftArrow} style={styles.backIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faChevronLeft}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.backIcon]}
+          />
         </TouchableOpacity>
 
         <View>

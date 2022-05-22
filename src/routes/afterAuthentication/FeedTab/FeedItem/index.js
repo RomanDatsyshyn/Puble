@@ -9,13 +9,15 @@ import {
 
 import TextBlock from '../../../../components/TextBlock';
 
-import {icons} from '../../../../assets/icons';
 import {colors} from '../../../../assets/colors';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 
 export const FeedItem = ({item}) => {
-  const {id, name, photo, rating, profession, distance, price} = item;
+  const {id, name, photo, rating, profession, distance} = item;
   return (
     <View style={styles.item}>
       <View style={styles.row}>
@@ -33,12 +35,11 @@ export const FeedItem = ({item}) => {
 
           <View>
             <View style={styles.row}>
-              <Image source={icons.uah} style={styles.itemUahIcon} />
-              <TextBlock text={price} size={5} deepBlue />
-            </View>
-
-            <View style={styles.row}>
-              <Image source={icons.location} style={styles.itemLocationIcon} />
+              <FontAwesomeIcon
+                icon={Icons.faLocationDot}
+                size={w * 0.05}
+                style={[{color: colors.deepBlue}, styles.itemLocationIcon]}
+              />
 
               <View style={styles.itemDistance}>
                 <TextBlock text={`${distance} -`} size={5} deepBlue />
@@ -50,7 +51,11 @@ export const FeedItem = ({item}) => {
             </View>
 
             <View style={styles.row}>
-              <Image source={icons.rating} style={styles.itemLocationIcon} />
+              <FontAwesomeIcon
+                icon={Icons.faChartSimple}
+                size={w * 0.05}
+                style={[{color: colors.deepBlue}, styles.itemLocationIcon]}
+              />
               <TextBlock text={`Рейтинг - ${rating} із 10`} size={5} deepBlue />
             </View>
           </View>
@@ -67,7 +72,11 @@ export const FeedItem = ({item}) => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.close} activeOpacity={0.7}>
-        <Image source={icons.close} style={styles.closeIcon} />
+        <FontAwesomeIcon
+          icon={Icons.faXmark}
+          size={w * 0.07}
+          style={[{color: colors.deepBlue}, styles.closeIcon]}
+        />
       </TouchableOpacity>
     </View>
   );

@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-  Image,
-} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 
-import {icons} from '../../../../assets/icons';
 import {colors} from '../../../../assets/colors';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -28,7 +24,11 @@ export const NewPasswordScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('ForgetPasswordScreen')}
           style={styles.backButton}>
-          <Image source={icons.leftArrow} style={styles.backIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faChevronLeft}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.backIcon]}
+          />
         </TouchableOpacity>
 
         <View>

@@ -1,13 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Dimensions,
-  Image,
-} from 'react-native';
+import {View, TouchableOpacity, StyleSheet, Dimensions} from 'react-native';
 
-import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
 import {getPhoneMask} from '../../components/common';
 
@@ -19,6 +12,9 @@ import BottomLinks from '../../components/BottomLinks';
 
 import {setToken} from '../../asyncStorage/token';
 import DataService from '../../API/HTTP/services/data.service';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -87,7 +83,11 @@ export const LoginScreen = ({navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('WelcomeScreen')}
           style={styles.backButton}>
-          <Image source={icons.leftArrow} style={styles.backIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faChevronLeft}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.backIcon]}
+          />
         </TouchableOpacity>
 
         <View>

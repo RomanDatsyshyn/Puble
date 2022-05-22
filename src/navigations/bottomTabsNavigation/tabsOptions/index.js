@@ -1,22 +1,21 @@
-/* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import {Image, Dimensions} from 'react-native';
+import {Dimensions} from 'react-native';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 
-import {icons} from '../../../assets/icons';
 import {colors} from '../../../assets/colors';
 
 const w = Dimensions.get('window').width;
 
 export const feedTabOptions = {
-  tabBarIcon: ({focused}) =>
-    focused ? (
-      <Image source={icons.homeActive} style={{width: 30, height: 30}} />
-    ) : (
-      <Image source={icons.home} style={{width: 30, height: 30}} />
-    ),
+  tabBarIcon: ({focused}) => (
+    <FontAwesomeIcon
+      icon={Icons.faPeopleArrowsLeftRight}
+      size={w * 0.1}
+      style={{color: focused ? colors.deepBlue : colors.lightGrey}}
+    />
+  ),
   headerTitle: 'Пропозиції',
   tabBarShowLabel: false,
   tabBarIconStyle: {
@@ -25,16 +24,19 @@ export const feedTabOptions = {
   tabBarBadge: '25',
   tabBarBadgeStyle: {
     backgroundColor: '#fae1dd',
+    marginLeft: w * 0.055,
+    marginTop: w * -0.005,
   },
 };
 
 export const categoriesTabOptions = {
-  tabBarIcon: ({focused}) =>
-    focused ? (
-      <Image source={icons.categoriesActive} style={{width: 30, height: 30}} />
-    ) : (
-      <Image source={icons.categories} style={{width: 30, height: 30}} />
-    ),
+  tabBarIcon: ({focused}) => (
+    <FontAwesomeIcon
+      icon={Icons.faPersonChalkboard}
+      size={w * 0.12}
+      style={{color: focused ? colors.deepBlue : colors.lightGrey}}
+    />
+  ),
   headerTitle: 'Категорії',
   tabBarShowLabel: false,
   tabBarIconStyle: {
@@ -45,7 +47,7 @@ export const categoriesTabOptions = {
 export const specialistsTabOptions = {
   tabBarIcon: ({focused}) => (
     <FontAwesomeIcon
-      icon={Icons.faUserGroup}
+      icon={Icons.faStreetView}
       size={w * 0.1}
       style={{color: focused ? colors.deepBlue : colors.lightGrey}}
     />
@@ -58,12 +60,13 @@ export const specialistsTabOptions = {
 };
 
 export const profileTabOptions = {
-  tabBarIcon: ({focused}) =>
-    focused ? (
-      <Image source={icons.profileActive} style={{width: 30, height: 30}} />
-    ) : (
-      <Image source={icons.profile} style={{width: 30, height: 30}} />
-    ),
+  tabBarIcon: ({focused}) => (
+    <FontAwesomeIcon
+      icon={Icons.faPerson}
+      size={w * 0.1}
+      style={{color: focused ? colors.deepBlue : colors.lightGrey}}
+    />
+  ),
   headerTitle: 'Профіль',
   tabBarShowLabel: false,
   tabBarIconStyle: {

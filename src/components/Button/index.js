@@ -1,16 +1,11 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {StyleSheet, Dimensions, TouchableOpacity, Text} from 'react-native';
 
 const w = Dimensions.get('window').width;
 
-import {icons} from '../../assets/icons';
 import {colors} from '../../assets/colors';
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 export const Button = ({
   label = '',
@@ -32,16 +27,22 @@ export const Button = ({
       style={[styles.button, getIdditionalStyles()]}
       onPress={onPress}>
       {leftArrow && (
-        <Image
-          source={icons.toLeft}
-          style={[styles.icon, styles.iconMarginRight]}
+        <FontAwesomeIcon
+          icon={Icons.faChevronLeft}
+          size={w * 0.08}
+          style={[
+            styles.icon,
+            styles.iconMarginRight,
+            {color: colors.deepBlue},
+          ]}
         />
       )}
       <Text style={[styles.text, bold && styles.boldText]}>{label}</Text>
       {rightArrow && (
-        <Image
-          source={icons.toRight}
-          style={[styles.icon, styles.iconMarginLeft]}
+        <FontAwesomeIcon
+          icon={Icons.faChevronRight}
+          size={w * 0.08}
+          style={[styles.icon, styles.iconMarginLeft, {color: colors.deepBlue}]}
         />
       )}
     </TouchableOpacity>

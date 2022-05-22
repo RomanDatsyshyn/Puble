@@ -4,16 +4,17 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  Image,
   ScrollView,
 } from 'react-native';
 
-import {icons} from '../../../../assets/icons';
 import {colors} from '../../../../assets/colors';
 
 import ServiceItem from '../ServiceItem';
 import Input from '../../../../components/Input';
 import TextBlock from '../../../../components/TextBlock';
+
+import * as Icons from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
@@ -28,7 +29,11 @@ export const ListOfServicesScreen = ({route, navigation}) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('CategoriesTabScreen')}
           style={styles.backButton}>
-          <Image source={icons.leftArrow} style={styles.backIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faChevronLeft}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.backIcon]}
+          />
         </TouchableOpacity>
         <View style={styles.title}>
           <TextBlock text={'Оберіть послугу'} size={2} lightBlue boldest />
@@ -43,7 +48,11 @@ export const ListOfServicesScreen = ({route, navigation}) => {
             value={searchQuery}
             onChangeText={e => setSearchQuery(e)}
           />
-          <Image source={icons.search} style={styles.toRightIcon} />
+          <FontAwesomeIcon
+            icon={Icons.faMagnifyingGlass}
+            size={w * 0.08}
+            style={[{color: colors.deepBlue}, styles.toRightIcon]}
+          />
         </View>
 
         <View style={styles.categoriesContainer}>
