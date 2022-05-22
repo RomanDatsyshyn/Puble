@@ -116,7 +116,14 @@ export const FeedTab = ({route}) => {
           style={styles.container}
           showsVerticalScrollIndicator={false}>
           {feed?.map((item, index) => (
-            <FeedItem item={item} key={index} />
+            <>
+              <FeedItem item={item} key={index + Math.random()} />
+              <FeedItem item={item} key={index + Math.random()} />
+              <FeedItem item={item} key={index + Math.random()} />
+              <FeedItem item={item} key={index + Math.random()} />
+              <FeedItem item={item} key={index + Math.random()} />
+              <FeedItem item={item} key={index + Math.random()} />
+            </>
           ))}
           <View style={styles.spacing} />
         </ScrollView>

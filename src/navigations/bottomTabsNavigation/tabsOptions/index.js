@@ -24,8 +24,8 @@ export const feedTabOptions = {
   tabBarBadge: '25',
   tabBarBadgeStyle: {
     backgroundColor: '#fae1dd',
-    marginLeft: w * 0.055,
-    marginTop: w * -0.005,
+    marginLeft: w * 0.03,
+    marginTop: w * -0.015,
   },
 };
 

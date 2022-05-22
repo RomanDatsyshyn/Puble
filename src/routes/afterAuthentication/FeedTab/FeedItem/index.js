@@ -10,6 +10,7 @@ import {
 import TextBlock from '../../../../components/TextBlock';
 
 import {colors} from '../../../../assets/colors';
+import {icons} from '../../../../assets/icons';
 
 import * as Icons from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -17,7 +18,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 const w = Dimensions.get('window').width;
 
 export const FeedItem = ({item}) => {
-  const {id, name, photo, rating, profession, distance} = item;
+  const {name, photo, rating, distance} = item;
   return (
     <View style={styles.item}>
       <View style={styles.row}>
@@ -30,46 +31,77 @@ export const FeedItem = ({item}) => {
         <View style={styles.itemInfo}>
           <View>
             <TextBlock text={name} size={3} deepBlue />
-            <TextBlock text={profession} size={6} grey />
           </View>
 
           <View>
             <View style={styles.row}>
               <FontAwesomeIcon
-                icon={Icons.faLocationDot}
-                size={w * 0.05}
-                style={[{color: colors.deepBlue}, styles.itemLocationIcon]}
+                icon={Icons.faBolt}
+                size={w * 0.055}
+                style={[{color: colors.black}, styles.itemLocationIcon]}
               />
 
               <View style={styles.itemDistance}>
-                <TextBlock text={`${distance} -`} size={5} deepBlue />
+                <TextBlock
+                  text={`${rating ? rating : 0} із 10`}
+                  size={3}
+                  deepBlue
+                />
+              </View>
+            </View>
+
+            <View style={styles.row}>
+              <FontAwesomeIcon
+                icon={Icons.faComment}
+                size={w * 0.055}
+                style={[{color: colors.black}, styles.itemLocationIcon]}
+              />
+              <View style={styles.itemDistance}>
+                <TextBlock text={'0 -'} size={3} deepBlue />
               </View>
 
               <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
-                <TextBlock text={'див. на карті'} size={5} orange />
+                <TextBlock text={'читати'} size={3} grey />
               </TouchableOpacity>
             </View>
 
             <View style={styles.row}>
               <FontAwesomeIcon
-                icon={Icons.faChartSimple}
-                size={w * 0.05}
-                style={[{color: colors.deepBlue}, styles.itemLocationIcon]}
+                icon={Icons.faLocationDot}
+                size={w * 0.055}
+                style={[{color: colors.black}, styles.itemLocationIcon]}
               />
-              <TextBlock text={`Рейтинг - ${rating} із 10`} size={5} deepBlue />
+
+              <View style={styles.itemDistance}>
+                <TextBlock text={`${distance} -`} size={3} deepBlue />
+              </View>
+
+              <TouchableOpacity style={styles.itemMap} activeOpacity={0.7}>
+                <TextBlock text={'глянути'} size={3} grey />
+              </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
 
-      <TouchableOpacity
-        style={styles.button}
-        activeOpacity={0.7}
-        onPress={() => {
-          console.log(id);
-        }}>
-        <TextBlock text={'Надіслати повідомлення'} size={3} deepBlue />
-      </TouchableOpacity>
+      <View style={styles.buttons}>
+        <TouchableOpacity activeOpacity={0.7}>
+          <Image source={icons.instagram} style={styles.instagram} />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7}>
+          <Image source={icons.telegram} style={styles.telegram} />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7}>
+          <Image source={icons.viber} style={styles.viber} />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7}>
+          <FontAwesomeIcon
+            icon={Icons.faMobileButton}
+            size={w * 0.09}
+            style={[{color: colors.black}]}
+          />
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity style={styles.close} activeOpacity={0.7}>
         <FontAwesomeIcon
@@ -97,9 +129,23 @@ const styles = StyleSheet.create({
     height: w * 0.32,
     borderRadius: w * 0.02,
   },
+  instagram: {
+    width: w * 0.11,
+    height: w * 0.11,
+  },
+  telegram: {
+    width: w * 0.1,
+    height: w * 0.1,
+  },
+  viber: {
+    width: w * 0.1,
+    height: w * 0.1,
+  },
   itemInfo: {
     marginLeft: w * 0.05,
     justifyContent: 'space-between',
+    paddingBottom: w * 0.01,
+    paddingTop: w * 0.01,
   },
   itemDistance: {
     marginBottom: w * 0.01,
@@ -117,17 +163,14 @@ const styles = StyleSheet.create({
   itemMap: {
     marginLeft: w * 0.01,
   },
-  button: {
+  buttons: {
+    flexDirection: 'row',
     width: '100%',
-    paddingLeft: w * 0.05,
-    paddingRight: w * 0.05,
-    paddingTop: w * 0.035,
-    paddingBottom: w * 0.035,
-    borderRadius: w * 0.02,
-    backgroundColor: colors.pink,
-    justifyContent: 'center',
+    paddingLeft: w * 0.04,
+    paddingRight: w * 0.04,
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: w * 0.03,
+    marginTop: w * 0.1,
   },
   close: {
     position: 'absolute',

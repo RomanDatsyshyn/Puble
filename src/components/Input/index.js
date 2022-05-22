@@ -60,7 +60,7 @@ export const Input = ({
           <FontAwesomeIcon
             icon={Icons.faMagnifyingGlass}
             size={w * 0.08}
-            style={[{color: colors.deepBlue}, styles.toRightIcon]}
+            style={[{color: colors.lightBlue}, styles.toRightIcon]}
           />
         )}
       </View>

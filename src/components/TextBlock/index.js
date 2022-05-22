@@ -16,7 +16,7 @@ export const TextBlock = ({
   underline,
   pink,
   red,
-  opange,
+  orange,
   deepBlue,
   lightBlue,
   white,
@@ -69,8 +69,8 @@ export const TextBlock = ({
   const getTextColor = () => {
     if (pink) {
       return colors.pink;
-    } else if (opange) {
-      return colors.opange;
+    } else if (orange) {
+      return colors.orange;
     } else if (deepBlue) {
       return colors.deepBlue;
     } else if (lightBlue) {
