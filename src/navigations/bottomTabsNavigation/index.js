@@ -3,14 +3,11 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import FeedTabScreen from '../../routes/afterAuthentication/FeedTab';
 import ProfileTabScreen from '../../routes/afterAuthentication/ProfileTab';
-
 import CategoriesTabNavigation from '../categoriesTabNavigation';
-import DirectTabNavigation from '../directTabNavigation';
 
 import {
   feedTabOptions,
   categoriesTabOptions,
-  directTabOptions,
   profileTabOptions,
   specialistsTabOptions,
 } from './tabsOptions';
@@ -21,9 +18,9 @@ export default function TabNavigation() {
   return (
     <Tab.Navigator initialRouteName="Categories">
       <Tab.Screen
-        name="Specialists"
-        component={CategoriesTabNavigation}
-        options={specialistsTabOptions}
+        name="Feed"
+        component={FeedTabScreen}
+        options={feedTabOptions}
       />
       <Tab.Screen
         name="Categories"
@@ -31,14 +28,9 @@ export default function TabNavigation() {
         options={categoriesTabOptions}
       />
       <Tab.Screen
-        name="Feed"
-        component={FeedTabScreen}
-        options={feedTabOptions}
-      />
-      <Tab.Screen
-        name="Direct"
-        component={DirectTabNavigation}
-        options={directTabOptions}
+        name="Specialists"
+        component={CategoriesTabNavigation}
+        options={specialistsTabOptions}
       />
       <Tab.Screen
         name="Profile"

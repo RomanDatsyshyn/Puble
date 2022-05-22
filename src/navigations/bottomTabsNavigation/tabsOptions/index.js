@@ -57,24 +57,6 @@ export const specialistsTabOptions = {
   },
 };
 
-export const directTabOptions = {
-  tabBarIcon: ({focused}) =>
-    focused ? (
-      <Image source={icons.directActive} style={{width: 30, height: 30}} />
-    ) : (
-      <Image source={icons.direct} style={{width: 30, height: 30}} />
-    ),
-  headerTitle: 'Особисті повідомлення',
-  tabBarShowLabel: false,
-  tabBarIconStyle: {
-    marginTop: w * 0.05,
-  },
-  tabBarBadge: '3',
-  tabBarBadgeStyle: {
-    backgroundColor: '#fae1dd',
-  },
-};
-
 export const profileTabOptions = {
   tabBarIcon: ({focused}) =>
     focused ? (
