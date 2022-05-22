@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 const {io} = require('socket.io-client');
 
-import FeedItem from './FeedItem';
+import SpecialistItem from './SpecialistItem';
 
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +21,7 @@ import DataService from '../../../API/HTTP/services/data.service';
 const w = Dimensions.get('window').width;
 const h = Dimensions.get('window').height;
 
-export const FeedTab = ({navigation, route}) => {
+export const SpecialistsTab = ({navigation, route}) => {
   const [userId, setUserId] = useState('');
   const [feed, setFeed] = useState([]);
   const [connected, setConnected] = useState(false);
@@ -135,12 +135,12 @@ export const FeedTab = ({navigation, route}) => {
           showsVerticalScrollIndicator={false}>
           {feed?.map((item, index) => (
             <>
-              <FeedItem item={item} key={index + Math.random()} />
-              <FeedItem item={item} key={index + Math.random()} />
-              <FeedItem item={item} key={index + Math.random()} />
-              <FeedItem item={item} key={index + Math.random()} />
-              <FeedItem item={item} key={index + Math.random()} />
-              <FeedItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
+              <SpecialistItem item={item} key={index + Math.random()} />
             </>
           ))}
           <View style={styles.spacing} />
@@ -151,7 +151,7 @@ export const FeedTab = ({navigation, route}) => {
   );
 };
 
-export default FeedTab;
+export default SpecialistsTab;
 
 const styles = StyleSheet.create({
   background: {

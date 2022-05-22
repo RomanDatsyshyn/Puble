@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import FeedTabScreen from '../../routes/afterAuthentication/FeedTab';
+import SpecialistsTabScreen from '../../routes/afterAuthentication/SpecialistsTab';
 import ProfileTabScreen from '../../routes/afterAuthentication/ProfileTab';
 import CategoriesTabNavigation from '../categoriesTabNavigation';
 
@@ -29,7 +30,7 @@ export default function TabNavigation() {
       />
       <Tab.Screen
         name="Specialists"
-        component={CategoriesTabNavigation}
+        component={SpecialistsTabScreen}
         options={specialistsTabOptions}
       />
       <Tab.Screen

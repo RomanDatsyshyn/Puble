@@ -17,7 +17,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
 const w = Dimensions.get('window').width;
 
-export const FeedItem = ({item}) => {
+export const SpecialistItem = ({item}) => {
   const {name, photo, rating, distance} = item;
   return (
     <View style={styles.item}>
@@ -114,7 +114,7 @@ export const FeedItem = ({item}) => {
   );
 };
 
-export default FeedItem;
+export default SpecialistItem;
 
 const styles = StyleSheet.create({
   item: {
