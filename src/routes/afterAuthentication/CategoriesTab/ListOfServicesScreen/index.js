@@ -51,13 +51,29 @@ export const ListOfServicesScreen = ({route, navigation}) => {
 
         <View style={styles.categoriesContainer}>
           {services.map(({name, id}, index) => (
-            <ServiceItem
-              id={id}
-              name={name}
-              navigation={navigation}
-              services={services}
-              key={index}
-            />
+            <>
+              <ServiceItem
+                id={id}
+                name={name}
+                navigation={navigation}
+                services={services}
+                key={index}
+              />
+              <ServiceItem
+                id={id}
+                name={name}
+                navigation={navigation}
+                services={services}
+                key={index}
+              />
+              <ServiceItem
+                id={id}
+                name={name}
+                navigation={navigation}
+                services={services}
+                key={index}
+              />
+            </>
           ))}
         </View>
       </ScrollView>

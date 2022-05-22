@@ -50,13 +50,50 @@ export const CategoriesTab = ({navigation}) => {
 
         <View style={styles.categoriesContainer}>
           {catagoriesList.map(({name, icon, services}, index) => (
-            <CategoryItem
-              name={name}
-              icon={icon}
-              services={services}
-              navigation={navigation}
-              key={index}
-            />
+            <>
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+              <CategoryItem
+                name={name}
+                icon={icon}
+                services={services}
+                navigation={navigation}
+                key={index}
+              />
+            </>
           ))}
         </View>
       </ScrollView>
