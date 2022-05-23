@@ -1,5 +1,5 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
-import {name as puble} from './app.json';
+import {name as navkolo} from './app.json';
 
-AppRegistry.registerComponent(puble, () => App);
+AppRegistry.registerComponent(navkolo, () => App);

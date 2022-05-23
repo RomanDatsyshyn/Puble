@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* publeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* publeTests.m */; };
+		00E356F31AD99517003FC87E /* navkoloTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* navkoloTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		4228ADB259E0E7C8F5CBE362 /* libPods-puble-publeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA868658303324DBA1579431 /* libPods-puble-publeTests.a */; };
+		4228ADB259E0E7C8F5CBE362 /* libPods-navkolo-navkoloTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA868658303324DBA1579431 /* libPods-navkolo-navkoloTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E25E1B5AB3162FD39689D035 /* libPods-puble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275E043654CA1A1084E1AB7 /* libPods-puble.a */; };
+		E25E1B5AB3162FD39689D035 /* libPods-navkolo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4275E043654CA1A1084E1AB7 /* libPods-navkolo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,27 +22,27 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = puble;
+			remoteInfo = navkolo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* publeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = publeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* navkoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = navkoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* publeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = publeTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* puble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = puble.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = puble/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = puble/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = puble/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = puble/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = puble/main.m; sourceTree = "<group>"; };
-		4275E043654CA1A1084E1AB7 /* libPods-puble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-puble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = puble/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		87D92D9DC706FE8565ABAF05 /* Pods-puble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puble.release.xcconfig"; path = "Target Support Files/Pods-puble/Pods-puble.release.xcconfig"; sourceTree = "<group>"; };
-		B0975A9FDC6F23ED88C171AD /* Pods-puble-publeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puble-publeTests.debug.xcconfig"; path = "Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C70747681ABED6788C7E92B8 /* Pods-puble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puble.debug.xcconfig"; path = "Target Support Files/Pods-puble/Pods-puble.debug.xcconfig"; sourceTree = "<group>"; };
-		DA868658303324DBA1579431 /* libPods-puble-publeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-puble-publeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB17472EEA4D61F1A59E65A1 /* Pods-puble-publeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-puble-publeTests.release.xcconfig"; path = "Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* navkoloTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navkoloTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* navkolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = navkolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = navkolo/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = navkolo/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = navkolo/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = navkolo/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = navkolo/main.m; sourceTree = "<group>"; };
+		4275E043654CA1A1084E1AB7 /* libPods-navkolo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-navkolo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = navkolo/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		87D92D9DC706FE8565ABAF05 /* Pods-navkolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navkolo.release.xcconfig"; path = "Target Support Files/Pods-navkolo/Pods-navkolo.release.xcconfig"; sourceTree = "<group>"; };
+		B0975A9FDC6F23ED88C171AD /* Pods-navkolo-navkoloTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navkolo-navkoloTests.debug.xcconfig"; path = "Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C70747681ABED6788C7E92B8 /* Pods-navkolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navkolo.debug.xcconfig"; path = "Target Support Files/Pods-navkolo/Pods-navkolo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA868658303324DBA1579431 /* libPods-navkolo-navkoloTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-navkolo-navkoloTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB17472EEA4D61F1A59E65A1 /* Pods-navkolo-navkoloTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-navkolo-navkoloTests.release.xcconfig"; path = "Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4228ADB259E0E7C8F5CBE362 /* libPods-puble-publeTests.a in Frameworks */,
+				4228ADB259E0E7C8F5CBE362 /* libPods-navkolo-navkoloTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25E1B5AB3162FD39689D035 /* libPods-puble.a in Frameworks */,
+				E25E1B5AB3162FD39689D035 /* libPods-navkolo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* publeTests */ = {
+		00E356EF1AD99517003FC87E /* navkoloTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* publeTests.m */,
+				00E356F21AD99517003FC87E /* navkoloTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = publeTests;
+			path = navkoloTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* puble */ = {
+		13B07FAE1A68108700A75B9A /* navkolo */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,18 +93,17 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = puble;
+			name = navkolo;
 			sourceTree = "<group>";
 		};
 		2CF618E3FF3E4454D7A5D774 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C70747681ABED6788C7E92B8 /* Pods-puble.debug.xcconfig */,
-				87D92D9DC706FE8565ABAF05 /* Pods-puble.release.xcconfig */,
-				B0975A9FDC6F23ED88C171AD /* Pods-puble-publeTests.debug.xcconfig */,
-				DB17472EEA4D61F1A59E65A1 /* Pods-puble-publeTests.release.xcconfig */,
+				C70747681ABED6788C7E92B8 /* Pods-navkolo.debug.xcconfig */,
+				87D92D9DC706FE8565ABAF05 /* Pods-navkolo.release.xcconfig */,
+				B0975A9FDC6F23ED88C171AD /* Pods-navkolo-navkoloTests.debug.xcconfig */,
+				DB17472EEA4D61F1A59E65A1 /* Pods-navkolo-navkoloTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -112,8 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				4275E043654CA1A1084E1AB7 /* libPods-puble.a */,
-				DA868658303324DBA1579431 /* libPods-puble-publeTests.a */,
+				4275E043654CA1A1084E1AB7 /* libPods-navkolo.a */,
+				DA868658303324DBA1579431 /* libPods-navkolo-navkoloTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,9 +127,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* puble */,
+				13B07FAE1A68108700A75B9A /* navkolo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* publeTests */,
+				00E356EF1AD99517003FC87E /* navkoloTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				2CF618E3FF3E4454D7A5D774 /* Pods */,
@@ -143,8 +142,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* puble.app */,
-				00E356EE1AD99517003FC87E /* publeTests.xctest */,
+				13B07F961A680F5B00A75B9A /* navkolo.app */,
+				00E356EE1AD99517003FC87E /* navkoloTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,9 +151,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* publeTests */ = {
+		00E356ED1AD99517003FC87E /* navkoloTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "publeTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "navkoloTests" */;
 			buildPhases = (
 				CAAB671F751BAA44D93D8060 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -168,14 +167,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = publeTests;
-			productName = publeTests;
-			productReference = 00E356EE1AD99517003FC87E /* publeTests.xctest */;
+			name = navkoloTests;
+			productName = navkoloTests;
+			productReference = 00E356EE1AD99517003FC87E /* navkoloTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* puble */ = {
+		13B07F861A680F5B00A75B9A /* navkolo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "puble" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "navkolo" */;
 			buildPhases = (
 				BB7277C11405AC7BE75F99B1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -190,9 +189,9 @@
 			);
 			dependencies = (
 			);
-			name = puble;
-			productName = puble;
-			productReference = 13B07F961A680F5B00A75B9A /* puble.app */;
+			name = navkolo;
+			productName = navkolo;
+			productReference = 13B07F961A680F5B00A75B9A /* navkolo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "puble" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "navkolo" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -225,8 +224,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* puble */,
-				00E356ED1AD99517003FC87E /* publeTests */,
+				13B07F861A680F5B00A75B9A /* navkolo */,
+				00E356ED1AD99517003FC87E /* navkoloTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,15 +270,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		13375B98FEC3940F49E986D2 /* [CP] Embed Pods Frameworks */ = {
@@ -288,15 +287,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-puble/Pods-puble-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navkolo/Pods-navkolo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		32C1D140D15641138B64A74A /* [CP] Copy Pods Resources */ = {
@@ -305,15 +304,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		76682869395658A36957628C /* [CP] Embed Pods Frameworks */ = {
@@ -322,15 +321,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-puble-publeTests/Pods-puble-publeTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-navkolo-navkoloTests/Pods-navkolo-navkoloTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB7277C11405AC7BE75F99B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -348,7 +347,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-puble-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-navkolo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,7 +369,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-puble-publeTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-navkolo-navkoloTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,7 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* publeTests.m in Sources */,
+				00E356F31AD99517003FC87E /* navkoloTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* puble */;
+			target = 13B07F861A680F5B00A75B9A /* navkolo */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -429,14 +428,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0975A9FDC6F23ED88C171AD /* Pods-puble-publeTests.debug.xcconfig */;
+			baseConfigurationReference = B0975A9FDC6F23ED88C171AD /* Pods-navkolo-navkoloTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = publeTests/Info.plist;
+				INFOPLIST_FILE = navkoloTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,17 +449,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/puble.app/puble";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/navkolo.app/navkolo";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB17472EEA4D61F1A59E65A1 /* Pods-puble-publeTests.release.xcconfig */;
+			baseConfigurationReference = DB17472EEA4D61F1A59E65A1 /* Pods-navkolo-navkoloTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = publeTests/Info.plist;
+				INFOPLIST_FILE = navkoloTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -474,19 +473,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/puble.app/puble";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/navkolo.app/navkolo";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C70747681ABED6788C7E92B8 /* Pods-puble.debug.xcconfig */;
+			baseConfigurationReference = C70747681ABED6788C7E92B8 /* Pods-navkolo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = puble/Info.plist;
+				INFOPLIST_FILE = navkolo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +496,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = puble;
+				PRODUCT_NAME = navkolo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -506,12 +505,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87D92D9DC706FE8565ABAF05 /* Pods-puble.release.xcconfig */;
+			baseConfigurationReference = 87D92D9DC706FE8565ABAF05 /* Pods-navkolo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = puble/Info.plist;
+				INFOPLIST_FILE = navkolo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +521,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = puble;
+				PRODUCT_NAME = navkolo;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -654,7 +653,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "publeTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "navkoloTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -663,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "puble" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "navkolo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -672,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "puble" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "navkolo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
