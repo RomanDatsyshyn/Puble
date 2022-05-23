@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginRight: w * 0.05,
     marginBottom: w * 0.05,
+    resizeMode: 'contain',
   },
   logo: {
     position: 'absolute',
