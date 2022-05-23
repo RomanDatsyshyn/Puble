@@ -106,13 +106,7 @@ export const RegistrationScreen = ({navigation}) => {
           <View style={styles.background}>
             <View>
               <View style={styles.labels}>
-                <TextBlock
-                  text={'Станьте частиною'}
-                  size={1}
-                  lightBlue
-                  boldest
-                />
-                <TextBlock text={'navkolo'} size={1} lightBlue boldest />
+                <TextBlock text={'Реєстрація'} size={1} lightBlue boldest />
 
                 <View style={styles.subTitle}>
                   <TextBlock
