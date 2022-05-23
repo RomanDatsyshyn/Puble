@@ -112,7 +112,7 @@ export const RegistrationScreen = ({navigation}) => {
                   lightBlue
                   boldest
                 />
-                <TextBlock text={'Puble'} size={1} lightBlue boldest />
+                <TextBlock text={'navkolo'} size={1} lightBlue boldest />
 
                 <View style={styles.subTitle}>
                   <TextBlock

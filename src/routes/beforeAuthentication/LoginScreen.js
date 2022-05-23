@@ -93,7 +93,7 @@ export const LoginScreen = ({navigation}) => {
         <View>
           <View style={styles.labels}>
             <TextBlock text={'Увійдіть до'} size={1} lightBlue boldest />
-            <TextBlock text={'Puble'} size={1} lightBlue boldest />
+            <TextBlock text={'navkolo'} size={1} lightBlue boldest />
 
             <View style={styles.subTitle}>
               <TextBlock text={'Заповніть всі поля нижче'} size={5} grey bold />

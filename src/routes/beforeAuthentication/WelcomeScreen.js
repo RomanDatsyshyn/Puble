@@ -22,11 +22,11 @@ export const WelcomeScreen = ({navigation}) => {
           <TextBlock text={'Тепер є Ми.'} size={2} deepBlue bolder />
         </View>
 
-        <Image source={images.newLogo} style={styles.logo} />
+        <Image source={images.logo} style={styles.logo} />
 
         <View style={styles.container}>
           <View style={styles.labelForSignIn}>
-            <TextBlock text={'Я вже є в Radius'} size={5} lighter />
+            <TextBlock text={'Вже є профіль'} size={5} lighter />
           </View>
 
           <Button
@@ -35,7 +35,7 @@ export const WelcomeScreen = ({navigation}) => {
           />
 
           <View style={styles.labelForSignUp}>
-            <TextBlock text={'Мене ще немає...'} size={5} lighter />
+            <TextBlock text={'Ще немає профілю...'} size={5} lighter />
           </View>
 
           <Button
@@ -78,11 +78,12 @@ const styles = StyleSheet.create({
   },
   logo: {
     position: 'absolute',
-    width: w * 0.5,
+    width: w * 0.6,
     height: h * 0.11,
     top: h * 0.07,
     alignSelf: 'center',
     marginBottom: w * 0.03,
+    resizeMode: 'contain',
   },
   container: {
     height: h * 0.45,
