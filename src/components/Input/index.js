@@ -21,6 +21,7 @@ export const Input = ({
   onFocus,
   onBlur,
   width = w * 0.8,
+  multiline = false,
 }) => {
   const getStylesOfPosition = () => {
     return isShowIcon ? styles.positionRelative : {};
@@ -55,6 +56,7 @@ export const Input = ({
           onFocus={onFocus}
           onBlur={onBlur}
           blurOnSubmit
+          multiline={multiline}
         />
         {isShowIcon && (
           <FontAwesomeIcon

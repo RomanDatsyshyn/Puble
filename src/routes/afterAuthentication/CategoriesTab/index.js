@@ -41,12 +41,17 @@ export const CategoriesTab = ({navigation}) => {
           <TextBlock text={'або скористайтеся пошуком'} size={5} grey bolde />
         </View>
 
-        <Input
-          placeholder="Введіть назву категорії"
-          isShowIcon={true}
-          value={searchQuery}
-          onChange={e => setSearchQuery(e)}
-        />
+        <View style={styles.center}>
+          <Input
+            width={w * 0.9}
+            placeholder="Введіть назву категорії"
+            isShowIcon={true}
+            value={searchQuery}
+            onChange={e => setSearchQuery(e)}
+          />
+        </View>
+
+        <View style={styles.hr} />
 
         <View style={styles.categoriesContainer}>
           {catagoriesList.map(({name, icon, services}, index) => (
@@ -110,17 +115,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    marginTop: w * 0.07,
+    marginTop: w * 0.02,
+    alignSelf: 'center',
   },
   subTitle: {
     marginTop: w * 0.01,
-    marginBottom: w * 0.05,
+    marginBottom: w * 0.04,
+    alignSelf: 'center',
   },
   categoriesContainer: {
-    width: w * 0.8,
+    width: w * 0.9,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     marginTop: w * 0.07,
+  },
+  hr: {
+    marginTop: w * 0.07,
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 0.5,
+  },
+  center: {
+    alignItems: 'center',
   },
 });

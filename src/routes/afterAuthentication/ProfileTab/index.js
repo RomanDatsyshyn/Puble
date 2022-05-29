@@ -5,6 +5,7 @@ import {clearToken} from '../../../asyncStorage/token';
 import DataService from '../../../API/HTTP/services/data.service';
 
 import Button from '../../../components/Button';
+import BottomLinks from '../../../components/BottomLinks';
 import TextBlock from '../../../components/TextBlock';
 
 import {colors} from '../../../assets/colors';
@@ -69,6 +70,13 @@ export const ProfileTab = ({navigation}) => {
         <View style={styles.moreSpacing} />
 
         <Button label={'Вийти'} onPress={() => logout()} />
+
+        <BottomLinks
+          firstText={'Маєте запитання?'}
+          secondText={'Напишіть нам!'}
+          route={'ContactUsScreen'}
+          navigation={navigation}
+        />
       </View>
     </View>
   );

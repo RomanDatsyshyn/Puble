@@ -9,9 +9,26 @@ export const IsUserLoggedScreen = ({navigation}) => {
     const fetchData = async () => {
       const token = await getToken();
 
-      token
-        ? navigation.navigate('TabNavigation')
-        : navigation.navigate('WelcomeScreen');
+      if (token) {
+        const response = await fetch('http://localhost:3001/user/checkToken', {
+          method: 'GET',
+          headers: {
+            Authorization: token,
+          },
+        });
+
+        let res = await response.json();
+
+        if (res.success) {
+          navigation.navigate('TabNavigation');
+        } else {
+          // refresh
+          // remove old token
+          // set new one
+        }
+      } else {
+        navigation.navigate('WelcomeScreen');
+      }
     };
     fetchData();
   }, [navigation]);

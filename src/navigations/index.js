@@ -10,6 +10,7 @@ import RegistrationScreen from '../routes/beforeAuthentication/RegistrationScree
 
 import IsUserLoggedScreen from '../routes/IsUserLoggedScreen';
 import TabNavigation from './bottomTabsNavigation';
+import ContactUsScreen from '../routes/contactUsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -54,6 +55,11 @@ export const RootNavigation = () => {
       <Stack.Screen
         name="RegistrationScreen"
         component={RegistrationScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ContactUsScreen"
+        component={ContactUsScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -39,11 +39,11 @@ export default CategoryItem;
 
 const styles = StyleSheet.create({
   item: {
-    width: w * 0.37,
-    height: w * 0.37,
+    width: w * 0.425,
+    height: w * 0.425,
     borderRadius: w * 0.02,
     backgroundColor: '#fae1dd',
-    marginBottom: w * 0.06,
+    marginBottom: w * 0.05,
     justifyContent: 'center',
     alignItems: 'center',
   },
