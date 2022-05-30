@@ -2,9 +2,13 @@ import React, {useEffect} from 'react';
 import {StyleSheet, View, ActivityIndicator} from 'react-native';
 
 import {colors} from '../assets/colors';
-import {getToken} from '../asyncStorage/token';
+import {getToken, setToken} from '../asyncStorage/token';
 
 export const IsUserLoggedScreen = ({navigation}) => {
+  const setTokenToStorage = async token => {
+    await setToken(token);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const token = await getToken();
@@ -22,9 +26,22 @@ export const IsUserLoggedScreen = ({navigation}) => {
         if (res.success) {
           navigation.navigate('TabNavigation');
         } else {
-          // refresh
-          // remove old token
-          // set new one
+          const response2 = await fetch(
+            'http://localhost:3001/user/checkToken',
+            {
+              method: 'GET',
+              headers: {
+                Authorization: token,
+              },
+            },
+          );
+
+          let res2 = await response2.json();
+
+          if (res2.success) {
+            setTokenToStorage(res2.data.access_token);
+            navigation.navigate('TabNavigation');
+          }
         }
       } else {
         navigation.navigate('WelcomeScreen');

@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    marginTop: w * 0.02,
+    marginTop: w * 0.04,
     alignSelf: 'center',
   },
   subTitle: {

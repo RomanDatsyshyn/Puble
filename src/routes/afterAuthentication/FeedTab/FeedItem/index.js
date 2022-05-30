@@ -29,8 +29,16 @@ export const FeedItem = ({item}) => {
           style={styles.itemImage}
         />
         <View style={styles.itemInfo}>
-          <View>
+          <View style={styles.itemRow}>
             <TextBlock text={name} size={3} deepBlue />
+            <FontAwesomeIcon
+              icon={Icons.faCircleCheck}
+              size={w * 0.045}
+              style={[
+                {color: colors.black, marginLeft: w * 0.015},
+                styles.itemLocationIcon,
+              ]}
+            />
           </View>
 
           <View>
@@ -123,6 +131,10 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+  },
+  itemRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   itemImage: {
     width: w * 0.32,

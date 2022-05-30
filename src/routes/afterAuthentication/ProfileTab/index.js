@@ -55,7 +55,9 @@ export const ProfileTab = ({navigation}) => {
 
         <Button
           label={'Змінити пароль'}
-          route={'ForgetPasswordScreen'}
+          onPress={() => {
+            navigation.navigate('NewPasswordScreen');
+          }}
           navigation={navigation}
           pink
         />
